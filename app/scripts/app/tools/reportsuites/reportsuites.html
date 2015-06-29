@@ -1,0 +1,48 @@
+<div>
+
+    <h2 translate="tools.reportsuites.title">Report Suites</h2>
+
+    <p translate="tools.reportsuites.intro">These are all the report suites that your Security credentials give you access to.</p>
+
+    <div>
+        <label><span translate="global.form.filtering.filterBy">Filter by</span>: <input ng-model="search.$"></label>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="tools.reportsuites.values.rsid.column">RSID</th>
+                    <th translate="global.values.name.column">Name</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr dir-paginate="rs in reportSuites | itemsPerPage: 25 | orderBy: 'rsid' | filter:search">
+                    <td>{{rs.rsid}}</td>
+                    <td>{{rs.site_title}}</td>
+                    <td>
+                        <button type="button"
+                                class="btn btn-info"
+                                ng-click="showGroups(rs)">
+                            <span class="glyphicon glyphicon-object-align-vertical"></span>
+                            <span translate="tools.reportsuites.groups.button">Groups</span>
+                        </button>
+
+                        <button type="button"
+                                class="btn btn-default"
+                                ng-click="showSettings(rs)">
+                            <span class="glyphicon glyphicon-cog"></span>
+                            <span translate="tools.reportsuites.settings.button">Settings</span>
+                        </button>
+                    </td>
+                </tr>
+                <tr ng-show="reportSuites.length === 0">
+                    <td colspan="3" translate="tools.reportsuites.noRecords">No records found.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <dir-pagination-controls></dir-pagination-controls>
+    </div>
+</div>

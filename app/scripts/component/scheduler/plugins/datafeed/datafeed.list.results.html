@@ -1,0 +1,47 @@
+<div>
+    <h2 translate="scheduler.plugins.datafeedlist.title">Data Feeds</h2>
+
+    <p translate="scheduler.plugins.datafeedlist.intro">Please see your list of Data Feeds below</p>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="scheduler.plugins.datafeedlist.values.feedId.column">Feed Id</th>
+                    <th translate="scheduler.plugins.datafeedlist.values.name.column">Name</th>
+                    <th translate="scheduler.plugins.datafeedlist.values.rsid.column">RSID</th>
+                    <th translate="scheduler.plugins.datafeedlist.values.interval.column">Interval</th>
+                    <th translate="scheduler.plugins.datafeedlist.values.timezone.column">TZ</th>
+                    <th translate="scheduler.plugins.datafeedlist.values.ftphost.column">FTP Host</th>
+                    <th translate="scheduler.plugins.datafeedlist.values.norequests.column">No Requests</th>
+                    <th translate="scheduler.plugins.datafeedlist.values.failures.column">Failures last 48 hrs?</th>
+                    <th translate="scheduler.plugins.datafeedlist.values.viewactivities.column">View Activities</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr dir-paginate="df in dataFeeds | itemsPerPage: 25" pagination-id="datafeeds">
+                    <td>{{df.feed_id}}</td>
+                    <td>{{df.name}}</td>
+                    <td>{{df.rsid}}</td>
+                    <td>{{df.interval}}</td>
+                    <td>{{df.timezone}}</td>
+                    <td><a href="#" tooltip-placement="bottom" tooltip="FTP path: {{df.ftp_path}}">{{df.ftp_host}}</a></td>
+                    <td>{{df.activity.length}}</td>
+                    <td>{{df.activityFailure.toString() | translate}}</td>
+                    <td>
+                        <button type="button"
+                                ng-class="df.activityFailure ? 'btn btn-danger' : 'btn btn-success'"
+                                ng-click="showActivityModal(df)">
+                            <span translate="global.form.action.view">View</span>
+                        </button>
+                    </td>
+                </tr>
+                <tr ng-show="dataFeeds.length === 0">
+                    <td colspan="9"><span translate="global.values.norecords">No records were found.</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <dir-pagination-controls pagination-id="datafeeds"></dir-pagination-controls>
+    </div>
+</div>

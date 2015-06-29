@@ -1,0 +1,72 @@
+{
+    "name": "Segments",
+    "methods": {"Segments.Delete":"Delete","Segments.Get":"Get","Segments.Save":"Save"},
+    "defaultArgs": {
+        "Segments.Delete": {
+            "segmentID":"(string)"
+        },
+        "Segments.Get": {
+            "accessLevel":"(string)",
+            "fields":[
+                "(string)"
+            ],
+            "filters":{
+                "name":"(string)",
+                "tags":"(string)",
+                "owner":"(string)",
+                "reportSuiteID":"(string)",
+                "approved":"(boolean)",
+                "favorite":"(boolean)"
+            },
+            "selected":[
+                "(string)"
+            ],
+            "sort":"(string)"
+        },
+        "Segments.Save": {
+            "definition":{
+                "container":{
+                    "name":"(string)",
+                    "type":"(string)",
+                    "operator":"(string)",
+                    "rules":[
+                        {
+                            "container":"(segment_container)",
+                            "name":"(string)",
+                            "metric":"(string)",
+                            "element":"(string)",
+                            "classification":"(string)",
+                            "operator":"(string)",
+                            "value":"(string)",
+                            "after":{
+                                "id":"(string)",
+                                "value":"(string)"
+                            },
+                            "within":{
+                                "id":"(string)",
+                                "value":"(string)"
+                            },
+                            "exclude":"(boolean)"
+                        }
+                    ],
+                    "exclude":"(boolean)"
+                }
+            },
+            "description":"(string)",
+            "favorite":"(boolean)",
+            "id":"(string)",
+            "name":"(string)",
+            "owner":"(string)",
+            "reportSuiteID":"(string)",
+            "shares":[
+                {
+                    "type":"(string)",
+                    "name":"(string)"
+                }
+            ],
+            "tags":[
+                "(string)"
+            ]
+        }
+    }
+}

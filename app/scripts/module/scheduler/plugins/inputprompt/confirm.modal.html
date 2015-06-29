@@ -1,0 +1,39 @@
+<div class="modal fade" id="confirmModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form name="confirmForm" ng-submit="confirm()">
+                <div class="modal-header">
+                    <button type="button"
+                            class="close"
+                            data-dismiss="modal"
+                            aria-hidden="true"
+                            ng-click="cancel()">&times;</button>
+
+                    <h4 class="modal-title">{{labels.title | translate}}</h4>
+                </div>
+
+                <div class="modal-body">
+                    <p>{{labels.description | translate}}</p>
+
+                    <div ng-repeat="(key, value) in formModel">
+                        <h5><strong>{{key}}</strong></h5>
+
+                        <ul>
+                            <li ng-repeat="item in value track by $index">{{item}}</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="cancel()">
+                        <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;{{labels.cancelButton | translate}}
+                    </button>
+
+                    <button type="submit" class="btn btn-danger">
+                        <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;{{labels.confirmButton | translate}}
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

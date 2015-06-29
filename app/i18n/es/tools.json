@@ -1,0 +1,132 @@
+﻿{
+    "tools": {
+        "explorer": {
+            "title": "Explorador API",
+            "intro": "Utiliza este formulario para hacer llamadas a la API.",
+            "settingsRequired": "Antes de nada necesitas saber tu 'Nombre de usuario de los servicios Web' y el 'Shared Secret' (password), así como el Data Centre y el entorno, Producción (PROD) o Desarrollo (DEV).",
+            "resetArguments": "Resetear Argumentos",
+            "group": {
+                "settings": {
+                    "title": "Configuración de la consulta"   
+                },
+                "apis": {
+                    "title": "Configuración de la llamada API"   
+                },
+                "request": {
+                    "title": "Llamada API"
+                },
+                "response": {
+                    "title": "Respuesta API",
+                    "text": "Datos de la respuesta",
+                    "tree": "Árbol de resultados"
+                },
+                "editor": {
+                    "title": "Editor de argumentos API",
+                    "intro": "Usa este editor para crear y configurar los argumentos.",
+                    "showbutton": "Usar Editor"
+                }                     
+            },
+            "values": {
+                "secret": {
+                    "label": "Shared Secret"
+                },
+                "environment": {
+                    "label": "Data Centre"
+                },
+                "api": {
+                    "label": "Selecciona API",
+                    "required": "Es necesario seleccionar la API para poder hacer la llamada correspondiente."
+                },
+                "method": {
+                    "label": "Selecciona el método",
+                    "noselection": "- Ninguno seleccionado -",
+                    "required": "Es necesario seleccionar el método para poder hacer la llamada correspondiente."
+                },
+                "arguments": {
+                    "label": "Argumentos",
+                    "required": "Es necesario indicar los argumentos de la llamada."
+                },
+                "response": {
+                    "label": "Respuesta"
+                }                 
+            }            
+        },
+        "users": {
+            "title": "Administrar Usuarios",
+            "intro": "La lista que se ve a continuación contiene los usuarios asociados con los credenciales suministrados.",
+            "noRecords": "No hemos podido encontrar ningún usuario con el que acceder a la herramienta",
+            "values": {
+                "isadmin": {
+                    "column": "¿Es Administrador?"
+                },
+                "lastlogin": {
+                    "column": "Fecha de último acceso"
+                }
+            }                
+        },
+        "credentials": {
+            "title": "Información sobre los credenciales",
+            "intro": "Información sobre los datos usados para iniciar sesión.",
+            "noRecords": "No se encontró ningún resultado.",
+            "group": {
+                "login": {
+                    "title": "Infomación de login",
+                    "values": {
+                        "admin": {
+                            "label": "¿Es Administrador?" 
+                        },   
+                        "changepassword": {
+                            "label": "¿Password modificado?" 
+                        },   
+                        "temp": {
+                            "label": "Temporal",
+                            "startdate": "Inicio",
+                            "enddate": "Fin"
+                        }                        
+                    }
+                },
+                "groups": {
+                    "title": "Grupos",
+                    "norecords": "Tus credenciales no pertenecen a ningún grupo."
+                }
+            }
+        },
+        "company": {
+            "title": "Congifurar Compañía",
+            "intro": "Información acerca de la Compañía través de la cual has iniciado sesión.",
+            "noRecords": "No se encontró ningún resultado.",
+            "group": {
+                "versionAccess": {
+                    "title": "Versión de acceso"   
+                },
+                "endpoint": {
+                    "title": "Endpoint",
+                    "label": "Endpoint"
+                }
+            }              
+        },
+        "reportsuites": {
+            "title": "Tus Report Suites",
+            "intro": "Lista de los report suites a los cuales tienes acceso.",
+            "noRecords": "No se encontró ningún report suite para el usuario.",
+            "values": {
+                "rsid": {
+                    "column": "RSID"
+                }
+            }            
+        },
+        "environment": {
+            "title": "Data Centres",
+            "intro": "Lista de los data centres disponibles en el sistema.",
+            "values": {
+                "norecords": "No se encontró ningún entorno (environment).",
+                "name": {
+                    "column": "Nombre"
+                },
+                "url": {
+                    "column": "URL de la API"
+                }
+            }            
+        }        
+    }
+}

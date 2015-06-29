@@ -1,0 +1,135 @@
+{
+    "id": "doGenericExecute",
+    "name": "scheduler.tasks.doGenericExecute.name",
+    "description": "scheduler.tasks.doGenericExecute.description",
+    "tags": "tools, explorer, execute, generic",
+    "jobs": [
+        {
+            "id": "getApis",
+            "name": "scheduler.jobs.getApis.name",
+            "description": "scheduler.jobs.getApis.description",
+            "pluginConfig": {
+                "id": "apiServiceCall",
+                "factory": "ServiceCallPluginFactory",
+                "serviceName": "ApiHelper",
+                "methodName": "getApis",
+                "methodArgs": {}
+            }
+        },
+        {
+            "id": "promptForApi",
+            "name": "scheduler.jobs.promptForApi.name",
+            "description": "scheduler.jobs.promptForApi.description",
+            "pluginConfig": {
+                "id": "captureUserInputApi",
+                "factory": "InputPromptPluginFactory",
+                "state": "scheduler.plugins.inputprompt",
+                "prompts": [
+                    {
+                        "name": "api",
+                        "label": "scheduler.jobs.promptForApi.label",
+                        "type": "selectone",
+                        "value": "@getApis",
+                        "options": "api as api for api in formValues[prompt.name]",
+                        "required": true
+                    }
+                ]
+            }
+        },
+        {
+            "id": "getMethods",
+            "name": "scheduler.jobs.getMethods.name",
+            "description": "scheduler.jobs.getMethods.description",
+            "pluginConfig": {
+                "id": "methodServiceCall",
+                "factory": "ServiceCallPluginFactory",
+                "serviceName": "ApiHelper",
+                "methodName": "getMethods",
+                "methodArgs": {
+                    "code": "@promptForApi.api"
+                }
+            }
+        },
+        {
+            "id": "promptForMethod",
+            "name": "scheduler.jobs.promptForMethod.name",
+            "description": "scheduler.jobs.promptForMethod.description",
+            "pluginConfig": {
+                "id": "captureUserInputMethod",
+                "factory": "InputPromptPluginFactory",
+                "state": "scheduler.plugins.inputprompt",
+                "prompts": [
+                    {
+                        "name": "method",
+                        "label": "scheduler.jobs.promptForMethod.label",
+                        "type": "selectone",
+                        "value": "@getMethods",
+                        "options": "v as v for (k, v) in formValues[prompt.name]",
+                        "required": true
+                    }
+                ]
+            }
+        },
+        {
+            "id": "getArguments",
+            "name": "scheduler.jobs.getArguments.name",
+            "description": "scheduler.jobs.getArguments.description",
+            "pluginConfig": {
+                "id": "methodServiceCall",
+                "factory": "ServiceCallPluginFactory",
+                "serviceName": "ApiHelper",
+                "methodName": "getArguments",
+                "methodArgs": {
+                    "code": "@promptForApi.api",
+                    "method": "@promptForMethod.method"
+                }
+            }
+        },
+        {
+            "id": "promptForArguments",
+            "name": "scheduler.jobs.promptForArguments.name",
+            "description": "scheduler.jobs.promptForArguments.description",
+            "pluginConfig": {
+                "id": "captureUserInputArguments",
+                "factory": "InputPromptPluginFactory",
+                "state": "scheduler.plugins.inputprompt",
+                "prompts": [
+                    {
+                        "name": "args",
+                        "label": "scheduler.jobs.promptForArguments.label",
+                        "type": "json",
+                        "value": "@getArguments",
+                        "options": {},
+                        "required": true
+                    }
+                ]
+            }
+        },
+        {
+            "id": "doExecution",
+            "name": "scheduler.tasks.doGenericExecute.jobs.doExecution.name",
+            "description": "scheduler.tasks.doGenericExecute.jobs.doExecution.description",
+            "pluginConfig": {
+                "id": "methodServiceCall",
+                "factory": "ServiceCallPluginFactory",
+                "serviceName": "ApiHelper",
+                "methodName": "executeMethod",
+                "methodArgs": {
+                    "code": "@promptForApi.api",
+                    "method": "@promptForMethod.method",
+                    "args": "@promptForArguments.args"
+                }
+            }
+        },
+        {
+            "id": "displayResults",
+            "name": "scheduler.tasks.doGenericExecute.jobs.displayResults.name",
+            "description": "scheduler.tasks.doGenericExecute.jobs.displayResults.name",
+            "pluginConfig": {
+                "id": "resultsDisplay",
+                "factory": "ResultsDisplayPluginFactory",
+                "state": "scheduler.plugins.resultsdisplay"
+            }
+        }
+    ]
+}

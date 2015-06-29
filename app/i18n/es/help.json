@@ -1,0 +1,68 @@
+﻿{
+    "help": {
+        "about": {
+            "title": "Acerca de Dr Jones",
+            "intro": "Detalles del Sistema e historia de la herramienta",
+            "inspiration": {
+                "title": "Inspiración",
+                "description": "Indiana Jones (con copyright de Lucas Films o alguno por el estilo) era un tipo bastante tranquilo para su época.   Dando sus clases y tomándose ya tenía suficiente para relajarse.   Por desgracia (o por suerte) siempre se topaba con alguien que lo acababa metiendo en algún marrón (tambien llamado 'aventura').   Esta herramienta por tanto intenta reflejar la parte aventurera de su vida.   Muchas de las herramientas internals de Adobe empiezan por 'Dr.' (Doctor), con lo cual tenía sentido que esta herramienta, 'Indiana', se llamara 'Dr Jones' (gracias Seth)."
+            },
+            "platform": {
+                "title": "Plataforma",
+                "description": "Como sospechabas, estamos ante una herramienta que se basa en Adobe Analytics REST 1.4 API.   La verdadera magia pasa en la cocina, con algo de contenido generado dinámicamente, aunque no te vas a encontrar a David Copperfiled haciendo desaparecer la API.   A medida que pase el tiempo Dr Jones irá creciendo como el plan EXPLAIN en bases de datos.  Te enseñaremos como alcanzar tus objetivos haciendo uso de la API de que proporciona Adobe Analytics.   La API es sencilla de usar pero con esta herramienta queremos que sea aún más fácil."
+            },
+            "getinvolved": {
+                "title": "Involúcrate",
+                "description": "A día de hoy la herramienta símplemente hace uso de la API pública que proporciona el equipo de API de Adobe Analytics.  La idea de este proyecto (aún por llevar a cabo) es proporcionar al usuario un entorno API que te permita concatenar llamadas para en última instancia tener acceso a la información que necesitas.  Atento a las actualizaciones, ya que una vez sentemos las bases esperamos poder ofrecer una herramienta que esté a la altura de las necesidades de tu empresa.",
+                "involvement": {
+                    "email": {
+                        "title": "Email",
+                        "description": "Puedes escribirnos con sugerencias. En inglés responderemos más rápido.",
+                        "contact": "support+dmaapilexplorer@eyelock.net"
+                    },
+                    "development": {
+                        "title": "Desarrollo",
+                        "description": "El código es gratuito y se puede descargar de la siguiente página.  Si no tienes acceso mándanos un correo y nos encargaremos de darte acceso.",
+                        "contact": "https://bitbucket.org/eyelock/aaindiana"
+                    }
+                }
+            },
+            "technologies": {
+                "title": "Technología",
+                "description": "Como todo en este mundillo de la tecnología siempre se acaban usando herramientas conocidas para implentar algo nuevo.  Aquí puedes ver un listado de lo que se ha usado para hacer posible Dr Jones."
+            }
+        },
+        "issues": {
+            "title": "Errores conocidos",
+            "intro": "Nadie es perfecto. Conoce qué no funciona en Dr Jones y descubre si existe alguna solución alternativa.",
+            "values": {
+                "version": {
+                    "column": "Versión"   
+                },
+                "reference ": {
+                    "column": "Referencia"   
+                },
+                "issue": {
+                    "column": "Causa"   
+                },
+                "workaroreferenceund": {
+                    "column": "Referencia"   
+                },                
+                "workaround": {
+                    "column": "Solución alternativa?"   
+                },
+                "status": {
+                    "column": "¿Estado?"   
+                },
+                "reference": {
+                    "column": "Referencia"   
+                }
+            }
+        },
+        "usage": {
+            "title": "Cómo se usa",
+            "intro": "Aprende a usar Dr Jones con las instrucciones a continuación."
+        }
+    }
+}
+        

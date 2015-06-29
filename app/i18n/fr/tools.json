@@ -1,0 +1,132 @@
+{
+    "tools": {
+        "explorer": {
+            "title": "API Exploreur",
+            "intro": "Utilisez ce formulaire pour effectuer des requêtes avec l'API.",
+            "settingsRequired": "Votre nom d’utilisateur et votre secret doivent être configurés. Le data center doit aussi être renseigné. ",
+            "resetArguments": "Rafraîchir les Arguments",
+            "group": {
+                "settings": {
+                    "title": "Query Settings"   
+                },
+                "apis": {
+                    "title": "API Settings"   
+                },
+                "request": {
+                    "title": "API Request"
+                },
+                "response": {
+                    "title": "API Response",
+                    "text": "Text Output",
+                    "tree": "Tree Output"
+                },
+                "editor": {
+                    "title": "API Argument Editor",
+                    "intro": "Utilisez l'éditeur pour construire vos arguments .",
+                    "showbutton": "Utilisez l'Éditeur"
+                }                     
+            },
+            "values": {
+                "secret": {
+                    "label": "Secret"
+                },
+                "environment": {
+                    "label": "Data Centre"
+                },
+                "api": {
+                    "label": "Sélectionnez l'API",
+                    "required": "L'API est nécessaire pour exécuter la requête."
+                },
+                "method": {
+                    "label": "Sélectionnez la méthode",
+                    "noselection": "- Non sélectionné -",
+                    "required": "La méthode est nécessaire pour exécuter la requête."
+                },
+                "arguments": {
+                    "label": "Arguments",
+                    "required": "Vous devez fournir les arguments pour la requête."
+                },
+                "response": {
+                    "label": "Réponse"
+                }                 
+            }            
+        },
+        "users": {
+            "title": "Gérer les utilisateurs",
+            "intro": "Ceci est une liste de toutes les logins associés à vos informations d'identification .",
+            "noRecords": "Nous n’avons trouvé aucun login que vous pouvez accéder.",
+            "values": {
+                "isadmin": {
+                    "column": "Is Admin?"
+                },
+                "lastlogin": {
+                    "column": "Date de dernière connexion"
+                }
+            }                
+        },
+        "credentials": {
+            "title": "Détails sur les identifiants ",
+            "intro": "Détails des informations d'identification vous êtes en train d’utiliser.",
+            "noRecords": "Aucune donnée trouvée.",
+            "group": {
+                "login": {
+                    "title": "Détails des logins",
+                    "values": {
+                        "admin": {
+                            "label": "Is Admin?" 
+                        },   
+                        "changepassword": {
+                            "label": "Change password?" 
+                        },   
+                        "temp": {
+                            "label": "Is Temp",
+                            "startdate": "Start",
+                            "enddate": "Finish"
+                        }                        
+                    }
+                },
+                "groups": {
+                    "title": "Membre du Groupe",
+                    "norecords": "Vos informations d'identification ne font pas partie d'aucun groupes."
+                }
+            }
+        },
+        "company": {
+            "title": "Gérer la compagnie",
+            "intro": "Détails et configuration liés à la compagnie liée au login que vous utilisez.",
+            "noRecords": "Aucune donnée trouvée.",
+            "group": {
+                "versionAccess": {
+                    "title": "Version Access"   
+                },
+                "endpoint": {
+                    "title": "Your endpoint",
+                    "label": "Endpoint"
+                }
+            }              
+        },
+        "reportsuites": {
+            "title": "Vos Report Suites",
+            "intro": "List de tous les report suites dont vous avez accès avec votre login.",
+            "noRecords": "Aucune donnée trouvée.",
+            "values": {
+                "rsid": {
+                    "column": "RSID"
+                }
+            }            
+        },
+        "environment": {
+            "title": "Data Centres",
+            "intro": "Liste des data centers disponibles.",
+            "values": {
+                "norecords": "Aucune donnée trouvée.",
+                "name": {
+                    "column": "Name"
+                },
+                "url": {
+                    "column": "API URL"
+                }
+            }            
+        }        
+    }
+}

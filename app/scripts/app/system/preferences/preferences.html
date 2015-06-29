@@ -1,0 +1,38 @@
+<div>
+    <h2 translate="system.preferences.title">Preferences</h2>
+
+    <p translate="system.preferences.intro">Introducton about Preferences.</p>
+
+
+    <tabset>
+        <tab>
+            <tab-heading>
+                <span translate="system.preferences.favtasks.tabTitle">Favourite Tasks</span>
+            </tab-heading>
+
+            <table class="table">
+            <tr>
+                <th translate="system.preferences.favtasks.values.favid.column">Favourite Id</th>
+                <th translate="system.preferences.favtasks.values.exists.column">Exists</th>
+                <th translate="system.preferences.favtasks.values.taskname.column">Task Name</th>
+                <th translate="system.preferences.favtasks.values.taskdesc.column">Task Description</th>
+            </tr>
+            <tr ng-repeat="(key, value) in favtasks.favourites">
+                <td>{{key}}</td>
+                <td>{{value ? 'true' : 'false'}}</td>
+                <td>{{value.name | translate}}</td>
+                <td>{{value.description | translate}}</td>
+            </tr>
+            </table>
+        </tab>
+
+        <tab>
+            <tab-heading>
+                <span translate="system.preferences.general.tabTitle">General Preferences</span>
+            </tab-heading>
+
+
+        </tab>
+    </tabset>
+
+</div>

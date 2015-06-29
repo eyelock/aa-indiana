@@ -1,0 +1,22 @@
+{
+    "tasks": {
+        "custom": {
+            "title": "Tareas personalizadas",
+            "intro": "Revisa la lista de tareas personalizadas existentes para ejecutarlas nuevamente."
+        },
+        "favourites": {
+            "title": "Favoritas",
+            "intro": "Vista rápida de tus tareas, desde donde puedes organizar las que mejor te venga tener a mano."
+        },
+        "export": {
+            "title": "Exportar"
+        },
+        "import": {
+            "title": "Importar"
+        },
+        "all": {
+            "title": "Todos",
+            "intro": "Hemos incluido algunas tareas predefinidas para avivar la imaginación que en lo que puede hacer con la API , y también para lograr algunas tareas comunes . La siguiente es una lista de todos los tasksa predefinido y las tareas personalizadas que ha almacenado ."
+        }
+    }
+}

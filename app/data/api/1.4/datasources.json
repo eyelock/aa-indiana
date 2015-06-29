@@ -1,0 +1,77 @@
+{
+    "name": "DataSources",
+    "methods": {"DataSources.Delete":"Delete","DataSources.Get":"Get","DataSources.GetJobs":"GetJobs","DataSources.ProcessIncompleteVisits":"ProcessIncompleteVisits","DataSources.Restart":"Restart","DataSources.Save":"Save","DataSources.UploadData":"UploadData"},
+    "defaultArgs": {
+        "DataSources.Delete": {
+            "dataSourceID":"(int)",
+            "reportSuiteID":"(string)"
+        },
+        "DataSources.Get": {
+            "reportSuiteID":"(string)"
+        },
+        "DataSources.GetJobs": {
+            "dataSourceID":"(int)",
+            "reportSuiteID":"(string)"
+        },
+        "DataSources.ProcessIncompleteVisits": {
+            "dataSourceID":"(int)",
+            "reportSuiteID":"(string)"
+        },
+        "DataSources.Restart": {
+            "dataSourceID":"(int)",
+            "reportSuiteID":"(string)"
+        },
+        "DataSources.Save": {
+            "email":"(string)",
+            "id":"(int)",
+            "name":"(string)",
+            "processing_type":"(string)",
+            "reportSuiteID":"(string)",
+            "settings":{
+                "injectionType":"(string)",
+                "allowOutOfOrderHits":"(boolean)",
+                "stopOnWarning":"(boolean)",
+                "metricNames":[
+                    "(string)"
+                ],
+                "metricEvents":[
+                    "(string)"
+                ],
+                "dimensionNames":[
+                    "(string)"
+                ],
+                "dimensionVariables":[
+                    "(string)"
+                ],
+                "dataScope":"(string)",
+                "standardBreakdowns":[
+                    "(string)"
+                ],
+                "metricList":[
+                    "(string)"
+                ],
+                "customBreakdownNames":[
+                    "(string)"
+                ],
+                "customBreakdownValues":[
+                    "(string)"
+                ],
+                "logFormat":"(string)"
+            }
+        },
+        "DataSources.UploadData": {
+            "columns":[
+                "(string)"
+            ],
+            "dataSourceID":"(int)",
+            "finished":"(boolean)",
+            "jobName":"(string)",
+            "reportSuiteID":"(string)",
+            "rows":[
+                [
+                    "(string)"
+                ]
+            ]
+        }
+    }
+}

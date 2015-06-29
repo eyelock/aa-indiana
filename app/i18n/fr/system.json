@@ -1,0 +1,66 @@
+{
+    "system": {
+        "auth": {
+            "title": "Identification",
+            "intro": "Ajouter votre nom d'utilisateur et secret ici pour permettre l'accès à l'API.",
+            "confirmlogouttext": "Êtes-vous sûr que vous voulez vous déconnecter? Vous perdrez toutes vos données mises en cache et vous ne serez pas en mesure d'accéder à certains rapports jusqu'à ce que vous vous connectiez à nouveau.",
+            "confirmlogouttitle": "Se déconnecter et effacer toutes les données?",
+            "values": {
+                "secret": {
+                    "label": "Secret",
+                    "invalid": "Le secret est nécessaire",
+                    "minlength": "La valeur secrète devrait être 32 caractères en longueur."
+                }
+            }
+        },
+        "preferences": {
+            "title": "Préférences",
+            "intro": "Vous pouvez modifier vos préférences ici, et rendre l'utilisation de l'outil plus facile chaque fois que vous revenez."
+        },
+        "storage": {
+            "title": "Gérer le stockage",
+            "intro": "Vous pouvez remarquer  que l'application stocke vos requêtes et identifiants, et peut les effacer si vous en avez besoin. 'Se déconnecter' efface efficacement tous ces détails!",
+            "clearall": {
+                "title": "Tout effacer!",
+                "description": "Vous pouvez tout effacer maintenant, cela  inclut les informations d'identification que vous utilisez pour vous connecter, assurez-vous que vous les avez noté!",
+                "buttonLabel": "Tout effacer!",
+                "confirmtitle": "Êtes-vous sûr de vouloir supprimer toutes les données dans le cache?",
+                "confirmdescription": "Vous êtes sur que vous voulez tout supprimer ? Cela supprimera les identifiants que vous utilisez pour votre connexion. Nous voulons confirmer que vous êtes conscient des risques. Cliquez sur 'Valider' pour tout supprimer. Vous ne pourrez pas revenir en arrière."
+            },
+            "clearcache": {
+                "confirmtitle": "Vider le cache individuelle!",
+                "confirmdescription": "Êtes-vous sûr de vouloir supprimer ce cache indivduel?"
+            },
+            "list": {
+                "title": "Tous vos caches m’appartiennent",
+                "description": "Voici une liste de toutes les caches courants détenus par l'application, vous pouvez choisir d'effacer  chacun d’eux individuellement.",
+                "warning": "Les caches énumérés ci-dessous sont tous ceux qui ont été consulté jusqu'ici, il peut y en avoir d'autres qui n’ont pas encore été accédé."
+            },
+            "values": {
+                "cacheFlushInterval": {
+                    "column": "Cache Flush Interval"
+                },
+                "capacity": {
+                    "column": "Capacity",
+                    "unlimited": "Unlimited"
+                },
+                "deleteOnExpire": {
+                    "column": "Expire Policy"
+                },
+                "disabled": {
+                    "column": "Disabled"
+                },
+                "maxAge": {
+                    "column": "Max. Age",
+                    "unlimited": "Until cache clearance"
+                },
+                "recycleFreq": {
+                    "column": "Recycle Frequency"
+                },
+                "storageMode": {
+                    "column": "Storage Mode"
+                }
+            }
+        }
+    }
+}

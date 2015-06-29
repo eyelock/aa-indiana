@@ -1,0 +1,45 @@
+<div>
+    <h2 translate="tasks.custom.title">Custom</h2>
+
+    <p translate="tasks.custom.intro">Introducton about Task Custom.</p>
+
+    <button class="btn btn-primary btn-lg" data-toggle="modal" ng-click="create()">
+        <span class="glyphicon glyphicon-flash"></span> <span translate="global.form.action.create">Create</span>
+    </button>
+
+    <div>
+        <label>
+            <span translate="global.form.filtering.filterBy">Filter by</span>:
+            <input ng-model="search.$">
+        </label>
+    </div>
+
+    <table class="table">
+    <tr>
+        <th translate="global.values.name.column">Name</th>
+        <th translate="global.values.tags.column">Tags</th>
+        <th translate="global.values.description.column">Description</th>
+        <th></th>
+    </tr>
+    <tr ng-repeat="task in tasks | orderBy: 'name' | filter:search">
+        <td><a href="#/tasks/run/{{task.id}}">{{task.name}}</a></td>
+        <td linkify-tags="filterByTag">{{task.tags}}</td>
+        <td>{{task.description}}</td>
+        <td>
+            <button type="submit"
+                    ng-click="update(task)"
+                    class="btn btn-primary">
+                <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="global.form.action.edit">Edit</span>
+            </button>
+            <button type="submit"
+                    ng-click="confirmDelete(task)"
+                    class="btn btn-danger">
+                <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="global.form.action.delete">Delete</span>
+            </button>
+        </td>
+    </tr>
+    <tr ng-show="tasks.length === 0">
+        <td colspan="4" translate="global.values.norecords">No records found.</td>
+    </tr>
+    </table>
+</div>

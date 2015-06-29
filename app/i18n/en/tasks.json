@@ -1,0 +1,76 @@
+{
+    "tasks": {
+        "custom": {
+            "title": "Custom Tasks",
+            "intro": "Review your configured custom tasks and execute them against the API.",
+            "values": {
+                "config": {
+                    "label": "Configuration"
+                }
+            }
+        },
+        "details": {
+            "title": "Custom Tasks Details",
+            "intro": "Load the custom tasks to perform export features.",
+            "count": "No. of custom tasks",
+            "prepareexport": "Prepare Export"
+        },
+        "favourites": {
+            "title": "Favourites",
+            "intro": "A quick look up list of all your favourite API tasks, control it here so you have what you need near to click."
+        },
+        "export": {
+            "title": "Export",
+            "intro": "From here you can export all the custom tasks you have so that you can back them up to import to a new browser instance.",
+            "json": {
+                "title": "JSON String",
+                "info": "Copy and paste the below contents to a .json file to save the back up."
+            },
+            "norecords": {
+                "title": "No Custom Tasks found",
+                "info": "No custom tasks were found to export.  Are you sure you have created some?"
+            }
+        },
+        "import": {
+            "title": "Import",
+            "intro": "You can import a set of custom tasks that you have previously exported.",
+            "overwrite": {
+                "label": "Overwrite?",
+                "help": "If you select overwrite, any existing custom tasks with the same Id will be overwritten, otherwise we will keep the existing."
+            },
+            "importjson": {
+                "label": "Import JSON",
+                "help": "A JSON array containing the objects that represent each Task Job configuration.",
+                "required": "The import JSON string is required.",
+                "parseerror": "The JSON must be valid and parseable.",
+                "notarray": "The JSON was not an array element",
+                "noelements": "The JSON array did not contain any elements",
+                "warnexisting": "Did not import due to existing:",
+                "importsuccessful": "Successfully imported number of total:",
+                "importfinished": "The import was succesful.",
+                "importagain": "Import Again"
+            }
+        },
+        "all": {
+            "title": "All",
+            "intro": "We've included some predefined tasks to stoke you imagination on what you can do with the API, and also to achieve some common tasks.  The following is a list of all the predefined tasksa and any custom tasks you have stored."
+        },
+        "run": {
+            "title": "Run Task",
+            "intro": "Details and output of running a task.",
+            "details": {
+                "tabTitle": "Details",
+                "intro": "Details about the task, including what the aim is."
+            },
+            "config": {
+                "tabTitle": "Configuration",
+                "intro": "View the configuration of this task in the JSON structure to create a chain of jobs to complete.",
+                "noJobs": "No of Jobs"
+            },
+            "jobs": {
+                "tabTitle": "Jobs",
+                "intro": "The following jobs are linked with this task."
+            }
+        }
+    }
+}

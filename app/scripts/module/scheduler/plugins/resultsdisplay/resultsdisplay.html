@@ -1,0 +1,36 @@
+<div>
+    <h2 translate="scheduler.plugins.resultsdisplay.title">Results Display</h2>
+
+    <p translate="scheduler.plugins.resultsdisplay.intro">Find the results of the Task that was completed.</p>
+
+    <div job-header="job"></div>
+
+    <div ng-repeat="result in lastResult">
+        <h3 ng-show="lastResult.length > 1">{{plugin.getResultTitle(lastResult, $index) | translate}}</h3>
+
+        <tabset>
+            <tab>
+                <tab-heading>
+                    <span translate="scheduler.plugins.resultsdisplay.textOutput.tabTitle">Text Outpu</span>
+                </tab-heading>
+
+                <div>
+                    <textarea name="apiArgs"
+                              class="largeTextArea"
+                              required
+                              disabled>{{result | json}}</textarea>
+                </div>
+            </tab>
+
+            <tab ng-show="!disableJsonEditor">
+                <tab-heading>
+                    <span translate="scheduler.plugins.resultsdisplay.treeOutput.tabTitle">Tree Output</span>
+                </tab-heading>
+
+                <div class="jsonView">
+                    <json child="result" default-collapsed="true" type="object"></json>
+                </div>
+            </tab>
+        </tabset>
+    </div>
+</div>

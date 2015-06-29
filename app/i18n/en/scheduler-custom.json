@@ -1,0 +1,378 @@
+{
+    "scheduler": {
+        "values": {
+            "starttime": {
+                "label": "Start Time"
+            },
+            "endtime": {
+                "label": "End Time"
+            }
+        },
+
+        "jobs": {
+            "getReportSuites": {
+                "name": "Get Accessible Report Suites",
+                "description": "Get a list of report suites to select upon."
+            },
+            "promptReportSuites": {
+                "name": "Which Report Suites?",
+                "description": "Present a list of report suites for selection for the task.",
+                "label": {
+                    "selectmulti": "Select one or more report suites",
+                    "selectone": "Select one report suites"
+                }
+            },
+            "getDataSources": {
+                "name": "Get Data Sources for Report Suite",
+                "description": "Uses the previously selected report suite to get a list of Data Sources."
+            },
+            "promptDataSource": {
+                "name": "Which Data Source?",
+                "description": "Present a list of data sources to select one to action.",
+                "label": {
+                    "selectmulti": "Select one or more data sources",
+                    "selectone": "Select one data source"
+                }
+            },
+            "getReportQueue": {
+                "name": "Get Queue of Requests",
+                "description": "Get the current queue of API requests accessible by this user."
+            },
+            "getApis": {
+                "name": "Get Apis",
+                "description": "List the APIs that can be access."
+            },
+            "promptForApi": {
+                "name": "Which API?",
+                "description": "Choose the API you want to Query",
+                "label": "Select one of of the APIs to query"
+            },
+            "getMethods": {
+                "name": "Get Methods",
+                "description": "List the methods for this API that can be access."
+            },
+            "promptForMethod": {
+                "name": "Which Method?",
+                "description": "Choose the API method you want to Query",
+                "label": "Select one of of the API methods to query"
+            },
+            "getArguments": {
+                "name": "Get Arguments",
+                "description": "Get the arguments as default for this api method.",
+                "label": "Create your arguments for executing against the method"
+            },
+            "promptForArguments": {
+                "name": "Configure Arguments",
+                "description": "Use the JSON Editor to add your arguments.",
+                "label": "Arguments for method call"
+            },
+            "displayResults": {
+                "name": "Display Base URL Results",
+                "description": "Displays the results from the previous service call to get the values."
+            },
+            "getReportSuiteSettings": {
+                "name": "Get the Report Suite settings for the selected RSIDs",
+                "description": "Uses the previously selected report suites to get a list of settings of each of them."
+            }
+        },
+
+        "tasks": {
+            "getDataFeeds": {
+                "name": "List Data Feeds for RSID",
+                "description": "Lists all the data feeds associated with a RSID",
+                "jobs": {
+                    "promptForSettings": {
+                        "starttime": "Start time for Activity return (max 48 hours)",
+                        "endtime": "End time for Activity return (max 48 hours)"
+                    },
+                    "displayResults": {
+                        "name": "Display Data Source Job Results",
+                        "description": "Displays the results from the previous service call to get the values."
+                    }
+                }
+            },
+            "getDataSourcesJobs": {
+                "name": "List Data Source Jobs",
+                "description": "This task allows you to select an RSID abd Data Source and view the Jobs associated with it.",
+                "jobs": {
+                    "getDataSourcesJobs": {
+                        "name": "Get Jobs for Data Source",
+                        "description": "Uses the previously selected data source to get a list of Jobs."
+                    },
+                    "displayResults": {
+                        "name": "Display Data Source Job Results",
+                        "description": "Displays the results from the previous service call to get the values."
+                    }
+                }
+            },
+            "cancelReportQueue": {
+                "name": "Cancel Reports in Queue",
+                "description": "Lists all the requests currently in the reporting queue, allowing you to select and then cancel them.",
+                "jobs": {
+                    "promptCurrentQueue": {
+                        "name": "Display the current queue",
+                        "description": "Displays the results from the previous service call to get the values.",
+                        "label": {
+                            "selectmulti": "Select one or more requests"
+                        },
+                        "confirmTitle": "Confirmation of Cancel Requests",
+                        "confirmDescription": "Are you sure you want to cancel the requests listed below?"
+                    },
+                    "doCancel": {
+                        "name": "API Calls to cancel Queue items",
+                        "description": "Takes the selections from the previous step, and performs a series of API calls to request cancellation of the reports in the queue."
+                    },
+                    "displayResults": {
+                        "name": "Display Results of Cancellation Request",
+                        "description": "Outputs the raw returns of the various calls to cancel the API Requests"
+                    }
+                }
+            },
+            "listReportQueue": {
+                "name": "List Reports in Queue",
+                "description": "Lists all the requests currently in the reporting queue, allowing you to select and then cancel them.",
+                "jobs": {
+                    "displayCurrentQueue": {
+                        "name": "Display the current queue",
+                        "description": "Displays the results from the previous service call to get the values."
+                    }
+                }
+            },
+            "getReportSuiteBaseUrls": {
+                "name": "Get RSIDs Base URLs",
+                "description": "This task gets all the report suites you have access to, and allows you select a subset before retrieving the Base URL for each Report Suite.",
+                "jobs": {
+                    "getBaseURLs": {
+                        "name": "Get Base URLs for Report Suites",
+                        "description": "Uses the previously selected report suites to get a list of Base URLs."
+                    }
+                }
+            },
+            "getReportSuiteEvars": {
+                "name": "Get eVars for Report Suites",
+                "description": "This task gets all the report suites you have access to, and allows you select a subset before retrieving the eVars for each Report Suite.",
+                "jobs": {
+                    "getEvars": {
+                        "name": "Get Evars for Report Suites",
+                        "description": "Uses the previously selected report suites to get a list of eVars."
+                    }
+                }
+            },
+            "getReportSuiteEvents": {
+                "name": "Get RSIDs Events",
+                "description": "This task gets all the report suites you have access to, and allows you select a subset before retrieving the Events for each Report Suite.",
+                "jobs": {
+                    "getEvents": {
+                        "name": "Get Events for Report Suites",
+                        "description": "Uses the previously selected report suites to get a list of Events."
+                    }
+                }
+            },
+            "getReportSuiteMarketingChannels": {
+                "name": "Get RSIDs Marketing Channels",
+                "description": "This task gets all the report suites you have access to, and allows you select a subset before retrieving the Marketing Channels for each Report Suite.",
+                "jobs": {
+                    "getMarketingChannels": {
+                        "name": "Get Marketing Channels for Report Suites",
+                        "description": "Uses the previously selected report suites to get a list of Marketing Channels."
+                    }
+                }
+            },
+            "getReportSuiteEUComplianceChecks": {
+                "name": "Get RSIDs EU Compliance Checks",
+                "description": "This task gets all the report suites you have access to, and allows you select a subset before retrieving the EU Compliance Checks for each Report Suite.",
+                "jobs": {
+                    "getIPObfuscations": {
+                        "name": "Get EU Compliance for Report Suites",
+                        "description": "Uses the previously selected report suites to get a list of EU Compliance."
+                    },
+                    "valueCheckerResults": {
+                        "name": "EU Compliance Check Results",
+                        "description": "Below you can find the details of the checks you requested between the RSIDs."
+                    }
+                }
+            },
+            "doGenericExecute": {
+                "name": "API Method Execution",
+                "description": "Use the JSON editor to build an API request to execute.",
+                "jobs": {
+                    "doExecution": {
+                        "name": "Execute API Call",
+                        "description": "Calls the API method with the arguments set in the previous steps."
+                    },
+                    "displayResults": {
+                        "name": "Display Method Execution Results",
+                        "description": "Displays the results from the method call."
+                    }
+                }
+            },
+            "doDataSourceProcessIncompleteVisits": {
+                "name": "Process Incomplete Visits on Data Source",
+                "description": "Send a command to process incomplete visits that are associated with a specific data source.",
+                "jobs": {
+                    "doDataSourcesProcessIncompleteVisits": {
+                        "name": "Send request to API",
+                        "description": "Sends the request to process the incomplete visits to the API."
+                    },
+                    "displayResults": {
+                        "name": "Display Result",
+                        "description": "The return value from the API on the request to process incomplete visits."
+                    }
+                }
+            },
+            "doReportSuiteSettingsComparison": {
+                "name": "Report Suite Settings Comparison",
+                "description": "Choose some report suites to compare settings against a primary one to compare values.",
+                "jobs": {
+                    "promptForSettings": {
+                        "name": "Prompt for RSID Settings",
+                        "description": "Prompt for the RSIDs and Primary Suite.",
+                        "selecttwo": "Select two or more RSIDs",
+                        "selectprimary": "Select the primary RSID to compare against"
+                    },
+                    "promptForProperties": {
+                        "name": "Choose Properties",
+                        "description": "Choose the properties you wish to compare between the report suites.",
+                        "label": "Select one or more properties."
+                    },
+                    "valueCheckerResults": {
+                        "name": "View Comparison Results",
+                        "description": "View the results of the comparison between the report suite settings and selected properties."
+                    }
+                }
+            },
+            "reportQueueAndGet": {
+                "name": "Queue Report and Poll",
+                "description": "This task queues a report for running, then polls for the results and displays the output.",
+                "jobs": {
+                    "getDefaultArguments": {
+                        "name": "Get Default Args for Report.Queue",
+                        "description": "Returns the default arguments for the method."
+                    },
+                    "promptForReport": {
+                        "name": "Enter Report Description",
+                        "description": "Enter the configuration of the report that you wish to run.",
+                        "label": "Enter valid JSON in the input below to configure your report"
+                    },
+                    "sendToQueue": {
+                        "name": "Send Report to Queue",
+                        "description": "Sends the report to the queue and gets a reportID in return to poll for."
+                    },
+                    "pollingQueue": {
+                        "name": "Report Completion Polling",
+                        "description": "Please wait while we poll for the finish of your report queue request."
+                    },
+                    "displayResults": {
+                        "name": "Report Finished",
+                        "description": "Your report has now been generated will be shown below shortly."
+                    }
+                }
+            },
+            "deleteUsers": {
+                "name": "Delete Users",
+                "description": "This task allows you to delete multiple logins from your company.  This assumes the web service credentials being used have the relevant permissions.",
+                "jobs": {
+                    "getUsers": {
+                        "name": "Get Users",
+                        "description": "Get all the users accessible by your web service credentials."
+                    },
+                    "promptForUsers": {
+                        "name": "Select Users to delete",
+                        "description": "Select from the list of users that you wish to delete.",
+                        "label": "Select users from list",
+                        "confirmTitle": "Confirm Deletion of Users",
+                        "confirmDescription": "Please review the logins listed below and confirm you wish to delete them.   NOTE: Currently the API Method is intentially misnamed to ensure that you cannot delete users by accident."
+                    },
+                    "doDelete": {
+                        "name": "Delete the Users",
+                        "description": "Calls the API using a series of calls to delete each user login."
+                    },
+                    "displayResults": {
+                        "name": "Display Results",
+                        "description": "Displays the results of each individual API call."
+                    }
+                }
+            }
+        },
+
+        "plugins": {
+            "datafeedlist": {
+                "title": "Data Feed Results",
+                "intro": "Please find your results for your data feed search below",
+                "values": {
+                    "feedId": {
+                        "column": "Feed Id"
+                    },
+                    "name": {
+                        "column": "Name"
+                    },
+                    "rsid": {
+                        "column": "RSID"
+                    },
+                    "interval": {
+                        "column": "Interval"
+                    },
+                    "timezone": {
+                        "column": "Timezone"
+                    },
+                    "ftphost": {
+                        "column": "FTP Host"
+                    },
+                    "ftppath": {
+                        "column": "FTP Path"
+                    },
+                    "norequests": {
+                        "column": "No Requests"
+                    },
+                    "failures": {
+                        "column": "Has Problems?"
+                    },
+                    "viewactivities": {
+                        "column": ""
+                    }
+                },
+                "activity": {
+                    "title": "Activity of Data Feed",
+                    "intro": "Below table is the list of activity against this data feed.  Note: If you did not specify a start or end date, then only the lastest one is shown.  If you did state a start and/or end, only the last 48 hours worth of activity is shown.",
+                    "jobid": "Job Id",
+                    "start": "Start Date",
+                    "end": "End Date",
+                    "status": "Status"
+                }
+            },
+            "reportqueuelist": {
+                "title": "Report Queue",
+                "intro": "The following is a view of your queue as it currently stands in Adobe Analytics.",
+                "values": {
+                    "reportID": {
+                        "column": "Report Id"
+                    },
+                    "type": {
+                        "column": "Type"
+                    },
+                    "queueTime": {
+                        "column": "Queue Time"
+                    },
+                    "status": {
+                        "column": "Status"
+                    },
+                    "priority": {
+                        "column": "Priority"
+                    },
+                    "estimate": {
+                        "column": "Estimate"
+                    },
+                    "reportSuiteID": {
+                        "column": "Report Suite Id"
+                    },
+                    "user": {
+                        "column": "User"
+                    },
+                    "totalRequests": {
+                        "column": "Total Current Requests"
+                    }
+                }
+            }
+        }
+    }
+}

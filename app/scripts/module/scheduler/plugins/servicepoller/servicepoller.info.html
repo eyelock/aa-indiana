@@ -1,0 +1,18 @@
+<div>
+    <dl class="dl-horizontal">
+        <dt translate="scheduler.plugins.servicepoller.starttime">Start Time</dt>
+        <dd>{{servicePollerInfo.startTime  | date:'HH:mm:ss'}}</dd>
+
+        <dt translate="scheduler.plugins.servicepoller.interval">Interval</dt>
+        <dd>{{servicePollerInfo.interval / 1000}}</dd>
+
+        <dt translate="scheduler.plugins.servicepoller.lastexecution">Last Execution</dt>
+        <dd>{{servicePollerInfo.currentTime  | date:'HH:mm:ss'}}</dd>
+
+        <dt translate="scheduler.plugins.servicepoller.counter">No Executions</dt>
+        <dd>{{servicePollerInfo.counter}}</dd>
+
+        <dt ng-show="servicePollerInfo.endtime"><span translate="scheduler.plugins.servicepoller.endtime">End Time</span></dt>
+        <dd ng-show="servicePollerInfo.endtime">{{servicePollerInfo.endTime | date:'HH:mm:ss'}}</dd>
+    </dl>
+</div>

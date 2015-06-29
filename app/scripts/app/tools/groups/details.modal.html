@@ -1,0 +1,89 @@
+<div class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-hidden="true"
+                        ng-click="cancel()">&times;</button>
+
+                <h4 class="modal-title" translate="tools.groups.details.title">Group Details</h4>
+            </div>
+
+            <div class="modal-body">
+                <p translate="tools.groups.details.intro">Details of the group.</p>
+                <p class="modal-subject">{{group.group_name}}</p>
+                <p>{{group.group_description}}</p>
+
+                <tabset>
+                    <tab>
+                        <tab-heading>
+                            <span translate="tools.groups.details.reportaccess.title">Report Access</span>
+                        </tab-heading>
+
+                        <p translate="tools.groups.details.reportaccess.intro"></p>
+
+                        <table class="table table-striped">
+                            <tr>
+                                <td translate="global.values.name.column">Name</td>
+                                <td translate="global.values.name.column">Category</td>
+                                <td translate="tools.groups.details.reportaccess.access">Access</td>
+                                <td translate="tools.groups.details.reportaccess.reportids">Report Ids</td>
+                            </tr>
+                            <tr dir-paginate="report in details.report_access_list | itemsPerPage: 10" pagination-id="report_access_list">
+                                <td>{{report.name}}</td>
+                                <td>{{report.category}}</td>
+                                <td>{{report.access}}</td>
+                                <td>{{report.reportids}}</td>
+                            </tr>
+                            <tr ng-show="details.report_access_list.length === 0">
+                                <td colspan="4"><span translate="global.values.norecords">No records were found.</span></td>
+                            </tr>
+                        </table>
+
+                        <dir-pagination-controls pagination-id="report_access_list"></dir-pagination-controls>
+                    </tab>
+
+                    <tab>
+                        <tab-heading>
+                            <span translate="tools.groups.details.users.title">Userss</span>
+                        </tab-heading>
+
+                        <p translate="tools.groups.details.users.intro"></p>
+
+                        <ul>
+                            <li  dir-paginate="login in details.user_list | itemsPerPage: 10" pagination-id="user_list">{{login}}</li>
+                        </ul>
+
+                        <p ng-show="details.user_list.length === 0"><span translate="global.values.norecords">No records.</span></p>
+
+                        <dir-pagination-controls pagination-id="user_list"></dir-pagination-controls>
+                    </tab>
+
+                    <tab>
+                        <tab-heading>
+                            <span translate="tools.groups.details.reportsuites.title">Report Suites</span>
+                        </tab-heading>
+
+                        <p translate="tools.groups.details.reportsuites.intro"></p>
+
+                        <ul>
+                            <li  dir-paginate="rsid in details.rsid_list | itemsPerPage: 10" pagination-id="rsid_list">{{rsid}}</li>
+                        </ul>
+
+                        <p ng-show="details.rsid_list.length === 0"><span translate="global.values.norecords">No records.</span></p>
+
+                        <dir-pagination-controls pagination-id="rsid_list"></dir-pagination-controls>
+                    </tab>
+                </tabset>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="cancel()">
+                    <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="global.form.action.close">Close</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

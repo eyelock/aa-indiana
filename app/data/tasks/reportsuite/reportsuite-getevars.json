@@ -1,0 +1,81 @@
+{
+    "id": "getReportSuiteEvars",
+    "name": "scheduler.tasks.getReportSuiteEvars.name",
+    "description": "scheduler.tasks.getReportSuiteEvars.description",
+    "tags": "reportsuite, evars, list",
+    "jobs": [
+        {
+            "id": "getReportSuites",
+            "name": "scheduler.jobs.getReportSuites.name",
+            "description": "scheduler.jobs.getReportSuites.name",
+            "pluginConfig": {
+                "id": "promptServiceCall",
+                "factory": "ServiceCallPluginFactory",
+                "serviceName": "ApiHelper",
+                "methodName": "executeMethod",
+                "methodArgs": {
+                    "code": "Company",
+                    "method": "GetReportSuites",
+                    "args": {}
+                }
+            }
+        },
+
+        {
+            "id": "promptForSettings",
+            "name": "scheduler.jobs.promptReportSuites.name",
+            "description": "scheduler.jobs.promptReportSuites.description",
+            "pluginConfig": {
+                "id": "captureUserInput",
+                "factory": "InputPromptPluginFactory",
+                "state": "scheduler.plugins.inputprompt",
+                "prompts": [
+                    {
+                        "name": "report_suites",
+                        "label": "scheduler.jobs.promptReportSuites.label.selectmulti",
+                        "type": "selectmulti",
+                        "value": "@getReportSuites.data.report_suites",
+                        "options": {
+                            "buttonLabel": "site_title",
+                            "itemLabel": "site_title (rsid)",
+                            "outputProperties": "rsid",
+                            "maxLabels": "6",
+                            "maxHeight": "200px"
+                        },
+                        "required": true
+                    }
+                ]
+            }
+        },
+
+        {
+            "id": "getEvars",
+            "name": "scheduler.tasks.getReportSuiteEvars.jobs.getEvars.name",
+            "description": "scheduler.tasks.getReportSuiteEvars.jobs.getEvars.description",
+            "pluginConfig": {
+                "id": "serviceCall",
+                "factory": "ServiceCallPluginFactory",
+                "serviceName": "ApiHelper",
+                "methodName": "executeMethod",
+                "methodArgs": {
+                    "code": "ReportSuite",
+                    "method": "GetEvars",
+                    "args": {
+                        "rsid_list": "@promptForSettings.report_suites:rsid"
+                    }
+                }
+            }
+        },
+
+        {
+            "id": "displayEvarsResults",
+            "name": "Display Evars Results",
+            "description": "Displays the results from the previous service call to get the Evars.",
+            "pluginConfig": {
+                "id": "resultsDisplay",
+                "factory": "ResultsDisplayPluginFactory",
+                "state": "scheduler.plugins.resultsdisplay"
+            }
+        }
+    ]
+}

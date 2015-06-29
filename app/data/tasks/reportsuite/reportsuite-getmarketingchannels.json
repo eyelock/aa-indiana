@@ -1,0 +1,81 @@
+{
+    "id": "getReportSuiteMarketingChannels",
+    "name": "scheduler.tasks.getReportSuiteMarketingChannels.name",
+    "description": "scheduler.tasks.getReportSuiteMarketingChannels.description",
+    "tags": "reportsuite, marketingchannels, list",
+    "jobs": [
+        {
+            "id": "getReportSuites",
+            "name": "scheduler.jobs.getReportSuites.name",
+            "description": "scheduler.jobs.getReportSuites.name",
+            "pluginConfig": {
+                "id": "promptServiceCall",
+                "factory": "ServiceCallPluginFactory",
+                "serviceName": "ApiHelper",
+                "methodName": "executeMethod",
+                "methodArgs": {
+                    "code": "Company",
+                    "method": "GetReportSuites",
+                    "args": {}
+                }
+            }
+        },
+
+        {
+            "id": "promptForSettings",
+            "name": "scheduler.jobs.promptReportSuites.name",
+            "description": "scheduler.jobs.promptReportSuites.description",
+            "pluginConfig": {
+                "id": "captureUserInput",
+                "factory": "InputPromptPluginFactory",
+                "state": "scheduler.plugins.inputprompt",
+                "prompts": [
+                    {
+                        "name": "report_suites",
+                        "label": "scheduler.jobs.promptReportSuites.label.selectmulti",
+                        "type": "selectmulti",
+                        "value": "@getReportSuites.data.report_suites",
+                        "options": {
+                            "buttonLabel": "site_title",
+                            "itemLabel": "site_title (rsid)",
+                            "outputProperties": "rsid",
+                            "maxLabels": "6",
+                            "maxHeight": "200px"
+                        },
+                        "required": true
+                    }
+                ]
+            }
+        },
+
+        {
+            "id": "getMarketingChannels",
+            "name": "scheduler.tasks.getReportSuiteMarketingChannels.jobs.getMarketingChannels.name",
+            "description": "scheduler.tasks.getReportSuiteMarketingChannels.jobs.getMarketingChannels.description",
+            "pluginConfig": {
+                "id": "serviceCall",
+                "factory": "ServiceCallPluginFactory",
+                "serviceName": "ApiHelper",
+                "methodName": "executeMethod",
+                "methodArgs": {
+                    "code": "ReportSuite",
+                    "method": "GetMarketingChannels",
+                    "args": {
+                        "rsid_list": "@promptForSettings.report_suites:rsid"
+                    }
+                }
+            }
+        },
+
+        {
+            "id": "displayResults",
+            "name": "scheduler.jobs.displayResults.name",
+            "description": "scheduler.jobs.displayResults.description",
+            "pluginConfig": {
+                "id": "resultsDisplay",
+                "factory": "ResultsDisplayPluginFactory",
+                "state": "scheduler.plugins.resultsdisplay"
+            }
+        }
+    ]
+}

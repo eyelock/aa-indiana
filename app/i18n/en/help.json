@@ -1,0 +1,70 @@
+{
+    "help": {
+        "about": {
+            "title": "About Dr Jones",
+            "intro": "System details and history of the tool",
+            "inspiration": {
+                "title": "Inspiration",
+                "description": "Indiana Jones (copyright Lucas Films, or such like) was a more sedate fellow in his time.   He liked to teach some classes and generally chill out.   Unfortunately he usually had someone to drag him into mischief.   This tool is the mischeif part of his life.   Adobe's internal tools are often prefixed with 'Dr.', so it made sense for the tool 'Indiana' to be prefixed with a Dr... so it made a lot of sense when Seth said call it 'Dr Jones'"
+            },
+            "platform": {
+                "title": "Platform",
+                "description": "As suspected, it's a tool that uses the Adobe Analytics REST 1.4 API.   There is a bit of trickery and dynamic generation of objects when you look at the source code but nothing is of a voodoo nature.   Over time Dr Jones will grow to be liek an EXPLAIN plan of a Database.  We will show you how to achieve your business aims using the most excellent API as provided by the Adobe Analytics API team.   It's easy to use, but we are trying to make it even smoother via this tool."
+            },
+            "getinvolved": {
+                "title": "Get Involved",
+                "description": "We are using only the pure public API as provided by the Adobe Analytics API Team.  These are all available to you to use as you need.  Now!  One of the main aims (not realised yet) is to provide an API Engine which will let you chain events to get you the data you want.  Stay tuned, once the basics are in place we will get an engine to meet your business needs.",
+                "involvement": {
+                    "email": {
+                        "title": "Email",
+                        "description": "You can email us and we will consider the tasks/tools you need.",
+                        "contact": "support+dmaapilexplorer@eyelock.net"
+                    },
+                    "development": {
+                        "title": "Development",
+                        "description": "The code is free, you can get it at the location below.  If you don't have access, email above and we can arrange access.",
+                        "contact": "https://bitbucket.org/eyelock/aaindiana"
+                    }
+                }
+            },
+            "technologies": {
+                "title": "Technologies",
+                "description": "As ever, there are a lot of components that make the application come alive.  See below for the main components used in this application."
+            }
+        },
+        "issues": {
+            "title": "Known Issues",
+            "intro": "Nothing is perfect, learn what we know is wrong with Dr Jones below, and where you can work around it if available.",
+            "values": {
+                "version": {
+                    "column": "Version"
+                },
+                "reference ": {
+                    "column": "Reference"
+                },
+                "issue": {
+                    "column": "Issue"
+                },
+                "workaroreferenceund": {
+                    "column": "Reference"
+                },
+                "workaround": {
+                    "column": "Workaround?"
+                },
+                "status": {
+                    "column": "Status?"
+                },
+                "reference": {
+                    "column": "Reference"
+                },
+                "component": {
+                    "column": "Component"
+                }
+            }
+        },
+        "usage": {
+            "title": "How to use",
+            "intro": "Learn how to use Dr Jones using the instructions below."
+        }
+    }
+}

@@ -1,0 +1,116 @@
+{
+    "id": "doDataSourceProcessIncompleteVisits",
+    "name": "scheduler.tasks.doDataSourceProcessIncompleteVisits.name",
+    "description": "scheduler.tasks.doDataSourceProcessIncompleteVisits.description",
+    "tags": "datasources, tools, process",
+    "jobs": [
+        {
+            "id": "getReportSuites",
+            "name": "scheduler.jobs.getReportSuites.name",
+            "description": "scheduler.jobs.getReportSuites.name",
+            "pluginConfig": {
+                "id": "promptServiceCall",
+                "factory": "ServiceCallPluginFactory",
+                "serviceName": "ApiHelper",
+                "methodName": "executeMethod",
+                "methodArgs": {
+                    "code": "Company",
+                    "method": "GetReportSuites",
+                    "args": {}
+                }
+            }
+        },
+
+        {
+            "id": "promptForReportSuite",
+            "name": "scheduler.jobs.promptReportSuites.name",
+            "description": "scheduler.jobs.promptReportSuites.description",
+            "pluginConfig": {
+                "id": "captureUserInputRSID",
+                "factory": "InputPromptPluginFactory",
+                "state": "scheduler.plugins.inputprompt",
+                "prompts": [
+                    {
+                        "name": "reportSuiteID",
+                        "label": "scheduler.jobs.promptReportSuites.label.selectone",
+                        "type": "selectone",
+                        "value": "@getReportSuites.data.report_suites",
+                        "options": "rs.rsid as rs.site_title for rs in formValues[prompt.name]",
+                        "required": true
+                    }
+                ]
+            }
+        },
+
+        {
+            "id": "getDataSources",
+            "name": "scheduler.jobs.getDataSources.name",
+            "description": "scheduler.jobs.getDataSources.description",
+            "pluginConfig": {
+                "id": "serviceCall",
+                "factory": "ServiceCallPluginFactory",
+                "serviceName": "ApiHelper",
+                "methodName": "executeMethod",
+                "methodArgs": {
+                    "code": "DataSources",
+                    "method": "Get",
+                    "args": {
+                        "reportSuiteID": "@promptForReportSuite.reportSuiteID"
+                    }
+                }
+            }
+        },
+
+        {
+            "id": "promptForDataSource",
+            "name": "scheduler.jobs.promptDataSource.name",
+            "description": "scheduler.jobs.promptDataSource.description",
+            "pluginConfig": {
+                "id": "captureUserInputDS",
+                "factory": "InputPromptPluginFactory",
+                "state": "scheduler.plugins.inputprompt",
+                "prompts": [
+                    {
+                        "name": "dataSourceID",
+                        "label": "scheduler.jobs.promptDataSource.label.selectone",
+                        "type": "selectone",
+                        "value": "@getDataSources.data",
+                        "options": "ds.id as ds.name for ds in formValues[prompt.name]",
+                        "required": true
+                    }
+                ]
+            }
+        },
+
+        {
+            "id": "doDataSourcesProcessIncompleteVisits",
+            "name": "scheduler.tasks.doDataSourceProcessIncompleteVisits.jobs.doDataSourcesProcessIncompleteVisits.name",
+            "description": "scheduler.tasks.doDataSourceProcessIncompleteVisits.jobs.doDataSourcesProcessIncompleteVisits.description",
+            "pluginConfig": {
+                "id": "serviceCall",
+                "factory": "ServiceCallPluginFactory",
+                "serviceName": "ApiHelper",
+                "methodName": "executeMethod",
+                "methodArgs": {
+                    "code": "DataSources",
+                    "method": "ProcessIncompleteVisits",
+                    "args": {
+                        "reportSuiteID": "@promptForReportSuite.reportSuiteID",
+                        "dataSourceID": "@promptForDataSource.dataSourceID"
+                    }
+                }
+            }
+        },
+
+        {
+            "id": "displayResults",
+            "name": "scheduler.tasks.doDataSourceProcessIncompleteVisits.jobs.displayResults.name",
+            "description": "scheduler.tasks.doDataSourceProcessIncompleteVisits.jobs.displayResults.description",
+            "pluginConfig": {
+                "id": "resultsDisplay",
+                "factory": "ResultsDisplayPluginFactory",
+                "state": "scheduler.plugins.resultsdisplay"
+            }
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "tasks": {
+        "custom": {
+            "title": "Benutzerdefinierte Aufgaben",
+            "intro": "Prüfen und ausführen der Benutzerdefinierten Aufgaben."
+        },
+        "favourites": {
+            "title": "Favoriten",
+            "intro": "Ein Überblick aller Favoriten."
+        },
+        "export": {
+            "title": "Exportieren"
+        },
+        "import": {
+            "title": "Importieren"
+        },
+        "all": {
+            "title": "Alle",
+            "intro": "Wir haben einige vordefinierte Aufgaben enthalten, die Sie Phantasie ab, was Sie mit der API zu tun, und auch einige allgemeine Aufgaben zu erreichen schüren . Das Folgende ist eine Liste aller vordefinierten tasksa und benutzerdefinierten Aufgaben, die Sie gespeichert haben."
+        }
+    }
+}

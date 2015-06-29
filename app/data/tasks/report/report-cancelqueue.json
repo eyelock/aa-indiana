@@ -1,0 +1,89 @@
+{
+    "id": "cancelReportQueue",
+    "name": "scheduler.tasks.cancelReportQueue.name",
+    "description": "scheduler.tasks.cancelReportQueue.description",
+    "tags": "report, cancel, api",
+    "jobs": [
+        {
+            "id": "getReportQueue",
+            "name": "scheduler.jobs.getReportQueue.name",
+            "description": "scheduler.jobs.getReportQueue.description",
+            "pluginConfig": {
+                "id": "serviceCall",
+                "factory": "ServiceCallPluginFactory",
+                "serviceName": "ApiHelper",
+                "methodName": "executeMethod",
+                "methodArgs": {
+                    "code": "Report",
+                    "method": "GetQueue",
+                    "args": {}
+                }
+            }
+        },
+
+        {
+            "id": "promptCurrentQueue",
+            "name": "scheduler.tasks.cancelReportQueue.jobs.promptCurrentQueue.name",
+            "description": "scheduler.tasks.cancelReportQueue.jobs.promptCurrentQueue.description",
+            "pluginConfig": {
+                "id": "caputreRequests",
+                "factory": "InputPromptPluginFactory",
+                "state": "scheduler.plugins.reportqueueprompt",
+                "prompts": [
+                    {
+                        "name": "reportID",
+                        "label": "scheduler.tasks.cancelReportQueue.jobs.promptCurrentQueue.label.selectmulti",
+                        "type": "noop"
+                    }
+                ],
+                "options": {
+                    "confirm": {
+                        "enabled": "true",
+                        "title": "scheduler.tasks.cancelReportQueue.jobs.promptCurrentQueue.confirmTitle",
+                        "description": "scheduler.tasks.cancelReportQueue.jobs.promptCurrentQueue.confirmDescription",
+                        "selectionLabel": "reportID"
+                    }
+                }
+            }
+        },
+
+        {
+            "id": "doCancel",
+            "name": "scheduler.tasks.cancelReportQueue.jobs.doCancel.name",
+            "description": "scheduler.tasks.cancelReportQueue.jobs.doCancel.description",
+            "autoProgress": true,
+            "pluginConfig": {
+                "id": "serviceCall",
+                "factory": "ServiceCallPluginFactory",
+                "serviceName": "ApiHelper",
+                "methodName": "executeMethod",
+                "methodArgs": {
+                    "code": "Report",
+                    "method": "Cancel",
+                    "args": {
+                        "reportID": "@promptCurrentQueue.reportID"
+                    }
+                },
+                "options": {
+                    "executeMany": "true",
+                    "splitArgs": "args"
+                }
+            }
+        },
+
+        {
+            "id": "displayResults",
+            "name": "scheduler.tasks.cancelReportQueue.jobs.displayResults.name",
+            "description": "scheduler.tasks.cancelReportQueue.jobs.displayResults.description",
+            "pluginConfig": {
+                "id": "resultsDisplay",
+                "factory": "ResultsDisplayPluginFactory",
+                "state": "scheduler.plugins.resultsdisplay",
+                "options": {
+                    "multipleResults": "true",
+                    "multipleTitle": "config.data.reportID"
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,122 @@
+<div>
+    <h2 translate="scheduler.plugins.inputprompt.title">Input Prompt</h2>
+
+    <p translate="scheduler.plugins.inputprompt.intro">To continue with the Task we need some input from you.</p>
+
+    <div job-header="job"></div>
+
+    <form name="promptForm" role="form" ng-submit="submitValues()" novalidate show-validation>
+        <div ng-repeat="prompt in formElements">
+            <div class="form-group">
+                <label class="control-label">{{prompt.label | translate}}</label>
+
+                <div ng-switch="prompt.type">
+                    <div ng-switch-when="selectone">
+                        <select name="{{prompt.name}}"
+                                ng-model="formModel[prompt.name]"
+                                ng-options="{{prompt.options}}"
+                                class="form-control"
+                                required="{{prompt.required}}"></select>
+                    </div>
+
+                    <div ng-switch-when="typeahead">
+                        <input type="text"
+                               ng-model="formModel[prompt.name]"
+                               typeahead="{{prompt.options}} | filter:$viewValue | limitTo:8"
+                               class="form-control"
+                               required="{{prompt.required}}">
+                    </div>
+
+                    <div ng-switch-when="checkbox">
+                        <table class="table">
+                        <tr dir-paginate="option in formValues[prompt.name] | itemsPerPage: 25 | orderBy: option"
+                            pagination-id="prompt.name">
+                            <td width="20">
+                                <input type="checkbox"
+                                       name="{{prompt.name}}"
+                                       id="{{prompt.name}}_{{option}}"
+                                       ng-model="formCheckboxElement[prompt.name][option]"
+                                       ng-true-value="true"
+                                       ng-false-value="false"
+                                       required="{{prompt.required}}">
+                            </td>
+                            <td>
+                                <label for="{{prompt.name}}_{{option}}">{{option | translate}}</label>
+                            </td>
+                        </tr>
+                        </table>
+
+                        <dir-pagination-controls pagination-id="prompt.name"></dir-pagination-controls>
+                    </div>
+
+                    <div ng-switch-when="selectmulti">
+                        <div
+                            isteven-multi-select
+                            input-model="formValues[prompt.name]"
+                            output-model="formModel[prompt.name]"
+                            output-properties="{{prompt.options.outputProperties}}"
+                            button-label="{{prompt.options.buttonLabel}}"
+                            item-label="{{prompt.options.itemLabel}}"
+                            max-labels="{{prompt.options.maxLabels}}"
+                            max-height="{{prompt.options.maxHeight}}"
+                            tick-property="ticked"
+                        >
+                        </div>
+                    </div>
+
+                    <div ng-switch-when="text">
+                        <input type="text"
+                               name="{{prompt.name}}"
+                               ng-model="formModel[prompt.name]"
+                               class="form-control"
+                               required="{{prompt.required}}">
+                    </div>
+
+                    <div ng-switch-when="textarea">
+                        <textarea name="{{prompt.name}}"
+                               ng-model="formModel[prompt.name]"
+                               class="form-control largeTextArea"
+                               required="{{prompt.required}}"></textarea>
+                    </div>
+
+                    <div ng-switch-when="json">
+                        <textarea json-input
+                                  json-text
+                                  name="{{prompt.name}}"
+                                  ng-model="formModel[prompt.name]"
+                                  class="largeTextArea"
+                                  required="{{prompt.required}}">></textarea>
+                    </div>
+
+                    <div ng-switch-when="date">
+                        <p class="input-group">
+
+                            <input type="text"
+                                   name="{{prompt.name}}"
+                                   class="form-control"
+                                   ng-model="formModel[prompt.name]"
+                                   datepicker-popup="{{prompt.options.format}}"
+                                   ng-required="{{prompt.required}}"
+                                   is-open="formDatePickerOpen[prompt.name]"
+                                   close-text="Close" />
+
+                            <span class="input-group-btn">
+                                <button type="button"
+                                        class="btn btn-default"
+                                        ng-click="openDatePicker($event, prompt.name)">
+                                    <i class="glyphicon glyphicon-calendar"></i>
+                                </button>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div ng-show="promptForm[prompt.name].$error.required">
+                    <p translate="scheduler.form.valuerequired" class="help-block">This value is required.</p>
+                </div>
+            </div>
+        </div>
+
+        <div input-prompt-form-buttons form="promptForm" submit="submitValues(promptForm)" reset="init()" current-job="job"></div>
+    </form>
+</div>

@@ -1,0 +1,47 @@
+<div>
+
+    <h2 translate="tools.users.title">Users</h2>
+
+    <p translate="tools.users.intro">Work with the users of the company associated with your credentials.</p>
+
+    <div>
+        <label><span translate="global.form.filtering.filterBy">Filter by</span>: <input ng-model="search.$"></label>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="global.values.username.column">Username</th>
+                    <th translate="global.values.name.column">Name</th>
+                    <th translate="global.values.email.column">Email</th>
+                    <th translate="tools.users.values.isadmin.column">Is Admin?</th>
+                    <th translate="tools.users.values.lastlogin.column">Last Login Date</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr dir-paginate="login in logins | itemsPerPage: 25 | orderBy: 'login' | filter:search">
+                    <td>{{login.login}}</td>
+                    <td>{{login.last_name}}, {{login.first_name}}</td>
+                    <td>{{login.email}}</td>
+                    <td>{{login.is_admin}}</td>
+                    <td>{{login.last_login}}</td>
+                    <td>
+                        <button type="button"
+                                class="btn btn-info"
+                                ng-click="showDetails(login)">
+                            <span class="glyphicon glyphicon-user"></span>
+                            <span translate="tools.users.details.button">Details</span>
+                        </button>
+                    </td>
+                </tr>
+                <tr ng-show="logins.length === 0">
+                    <td colspan="6" translate="tools.users.noRecords">No records found.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <dir-pagination-controls></dir-pagination-controls>
+    </div>
+</div>

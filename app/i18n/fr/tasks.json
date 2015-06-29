@@ -1,0 +1,22 @@
+{
+    "tasks": {
+        "custom": {
+            "title": "Tâches personnalisées",
+            "intro": "Passez en revue vos tâches personnalisées, qui sont configurées, et les exécuter contre l'API."
+        },
+        "favourites": {
+            "title": "Favoris",
+            "intro": "Liste de toutes vos tâches préférées de l'API."
+        },
+        "export": {
+            "title": "Exporter"
+        },
+        "import": {
+            "title": "Importer"
+        },
+        "predefined": {
+            "title": "Tous",
+            "intro": "Nous avons inclus quelques tâches prédéfinies pour attiser votre imagination sur ce que vous pouvez faire avec l'API , et aussi à réaliser certaines tâches courantes . Ce qui suit est une liste de tous les tasksa prédéfini et des tâches personnalisées que vous avez stockées ."
+        }
+    }
+}

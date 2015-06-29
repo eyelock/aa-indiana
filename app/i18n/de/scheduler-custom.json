@@ -1,0 +1,35 @@
+{
+    "scheduler": {
+        "values": {
+
+        },
+
+        "jobs": {
+            "getReportSuites": {
+                "name": "Holen Accessible Bericht Suites",
+                "description": "Holen Sie sich eine Liste der Berichts Suiten , auf auswählen.",
+                "label": ""
+            },
+            "promptReportSuites": {
+                "name": "Welcher Bericht Suites ?",
+                "description": "Präsentieren Sie eine Liste der Bericht Suiten zur Auswahl für die Aufgabe.",
+                "label": {
+                    "selectmulti": "Wählen Sie ein oder mehrere Report Suites"
+                }
+            }
+        },
+
+        "tasks": {
+            "getDataFeeds": {
+                "name": "Liste Daten-Feeds für RSID",
+                "description": "Listet alle Datenfeeds mit einem RSID zugeordnet",
+                "jobs": {
+                    "displayResults": {
+                        "name": "Display Data Source Job Ergebnisse",
+                        "description": "Zeigt die Ergebnisse aus dem vorherigen Service-Aufruf , um die Werte zu erhalten."
+                    }
+                }
+            }
+        }
+    }
+}

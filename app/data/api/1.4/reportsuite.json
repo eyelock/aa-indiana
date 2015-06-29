@@ -1,0 +1,604 @@
+{
+    "name": "ReportSuite",
+    "methods": {"ReportSuite.Create":"Create","ReportSuite.DeleteCalculatedMetrics":"DeleteCalculatedMetrics","ReportSuite.DeleteClassification":"DeleteClassification","ReportSuite.DeleteIPAddressExclusion":"DeleteIPAddressExclusion","ReportSuite.DeleteInternalURLFilters":"DeleteInternalURLFilters","ReportSuite.DeleteKeyVisitors":"DeleteKeyVisitors","ReportSuite.DeleteMarketingChannelCost":"DeleteMarketingChannelCost","ReportSuite.DeletePaidSearchDetection":"DeletePaidSearchDetection","ReportSuite.GetActivation":"GetActivation","ReportSuite.GetAxleStartDate":"GetAxleStartDate","ReportSuite.GetBaseCurrency":"GetBaseCurrency","ReportSuite.GetBaseURL":"GetBaseURL","ReportSuite.GetCalculatedMetrics":"GetCalculatedMetrics","ReportSuite.GetClassifications":"GetClassifications","ReportSuite.GetCustomCalendar":"GetCustomCalendar","ReportSuite.GetDataWarehouseDisplay":"GetDataWarehouseDisplay","ReportSuite.GetDefaultPage":"GetDefaultPage","ReportSuite.GetDiscoverEnabled":"GetDiscoverEnabled","ReportSuite.GetEcommerce":"GetEcommerce","ReportSuite.GetEvars":"GetEvars","ReportSuite.GetEvents":"GetEvents","ReportSuite.GetGeoSegmentation":"GetGeoSegmentation","ReportSuite.GetIPAddressExclusions":"GetIPAddressExclusions","ReportSuite.GetIPObfuscation":"GetIPObfuscation","ReportSuite.GetInternalURLFilters":"GetInternalURLFilters","ReportSuite.GetKeyVisitors":"GetKeyVisitors","ReportSuite.GetListVariables":"GetListVariables","ReportSuite.GetLocalization":"GetLocalization","ReportSuite.GetMarketingChannelCosts":"GetMarketingChannelCosts","ReportSuite.GetMarketingChannelExpiration":"GetMarketingChannelExpiration","ReportSuite.GetMarketingChannelRules":"GetMarketingChannelRules","ReportSuite.GetMarketingChannels":"GetMarketingChannels","ReportSuite.GetMobileAppReporting":"GetMobileAppReporting","ReportSuite.GetPaidSearchDetection":"GetPaidSearchDetection","ReportSuite.GetPermanentTraffic":"GetPermanentTraffic","ReportSuite.GetProcessingStatus":"GetProcessingStatus","ReportSuite.GetProps":"GetProps","ReportSuite.GetRealTimeSettings":"GetRealTimeSettings","ReportSuite.GetScheduledSpike":"GetScheduledSpike","ReportSuite.GetSegments":"GetSegments","ReportSuite.GetSettings":"GetSettings","ReportSuite.GetSiteTitle":"GetSiteTitle","ReportSuite.GetTemplate":"GetTemplate","ReportSuite.GetTimeZone":"GetTimeZone","ReportSuite.GetTransactionEnabled":"GetTransactionEnabled","ReportSuite.GetUniqueVisitorVariable":"GetUniqueVisitorVariable","ReportSuite.GetVideoSettings":"GetVideoSettings","ReportSuite.SaveBaseCurrency":"SaveBaseCurrency","ReportSuite.SaveBaseURL":"SaveBaseURL","ReportSuite.SaveCalculatedMetrics":"SaveCalculatedMetrics","ReportSuite.SaveClassification":"SaveClassification","ReportSuite.SaveCustomCalendar":"SaveCustomCalendar","ReportSuite.SaveDataWarehouseDisplay":"SaveDataWarehouseDisplay","ReportSuite.SaveDefaultPage":"SaveDefaultPage","ReportSuite.SaveDiscoverEnabled":"SaveDiscoverEnabled","ReportSuite.SaveEcommerce":"SaveEcommerce","ReportSuite.SaveEvars":"SaveEvars","ReportSuite.SaveEvents":"SaveEvents","ReportSuite.SaveGeoSegmentation":"SaveGeoSegmentation","ReportSuite.SaveIPAddressExclusion":"SaveIPAddressExclusion","ReportSuite.SaveIPObfuscation":"SaveIPObfuscation","ReportSuite.SaveInternalURLFilters":"SaveInternalURLFilters","ReportSuite.SaveKeyVisitors":"SaveKeyVisitors","ReportSuite.SaveListVariables":"SaveListVariables","ReportSuite.SaveMarketingChannelCost":"SaveMarketingChannelCost","ReportSuite.SaveMarketingChannelExpiration":"SaveMarketingChannelExpiration","ReportSuite.SaveMarketingChannelRules":"SaveMarketingChannelRules","ReportSuite.SaveMarketingChannels":"SaveMarketingChannels","ReportSuite.SaveMobileAppReporting":"SaveMobileAppReporting","ReportSuite.SavePaidSearchDetection":"SavePaidSearchDetection","ReportSuite.SavePermanentTraffic":"SavePermanentTraffic","ReportSuite.SaveProps":"SaveProps","ReportSuite.SaveRealTimeSettings":"SaveRealTimeSettings","ReportSuite.SaveScheduledSpike":"SaveScheduledSpike","ReportSuite.SaveSiteTitle":"SaveSiteTitle","ReportSuite.SaveTimeZone":"SaveTimeZone","ReportSuite.SaveUniqueVisitorVariable":"SaveUniqueVisitorVariable","ReportSuite.SaveVideoSettings":"SaveVideoSettings"},
+    "defaultArgs": {
+        "ReportSuite.Create": {
+	"base_url":"(string)",
+	"default_page":"(string)",
+	"duplicate_rsid":"(string)",
+	"go_live_date":"(date)",
+	"hits_per_day":"(int)",
+	"japanese_keyword_processing":"(boolean)",
+	"rsid":"(string)",
+	"simplified_menu":"(boolean)",
+	"site_title":"(string)",
+	"time_zone":"(string)"
+        },
+        "ReportSuite.DeleteCalculatedMetrics": {
+	"calculated_metrics":[
+		{
+			"name":"(string)",
+			"formula_id":"(string)"
+		}
+	],
+	"rsid_list":[
+		"(string)"
+	]       
+        },
+        "ReportSuite.DeleteClassification": {
+	"element":"(string)",
+	"name":"(string)",
+	"rsid_list":[
+		"(string)"
+	]         
+        },
+        "ReportSuite.DeleteIPAddressExclusion": {
+	"ip_address":"(string)",
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.DeleteInternalURLFilters": {
+	"internal_url_filters":[
+		"(string)"
+	],
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.DeleteKeyVisitors": {
+	"key_visitors":[
+		"(string)"
+	],
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.DeleteMarketingChannelCost": {
+	"channel_type":"(string)",
+	"cost_group":"(string)",
+	"cost_id":"(int)",
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.DeletePaidSearchDetection": {
+	"operator":"(string)",
+	"query_string":"(string)",
+	"rsid_list":[
+		"(string)"
+	],
+	"search_engine":"(string)"
+},
+        "ReportSuite.GetActivation": {
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.GetAxleStartDate": {
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.GetBaseCurrency": {
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.GetBaseURL": {
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.GetCalculatedMetrics": {
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.GetClassifications": {
+	"element_list":[
+		"(string)"
+	],
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.GetCustomCalendar": {
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.GetDataWarehouseDisplay": {
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.GetDefaultPage": {
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.GetDiscoverEnabled": {
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.GetEcommerce": {
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.GetEvars": {
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.GetEvents": {
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.GetGeoSegmentation": {
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.GetIPAddressExclusions": {
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.GetIPObfuscation": {
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.GetInternalURLFilters": {
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.GetKeyVisitors": {
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.GetListVariables": {
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.GetLocalization": {
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.GetMarketingChannelCosts": {
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.GetMarketingChannelExpiration": {
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.GetMarketingChannelRules": {
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.GetMarketingChannels": {
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.GetMobileAppReporting": {
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.GetPaidSearchDetection": {
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.GetPermanentTraffic": {
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.GetProcessingStatus": {
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.GetProps": {
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.GetRealTimeSettings": {
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.GetScheduledSpike": {
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.GetSegments": {
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.GetSettings": {
+	"locale":"(string)",
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.GetSiteTitle": {
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.GetTemplate": {
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.GetTimeZone": {
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.GetTransactionEnabled": {
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.GetUniqueVisitorVariable": {
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.GetVideoSettings": {
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.SaveBaseCurrency": {
+	"base_currency":"(string)",
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.SaveBaseURL": {
+	"base_url":"(string)",
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.SaveCalculatedMetrics": {
+	"calculated_metrics":[
+		{
+			"name":"(string)",
+			"formula":"(string)",
+			"friendly_formula":"(string)",
+			"type":"(string)",
+			"decimal_places":"(int)",
+			"formula_id":"(string)"
+		}
+	],
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.SaveCalculatedMetric": {
+	"calculated_metrics":[
+		{
+			"name":"(string)",
+			"formula":"(string)",
+			"friendly_formula":"(string)",
+			"type":"(string)",
+			"decimal_places":"(int)",
+			"formula_id":"(string)"
+		}
+	],
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.SaveClassification": {
+	"date_enabled":"(boolean)",
+	"element":"(string)",
+	"name":"(string)",
+	"new_name":"(string)",
+	"parent_name":"(string)",
+	"rsid_list":[
+		"(string)"
+	],
+	"type":"(string)"
+},
+        "ReportSuite.SaveCustomCalendar": {
+	"anchor_date":"(date)",
+	"calendar_type":"(string)",
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.SaveDataWarehouseDisplay": {
+	"data_warehouse_display":"(string)",
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.SaveDefaultPage": {
+	"default_page":"(string)",
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.SaveDiscoverEnabled": {
+	"discover_enabled":"(boolean)",
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.SaveEcommerce": {
+	"ecommerce":"(boolean)",
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.SaveEvars": {
+	"evars":[
+		{
+			"id":"(string)",
+			"name":"(string)",
+			"allocation_type":"(string)",
+			"type":"(string)",
+			"enabled":"(boolean)",
+			"expiration_type":"(string)",
+			"expiration_custom_days":"(int)",
+			"merchandising_syntax":"(string)",
+			"binding_events":[
+				"(string)"
+			]
+		}
+	],
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.SaveEvents": {
+	"events":[
+		{
+			"id":"(string)",
+			"name":"(string)",
+			"type":"(string)",
+			"description":"(string)",
+			"default_metric":"(boolean)",
+			"participation":"(string)",
+			"serialization":"(string)"
+		}
+	],
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.SaveGeoSegmentation": {
+	"geo_segmentation":"(boolean)",
+	"rsid_list":[
+		"(string)"
+	],
+	"vista_enabled":"(boolean)"
+},
+        "ReportSuite.SaveIPAddressExclusion": {
+	"comment":"(string)",
+	"ip_address":"(string)",
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.SaveIPObfuscation": {
+	"ip_obfuscation":"(string)",
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.SaveInternalURLFilters": {
+	"internal_url_filters":[
+		"(string)"
+	],
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.SaveKeyVisitors": {
+	"key_visitors":[
+		"(string)"
+	],
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.SaveListVariables": {
+	"list_variables":[
+		{
+			"id":"(int)",
+			"name":"(string)",
+			"allocation_type":"(string)",
+			"expiration_type":"(string)",
+			"expiration_custom_days":"(int)",
+			"value_delimiter":"(string)",
+			"max_values":"(string)",
+			"enabled":"(int)"
+		}
+	],
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.SaveMarketingChannelCost": {
+	"amount":"(double)",
+	"channel_id":"(int)",
+	"channel_type":"(string)",
+	"cost_group":"(string)",
+	"cost_id":"(int)",
+	"end_date":"(dateTime)",
+	"metric":"(string)",
+	"name":"(string)",
+	"rsid_list":[
+		"(string)"
+	],
+	"start_date":"(dateTime)",
+	"type":"(string)"
+},
+        "ReportSuite.SaveMarketingChannelExpiration": {
+	"days":"(int)",
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.SaveMarketingChannelRules": {
+	"marketing_channel_rules":[
+		{
+			"ruleset_id":"(int)",
+			"channel_id":"(int)",
+			"junction":"(string)",
+			"channel_value":{
+				"type":"(string)",
+				"query_string_parameter":"(string)"
+			},
+			"rules":[
+				{
+					"rule_id":"(int)",
+					"hit_attribute":{
+						"type":"(string)",
+						"query_string_parameter":"(string)"
+					},
+					"operator":"(string)",
+					"matches":[
+						"(string)"
+					]
+				}
+			]
+		}
+	],
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.SaveMarketingChannels": {
+	"marketing_channels":[
+		{
+			"channel_id":"(int)",
+			"name":"(string)",
+			"type":"(string)",
+			"color":"(string)",
+			"enabled":"(boolean)",
+			"channel_breakdown":"(int)",
+			"override_last_touch_channel":"(boolean)"
+		}
+	],
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.SaveMobileAppReporting": {
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.SavePaidSearchDetection": {
+	"operator":"(string)",
+	"query_string":"(string)",
+	"rsid_list":[
+		"(string)"
+	],
+	"search_engine":"(string)"
+},
+        "ReportSuite.SavePermanentTraffic": {
+	"hits_per_day":"(int)",
+	"rsid_list":[
+		"(string)"
+	],
+	"start_date":"(date)"
+},
+        "ReportSuite.SaveProps": {
+	"props":[
+		{
+			"id":"(string)",
+			"name":"(string)",
+			"enabled":"(boolean)",
+			"pathing_enabled":"(boolean)",
+			"list_enabled":"(boolean)",
+			"list_delimiter":"(string)",
+			"participation_enabled":"(boolean)"
+		}
+	],
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.SaveRealTimeSettings": {
+	"real_time_settings":[
+		{
+			"metric":"(string)",
+			"elements":[
+				"(string)"
+			],
+			"min_granularity":"(int)",
+			"name":"(string)",
+			"ui_report":"(boolean)"
+		}
+	],
+	"rsid_list":[
+		"(string)"
+	]
+},
+        "ReportSuite.SaveScheduledSpike": {
+	"end_date":"(date)",
+	"hits_per_day":"(int)",
+	"rsid_list":[
+		"(string)"
+	],
+	"start_date":"(date)"
+},
+        "ReportSuite.SaveSiteTitle": {
+	"rsid_list":[
+		"(string)"
+	],
+	"site_title":"(string)"
+},
+        "ReportSuite.SaveTimeZone": {
+	"rsid_list":[
+		"(string)"
+	],
+	"time_zone":"(string)"
+},
+        "ReportSuite.SaveUniqueVisitorVariable": {
+	"rsid_list":[
+		"(string)"
+	],
+	"unique_visitor_variable":"(string)"
+},
+        "ReportSuite.SaveVideoSettings": {
+	"content_type_evar":"(string)",
+	"enable_ad_tracking":"(boolean)",
+	"enable_chapter_tracking":"(boolean)",
+	"rename_custom_variables":"(boolean)",
+	"rsid_list":[
+		"(string)"
+	],
+	"use_custom_variables":"(boolean)",
+	"video_completes_event":"(string)",
+	"video_name_evar":"(string)",
+	"video_time_event":"(string)",
+	"video_views_event":"(string)"
+    }
+}
+}

@@ -1,0 +1,86 @@
+{
+    "system": {
+        "auth": {
+            "title": "Authentication",
+            "intro": "Add your username and secret here to allow access to the API.",
+            "confirmlogouttext": "Are you sure you want to log out?  You will lose all your cached data and won't be able to access some reports until you log back in again.",
+            "confirmlogouttitle": "Logout and clear all data?",
+            "values": {
+                "secret": {
+                    "label": "Secret",
+                    "invalid": "The secret is required",
+                    "minlength": "The secret value should be 32 characters in length."
+                }
+            }
+        },
+        "preferences": {
+            "title": "Preferences",
+            "intro": "You can change your preferences here, and make using the tool easier each time you come back.",
+            "favtasks": {
+                "tabTitle": "Favourite Tasks",
+                "values": {
+                    "favid": {
+                        "column": "Favourite Id"
+                    },
+                    "exists": {
+                        "column": "Exists"
+                    },
+                    "taskname": {
+                        "column": "Task Name"
+                    },
+                    "taskdesc": {
+                        "column": "Task Description"
+                    }
+                }
+            },
+            "general": {
+                "tabTitle": "General Preferences"
+            }
+        },
+        "storage": {
+            "title": "Manage Storage",
+            "intro": "You can view what the application currently stores about your requests and credentials here, and clear them if you need.  'Logout' effectively clears everyting also!",
+            "clearall": {
+                "title": "Clear Everything!",
+                "description": "You can clear everything now, this includes the credentials you are currently authentication against, so make sure you still have them!",
+                "buttonLabel": "Clear Everything",
+                "confirmtitle": "Are you sure you want to delete all the cache?",
+                "confirmdescription": "If you delete everything you will also lose the credentials you are currently logged in with.  We ___really___ want to double check that you want to clear it all.  Click 'Confirm' to delete everything.  This is not undo-able."
+            },
+            "clearcache": {
+                "confirmtitle": "Clear Individual Cache!",
+                "confirmdescription": "Are you sure you want to delete this indivdual cache?"
+            },
+            "list": {
+                "title": "All your caches belong to me",
+                "description": "Below is a list of all the current caches held by the application, you can choose to clear each one individually.",
+                "warning": "Cache's listed below are all that have been accessed so far, there may be others that haven't been accessed yet."
+            },
+            "values": {
+                "cacheFlushInterval": {
+                    "column": "Cache Flush Interval"
+                },
+                "capacity": {
+                    "column": "Capacity",
+                    "unlimited": "Unlimited"
+                },
+                "deleteOnExpire": {
+                    "column": "Expire Policy"
+                },
+                "disabled": {
+                    "column": "Disabled"
+                },
+                "maxAge": {
+                    "column": "Max. Age",
+                    "unlimited": "Until cache clearance"
+                },
+                "recycleFreq": {
+                    "column": "Recycle Frequency"
+                },
+                "storageMode": {
+                    "column": "Storage Mode"
+                }
+            }
+        }
+    }
+}

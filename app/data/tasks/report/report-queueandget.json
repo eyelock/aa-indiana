@@ -1,0 +1,99 @@
+{
+    "id": "reportQueueAndGet",
+    "name": "scheduler.tasks.reportQueueAndGet.name",
+    "description": "scheduler.tasks.reportQueueAndGet.description",
+    "jobs": [
+        {
+            "id": "getDefaultArguments",
+            "name": "scheduler.tasks.reportQueueAndGet.jobs.getDefaultArguments.name",
+            "description": "scheduler.tasks.reportQueueAndGet.jobs.getDefaultArguments.description",
+            "pluginConfig": {
+                "id": "methodServiceCall",
+                "factory": "ServiceCallPluginFactory",
+                "serviceName": "ApiHelper",
+                "methodName": "getArguments",
+                "methodArgs": {
+                    "code": "Report",
+                    "method": "Queue"
+                }
+            }
+        },
+        {
+            "id": "promptForReport",
+            "name": "scheduler.tasks.reportQueueAndGet.jobs.promptForReport.name",
+            "description": "scheduler.tasks.reportQueueAndGet.jobs.promptForReport.description",
+            "pluginConfig": {
+                "id": "captureReportArguments",
+                "factory": "InputPromptPluginFactory",
+                "state": "scheduler.plugins.inputprompt",
+                "prompts": [
+                    {
+                        "name": "reportData",
+                        "label": "scheduler.tasks.reportQueueAndGet.jobs.promptForReport.label",
+                        "type": "json",
+                        "value": "@getDefaultArguments",
+                        "options": {},
+                        "required": "true"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "sendToQueue",
+            "name": "scheduler.tasks.reportQueueAndGet.jobs.sendToQueue.name",
+            "description": "scheduler.tasks.reportQueueAndGet.jobs.sendToQueue.description",
+            "pluginConfig": {
+                "id": "serviceCall",
+                "factory": "ServiceCallPluginFactory",
+                "serviceName": "ApiHelper",
+                "methodName": "executeMethod",
+                "methodArgs": {
+                    "code": "Report",
+                    "method": "Queue",
+                    "args": "@promptForReport.reportData"
+                }
+            }
+        },
+        {
+            "id": "pollingQueue",
+            "name": "scheduler.tasks.reportQueueAndGet.jobs.sendToQueue.name",
+            "description": "scheduler.tasks.reportQueueAndGet.jobs.sendToQueue.description",
+            "pluginConfig": {
+                "id": "pollingService",
+                "factory": "PollerTaskPluginFactory",
+                "state": "scheduler.plugins.servicepoller",
+                "options": {
+                    "interval": "20",
+                    "service": {
+                        "serviceName": "ApiHelper",
+                        "methodName": "executeMethod",
+                        "methodArgs": {
+                            "code": "Report",
+                            "method": "Get",
+                            "args": {
+                                "reportID": "@sendToQueue.data.reportID"
+                            }
+                        }
+                    },
+                    "continueCheck": {
+                        "property": "data.error",
+                        "value": "report_not_ready"
+                    }
+                }
+            }
+        },
+        {
+            "id": "displayResults",
+            "name": "scheduler.tasks.reportQueueAndGet.jobs.displayResults.name",
+            "description": "scheduler.tasks.reportQueueAndGet.jobs.displayResults.name",
+            "pluginConfig": {
+                "id": "resultsDisplay",
+                "factory": "ResultsDisplayPluginFactory",
+                "state": "scheduler.plugins.resultsdisplay",
+                "options": {
+                    "disableJsonEditor": "true"
+                }
+            }
+        }
+    ]
+}

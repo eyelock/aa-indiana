@@ -1,0 +1,56 @@
+<div>
+    <h2 translate="system.auth.title">Security Settings</h2>
+
+    <p translate="system.auth.intro"></p>
+
+    <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+
+    <form name="editForm" role="form" ng-submit="login()" novalidate show-validation>
+        <div class="form-group" show-errors>
+            <label tranlsate="global.values.username.label" class="control-label">Username</label>
+            <input type="text"
+                   class="form-control"
+                   name="username"
+                   ng-model="username"
+                   ng-minlength="5"
+                   class="form-control"
+                   required>
+
+            <div ng-show="editForm.username.$error.required && !editForm.$pristine">
+                <p translate="global.values.username.invalid" class="help-block">Username is invalid.</p>
+            </div>
+            <div ng-show="editForm.username.$error.minlength && !editForm.$pristine">
+                <p translate="global.values.username.minlength" class="help-block">You must give a value greater than 5.</p>
+            </div>
+        </div>
+
+        <div class="form-group" show-errors>
+            <label translate="system.auth.values.secret.label" class="control-label">Secret</label>
+            <input type="text"
+                   class="form-control"
+                   name="secret"
+                   ng-model="secret"
+                   ng-minlength="32"
+                   class="form-control"
+                   required>
+
+            <div ng-show="editForm.secret.$error.required && !editForm.$pristine">
+                <p translate="system.auth.values.secret.invalid" class="help-block">Secret is invalid.</p>
+            </div>
+            <div ng-show="editForm.secret.$error.minlength && !editForm.$pristine">
+                <p translate="system.auth.values.secret.minlength" class="help-block">You must give a value greater than 32.</p>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" ng-click="confirmLogout()" ng-disabled="!authenticatedUser">
+                <span class="glyphicon glyphicon-log-out"></span>&nbsp;<span translate="global.form.action.logout">Logout</span>
+            </button>
+            <button type="button" class="btn btn-default" ng-click="init()" ng-disabled="!editForm.$dirty">
+                <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="global.form.action.reset">Reset</span>
+            </button>
+            <button type="submit" class="btn btn-primary" ladda="loading" data-style="slide-right">
+                <span class="glyphicon glyphicon-log-in"></span>&nbsp;<span translate="global.form.action.login">Login</span>
+            </button>
+        </div>
+    </form>
+</div>

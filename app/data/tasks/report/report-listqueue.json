@@ -1,0 +1,38 @@
+{
+    "id": "listReportQueue",
+    "name": "scheduler.tasks.listReportQueue.name",
+    "description": "scheduler.tasks.listReportQueue.description",
+    "tags": "report, list, api",
+    "name": "scheduler.tasks.listReportQueue.name",
+    "description": "scheduler.tasks.listReportQueue.description",
+
+    "jobs": [
+        {
+            "id": "getReportQueue",
+            "name": "scheduler.jobs.getReportQueue.name",
+            "description": "scheduler.jobs.getReportQueue.description",
+            "pluginConfig": {
+                "id": "serviceCall",
+                "factory": "ServiceCallPluginFactory",
+                "serviceName": "ApiHelper",
+                "methodName": "executeMethod",
+                "methodArgs": {
+                    "code": "Report",
+                    "method": "GetQueue",
+                    "args": {}
+                }
+            }
+        },
+
+        {
+            "id": "displayCurrentQueue",
+            "name": "scheduler.tasks.listReportQueue.jobs.displayCurrentQueue.name",
+            "description": "scheduler.tasks.listReportQueue.jobs.displayCurrentQueue.description",
+            "pluginConfig": {
+                "id": "resultsDisplay",
+                "factory": "ResultsDisplayPluginFactory",
+                "state": "scheduler.plugins.reportqueuelist"
+            }
+        }
+    ]
+}

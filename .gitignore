@@ -1,6 +1,9 @@
-node_modules/
-bower_components/
-*.log
-
+node_modules
+dist
+.tmp
+.sass-cache
+app/bower_components
+config/*.json
+backup/
+docs/
 build/
-dist/

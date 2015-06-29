@@ -1,0 +1,179 @@
+{
+    "global": {
+        "title": "Dr Jones",
+
+        "main": {
+            "title": "Willkommen zu Dr. Jones",
+            "intro": "Dr. Jones ist ein Werkzeug um die Adobe Analytics API abzufragen. Indiana Jones war ein Professor und Forscher. Unser Ziel ist es Ihnen alles zu zeigen was fuer Sie Verfuegbar ist.",
+
+            "group": {
+                "next": {
+                    "title": "Die API abfragen",
+                    "description": "Sie koennen die API direkt und ohne Benutzernamen und Passwort abfragen.",
+					"linkText": "Die API abfragen",
+                    "authentication": "Speichern ist gut, sie koennen so auf mehr Werkzeuge und Aufgaben zugreifen, aber notwendig ist es nicht!. Unter 'Erste Schritte' erfahren sie mehr."
+
+                },
+                "getstarted": {
+                    "title": "Erste Schritte",
+                    "description": "Geben Sie Ihre Benutzerdaten ein um Zugriff auf eine Gruppe von Werkzeugen zu erhalten die Ihnen die API in all Ihrer Vielfallt zeigt. Diese Werkzeuge und Aufgaben sind auf Unternehmensanforderungen zugeschnitten und sind ein nützliches Werkzeug um Ihre Analyticsumgebung zu konfigurieren und zu verwalten.",
+                    "linkText": "Anmeldung (oder Logindaten pruefen)"
+
+                },
+                "help": {
+                    "title": "Nicht sicher was Sie als nächstes tun möchten?",
+                    "description": "Es ist alles sehr verwirrend, immer. Keine Sorge, die Hilfe deckt alles ab. Speichern Sie Ihre Benutzerdaten um Zugriff auf mehr als nur API Abfragen zu erhalten. Probieren Sie es.",
+					"linkText": "Die Hilfe anzeigen"
+                }
+            }
+        },
+
+        "menu": {
+            "home": "Home",
+            "language": "Sprache",
+            "help": {
+                "title": "Hilfe",
+                "about": "Über Dr. Jones",
+                "issues": "Bekannte Probleme",
+                "usage": "How To Use Dr Jones"
+            },
+            "system": {
+                "title": "Operationen",
+                "auth": "Anmelden/Abmelden",
+                "preferences": "Einstellungen",
+                "storage": "Speicher verwalten"
+            },
+            "tasks": {
+                "title": "Aufgaben",
+                "custom": "Benutzerdefinierte Aufgaben",
+                "favourites": "Gespeicherte Aufgaben",
+                "export": "Exportieren..",
+                "import": "Importieren..",
+                "all": "Vordefinierte Alle"
+            },
+            "tools": {
+                "title": "Werkzeuge",
+                "company": "Firma verwalten",
+                "credentials": "Anmeldeinformationen",
+                "explorer": "API Explorer",
+                "reportsuites": "Report Suites verwalten",
+                "users": "Logins verwalten",
+                "environment": "Data Centres"
+            }
+        },
+
+        "form": {
+            "action": {
+                "save": "Speichern",
+                "cancel": "Abbrechen",
+                "revert": "Zurueck",
+                "reset": "Zuruecksetzen",
+                "view": "Ansicht",
+                "submit": "Absenden",
+                "logout": "Abmelden",
+                "login": "Anmelden",
+                "delete": "Löschen",
+                "dismiss": "Verwerfen",
+                "refresh": "Aktualisieren",
+                "info": "Info"
+            },
+            "ordering": {
+
+            },
+            "filtering": {
+                "filterBy": "Filtern nach"
+            }
+        },
+
+        "cache": {
+            "results": "(Zwischengespeicherte Ergebnisse)",
+            "info": {
+                "title": "Zwischenspeicher Info",
+                "intro": "Details über die zwischengespeicherten Ergebnisse."
+            },
+            "refresh": {
+                "title": "Zwischenspeicher aktualisieren",
+                "intro": "Sie können die Ergebnisse aktualisieren. Die Werte werden dabei aus dem Zwischenspeicher entfernt und dann neu geladen."
+	        },
+            "values": {
+                "storename": "Store Name",
+                "keyname": "Key Name"
+            }
+        },
+
+        "values": {
+            "norecords": "Es wurden keine Werte gefunden.",
+            "id": {
+                "title": "Id",
+                "column": "Id"
+            },
+            "code": {
+                "title": "Code",
+                "column": "Code"
+            },
+            "name": {
+                "title": "Name",
+                "column": "Name"
+            },
+            "username": {
+                "label": "Benutzername",
+                "column": "Benutzername",
+                "invalid": "Der Benutzername ist erforderlich",
+                "minlength": "Der Benutzername muss länger als fünf Zeichen sein. "
+            },
+            "firstname": {
+                "label": "Vorname",
+                "column": "Vorname"
+            },
+            "lastname": {
+                "label": "Nachname",
+                "column": "Nachname"
+            },
+            "email": {
+                "label": "Email",
+                "column": "Email"
+            },
+            "phone": {
+                "label": "Telefon",
+                "column": "Telefon"
+            },
+            "size": {
+                "label": "Grösse",
+                "column": "Grösse"
+            },
+            "date": {
+                "label": "Datum",
+                "column": "Datum"
+            },
+            "created": {
+                "label": "Erstellt am",
+                "column": "Erstellt am"
+            },
+            "expires": {
+                "label": "Läuft ab am",
+                "column": "Läuft ab am"
+            }
+        },
+
+        "errors": {
+            "notimplemented": {
+                "title": "Nicht implementiert",
+                "intro": "Diese Funktion wurde noch nicht implementiert."
+            },
+            "accessdenied": {
+                "title": "Kein Zugriff!",
+                "intro": "Sie haben keinen Zugriff auf diese Seite.",
+                "relogin": "Nochmal einloggen."
+            }
+        },
+
+        "notifications": {
+            "async": {
+                "start": "Die Anfrage wird geladen.",
+                "finish": "Danke fuer die Geduld, wir sind jetzt fertig!",
+                "error": "Ohje, beim Laden der Ergebnisse ist etwas schief gegangen.",
+                "cached": "Gut!  Wir haben noch Ergebnisse von einer vorheringen Anfrage."
+            }
+        }
+    }
+}

@@ -1,0 +1,9 @@
+<div ng-show="err != null">
+    <alert type="danger">
+        <strong>{{err.error}}</strong> - {{err.error_description}}
+
+        <span ng-if="err.error_uri.length > 0">
+            <a ng-href="err.error_uri"><span translate="global.form.action.info">Info</span></a>
+        </span>
+    </alert>
+</div>

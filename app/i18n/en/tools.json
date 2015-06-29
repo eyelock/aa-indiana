@@ -1,0 +1,226 @@
+{
+    "tools": {
+        "explorer": {
+            "title": "API Explorer",
+            "intro": "Use this form to perform raw queries on the APIs.",
+            "settingsRequired": "You need to have set up your Username and Secret, as well as Data Centre Environment in the Settings section first.",
+            "resetArguments": "Reset Arguments",
+            "group": {
+                "settings": {
+                    "title": "Query Settings"
+                },
+                "apis": {
+                    "title": "API Settings"
+                },
+                "request": {
+                    "title": "API Request"
+                },
+                "response": {
+                    "title": "API Response",
+                    "text": "Text Output",
+                    "tree": "Tree Output"
+                },
+                "editor": {
+                    "title": "API Argument Editor",
+                    "intro": "Use the editor to build up your arguments.",
+                    "showbutton": "Use Editor"
+                }
+            },
+            "values": {
+                "secret": {
+                    "label": "Secret"
+                },
+                "environment": {
+                    "label": "Data Centre"
+                },
+                "api": {
+                    "label": "Select API",
+                    "required": "The API is required to be able to run the request."
+                },
+                "method": {
+                    "label": "Select Method",
+                    "noselection": "- Not selected -",
+                    "required": "The method is required to be able to run the request."
+                },
+                "arguments": {
+                    "label": "Arguments",
+                    "required": "You must supply the arguments to the request.",
+                    "invalidJson": "The JSON supplied is invalid."
+                },
+                "response": {
+                    "label": "Response"
+                }
+            }
+        },
+        "users": {
+            "title": "Manage Users",
+            "intro": "This is a list of all logins associated with your credentials.",
+            "noRecords": "We couldn't find any logins you can access",
+            "values": {
+                "isadmin": {
+                    "column": "Is Admin?"
+                },
+                "lastlogin": {
+                    "column": "Last Login Date"
+                }
+            },
+            "details": {
+                "title": "Login Details",
+                "intro": "View details associated with the login.",
+                "button": "Details",
+                "details": {
+                    "tabTitle": "Info"
+                },
+                "groups": {
+                    "tabTitle": "Groups",
+                    "noGroups": "The login does not belong to any groups."
+                }
+
+            }
+        },
+        "credentials": {
+            "title": "Details for Credentials",
+            "intro": "Details about the credentials you are currently authenticated against.",
+            "noRecords": "No records found.",
+            "group": {
+                "login": {
+                    "title": "Login Details",
+                    "values": {
+                        "admin": {
+                            "label": "Is Admin?"
+                        },
+                        "changepassword": {
+                            "label": "Change password?"
+                        },
+                        "temp": {
+                            "label": "Is Temp",
+                            "startdate": "Start",
+                            "enddate": "Finish"
+                        }
+                    }
+                },
+                "groups": {
+                    "title": "Group Membership",
+                    "norecords": "Your credentials don't belong to any groups."
+                }
+            },
+            "details": {
+                "title": "Info",
+                "intro": "Information associated with the credentials you are logged in with."
+            },
+            "company": {
+                "title": "Company",
+                "intro": "Details and configuration related to the company of the credentials you are logged in against.",
+                "noRecords": "No records found.",
+                "group": {
+                    "versionAccess": {
+                        "title": "Version Access"
+                    },
+                    "endpoint": {
+                        "title": "Your endpoint",
+                        "label": "Endpoint"
+                    }
+                }
+            }
+        },
+
+        "reportsuites": {
+            "title": "Your Report Suites",
+            "intro": "These are all the report suites that your Security credentials give you access to.",
+            "noRecords": "No report suites were found for your credentials.",
+            "values": {
+                "rsid": {
+                    "column": "RSID"
+                }
+            },
+            "groups": {
+                "title": "Report Suite Groups",
+                "intro": "View all the groups that this Report Suite is a member of.",
+                "button": "Groups",
+                "values": {
+                    "type": {
+                        "column": "Type"
+                    }
+                }
+            },
+            "settings": {
+                "title": "Report Suite Settings",
+                "intro": "View all the settings of this report suite..",
+                "button": "Settings",
+                "general": {
+                    "title": "General",
+                    "intro": "General settings of the report suite."
+                },
+                "properties": {
+                    "title": "Properties",
+                    "intro": "Properties of the report suite."
+                },
+                "classifications": {
+                    "title": "Classifications",
+                    "intro": "Classifications of the report suite."
+                },
+                "segments": {
+                    "title": "Segments",
+                    "intro": "Segments of the report suite."
+                },
+                "elements": {
+                    "title": "Elements",
+                    "intro": "Elements of the report suite."
+                },
+                "videosettings": {
+                    "title": "Video Settings",
+                    "intro": "Video settings of the report suite."
+                },
+                "metrics": {
+                    "title": "Metrics",
+                    "intro": "Metrics of the report suite."
+                },
+                "mobilebreakdowns": {
+                    "title": "Mobile Breakdowns",
+                    "intro": "Mobile Breakdowns of the report suite."
+                }
+            }
+        },
+        "environment": {
+            "title": "Data Centres",
+            "intro": "These are the data centres available in the system.",
+            "values": {
+                "norecords": "No environments were found to display.",
+                "name": {
+                    "column": "Name"
+                },
+                "url": {
+                    "column": "API URL"
+                }
+            }
+        },
+        "groups": {
+            "title": "Manage Groups",
+            "intro": "View all the details about your groups here.",
+            "values": {
+                "type": {
+                    "column": "Type"
+                }
+            },
+            "details": {
+                "title": "Group Detail",
+                "intro": "View the group information.",
+                "button": "Info",
+                "reportsuites": {
+                    "title": "Report Suites",
+                    "intro": "Report Suites that this Group has access too."
+                },
+                "users": {
+                    "title": "Logins",
+                    "intro": "The following logins are memebers of this group."
+                },
+                "reportaccess": {
+                    "title": "Report Access",
+                    "intro": "This group has access to the following reports..",
+                    "access": "Access",
+                    "reportids": "Report Ids"
+                }
+            }
+        }
+    }
+}

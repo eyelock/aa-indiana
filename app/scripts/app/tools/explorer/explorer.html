@@ -1,0 +1,160 @@
+<div>
+    <h2 translate="tools.explorer.title">Query the APIs</h2>
+
+    <p>
+        <span translate="tools.explorer.intro">Use this form to perform raw queries on the APIs.</span>
+        <span translate="tools.explorer.settingsRequired">You need to have set up your Username and Secret, as well as Data Centre Environment in the Settings section first.</span>
+    </p>
+
+    <form name="editForm" role="form" ng-submit="runApiRequest()" novalidate show-validation>
+        <h3 tranlsate="tools.explorer.group.settings.title">Query Details</h3>
+
+        <div class="row">
+            <div class="col-md-4 form-group" show-errors>
+                <label tranlsate="global.values.username.label" class="control-label">Username</label>
+                <input type="text"
+                       class="form-control"
+                       name="username"
+                       ng-model="credentials.username"
+                       class="form-control"
+                       ng-change="initExplorer()"
+                       required>
+
+                <div ng-show="editForm.username.$error.required && !editForm.$pristine">
+                    <p translate="global.values.username.invalid" class="help-block">Username is invalid.</p>
+                </div>
+                <div ng-show="editForm.username.$error.minlength && !editForm.$pristine">
+                    <p translate="global.values.username.minlength" class="help-block">You must give a value greater than 5.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 form-group" show-errors>
+                <label translate="tools.explorer.values.secret.label" class="control-label">Secret</label>
+                <input type="text"
+                       class="form-control"
+                       name="secret"
+                       ng-model="credentials.secret"
+                       ng-minlength="32"
+                       ng-change="initExplorer()"
+                       class="form-control"
+                       required>
+
+                <div ng-show="editForm.secret.$error.required && !editForm.$pristine">
+                    <p translate="system.auth.values.secret.invalid" class="help-block">Secret is invalid.</p>
+                </div>
+                <div ng-show="editForm.secret.$error.minlength && !editForm.$pristine">
+                    <p translate="system.auth.values.secret.minlength" class="help-block">You must give a value greater than 32.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 form-group" show-errors>
+                <label translate="tools.explorer.values.environment.label" class="control-label">Environment</label>
+                <select class="form-control"
+                        name="environment"
+                        ng-model="environment"
+                        ng-options="env as env.name for env in environments"
+                        ng-change="initExplorer()"
+                        required>
+                </select>
+
+                <div ng-show="editForm.environment.$error.required">
+                    <p translate="tools.explorer.values.environment.required" class="help-block">Environment is invalid.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <h3 tranlsate="tools.explorer.group.apis.title">API Settings</h3>
+
+        <div class="form-group" show-errors>
+            <label translate="tools.explorer.values.api.label" class="control-label">API</label>
+            <select class="form-control"
+                    name="apiName"
+                    ng-model="apiName"
+                    ng-options="a as a for a in apis"
+                    ng-change="setApi()"
+                    required>
+            </select>
+
+            <div ng-show="editForm.apiName.$error.required">
+                <p translate="tools.explorer.values.api.required" class="help-block">Secret is invalid.</p>
+            </div>
+        </div>
+
+        <div class="form-group" show-errors>
+            <label translate="tools.explorer.values.method.label" class="control-label">API</label>
+            <select class="form-control"
+                    name="apiMethod"
+                    ng-model="apiMethodName"
+                    ng-options="v as v for (k,v) in apiMethods"
+                    ng-change="setApiMethod()"
+                    required>
+            </select>
+
+            <div ng-show="editForm.apiMethod.$error.required">
+                <p translate="tools.explorer.values.method.required" class="help-block">The field is required.</p>
+            </div>
+        </div>
+
+        <div id="requestDetails" ng-show="apiMethod != null">
+            <h3 tranlsate="tools.explorer.group.request.title">Request</h3>
+
+            <div api-request-error="requestError"></div>
+
+            <div class="form-group" show-errors>
+                <label translate="tools.explorer.values.arguments.label" class="control-label">Arguments</label>
+
+                <div id="argsTextInput" class="clearfix">
+                    <textarea json-input
+                              json-text
+                              name="apiArgs"
+                              ng-model="apiArgs"
+                              class="largeTextArea"
+                              required></textarea>
+                </div>
+
+                <div ng-show="editForm.apiArgs.$error.required">
+                    <p translate="tools.explorer.values.arguments.required" class="help-block">The field is required.</p>
+                </div>
+
+                <div ng-show="editForm.apiArgs.$error.invalidJson">
+                    <p translate="tools.explorer.values.arguments.invalidJson" class="help-block">The JSON is invalid.</p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-warning" type="button" ng-disabled="!(apiMethodName && apiMethodName.length > 0)" ng-click="setApiMethod()">
+                    <span class="glyphicon glyphicon-hand-left"></span>&nbsp;<span translate="tools.explorer.resetArguments">Reset Arguments</span>
+                </button>
+
+                <button type="submit" class="btn btn-primary" ladda="loading" data-style="slide-right">
+                    <span class="glyphicon glyphicon-upload"></span>&nbsp;<span translate="global.form.action.submit">Submit</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="responseDetails" ng-show="apiResponse != null">
+            <h3 tranlsate="tools.explorer.group.response.title">Response</h3>
+
+            <tabset>
+                <tab>
+                    <tab-heading><span translate="tools.explorer.group.response.text">Text Output</span></tab-heading>
+
+                    <div class="form-group">
+                        <label translate="tools.explorer.values.response.label" class="control-label">Response</label>
+                        <textarea name="apiResponse"
+                                  class="largeTextArea"
+                                  disabled>{{apiResponse | json}}</textarea>
+                    </div>
+                </tab>
+
+                <tab>
+                    <tab-heading><span translate="tools.explorer.group.response.tree">Tree Output</span></tab-heading>
+
+                    <json-formatter json="apiResponse" open="1"></json-formatter>
+                </tab>
+            </tabset>
+        </div>
+    </form>
+</div>

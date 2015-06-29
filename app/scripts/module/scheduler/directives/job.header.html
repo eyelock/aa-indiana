@@ -1,0 +1,22 @@
+<div>
+    <div ng-show="task.running">
+        <alert type="warning"><span translate="scheduler.refreshcancels"></span></alert>
+    </div>
+
+    <div ng-show="!task.running">
+        <alert type="success"><span translate="scheduler.taskcompleted"></span></alert>
+    </div>
+
+    <h3>{{job.name | translate}}</h3>
+
+    <p>{{job.description | translate}}</p>
+
+    <progressbar max="jobs.length"
+                 value="jobs.currentIndex + 1"
+                 type="progressBarType"
+                 class="{{ task.loading ? 'progress-striped active' : '' }}">
+        <span style="color:white; white-space:nowrap;">{{jobs.currentIndex + 1}} / {{jobs.length}}</span>
+    </progressbar>
+
+    <div api-request-error="task.lastError"></div>
+</div>

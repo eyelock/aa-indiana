@@ -1,0 +1,13 @@
+<div>
+    <h2 translate="scheduler.plugins.servicepoller.title">Service Poller</h2>
+
+    <p translate="scheduler.plugins.servicepoller.intro">Please wait while we poll your configured service.  This might take a while, so pleaes be patient.</p>
+
+    <div job-header="job"></div>
+
+    <textarea class="largeTextArea">{{lastResult | json}}</textarea>
+
+    <div service-poller-info="lastPoll"></div>
+
+    <textarea class="largeTextArea">{{lastNotification | json}}</textarea>
+</div>

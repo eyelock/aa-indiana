@@ -1,0 +1,49 @@
+.largeTextArea {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 100%;
+    height: 200px;
+}
+
+hr {
+    color: black
+}
+
+table tr.header {
+    font-weight: bold;
+    border-bottom: 1px solid black;
+}
+
+table td.header {
+    font-weight: bold;
+}
+
+table td.danger {
+    font-weight: italic;
+}
+
+.toggleOn:hover, .toggleOff:hover {
+    text-decoration: none;
+}
+
+.toggleOn span, .toggleOff span {
+    display: none;
+}
+
+.toggleOn:after {
+    font-family: "Glyphicons Halflings";
+    content: "\e007";
+    cursor: pointer; cursor: hand;
+
+}
+
+.toggleOff:after {
+    font-family: "Glyphicons Halflings";
+    content: "\e006";
+    cursor: pointer; cursor: hand;
+}
+
+.modal.modal-wide .modal-dialog {
+  width: 90%;
+}

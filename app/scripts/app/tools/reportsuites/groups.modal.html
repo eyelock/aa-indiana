@@ -1,0 +1,48 @@
+<div class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-hidden="true"
+                        ng-click="cancel()">&times;</button>
+
+                <h4 class="modal-title" translate="tools.reportsuites.groups.title">Report Suite Groups</h4>
+            </div>
+
+            <div class="modal-body">
+                <p translate="tools.reportsuites.groups.intro">View the groups tha this report suite is associated with.</p>
+                <p class="modal-subject">{{reportSuite.site_title}}</p>
+
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th translate="global.values.name.column">Name</th>
+                            <th translate="global.values.description.column">Description</th>
+                            <th translate="tools.reportsuites.groups.values.type.column">Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr dir-paginate="group in groups | itemsPerPage: 10 | orderBy: 'group_name'">
+                            <td>{{group.group_name}}</td>
+                            <td>{{group.group_description}}</td>
+                            <td>{{group.group_type}}</td>
+                        </tr>
+                        <tr ng-show="groups.length === 0">
+                            <td colspan="3" translate="global.values.norecords">No records found.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <dir-pagination-controls></dir-pagination-controls>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="cancel()">
+                    <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="global.form.action.close">Close</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

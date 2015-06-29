@@ -1,0 +1,204 @@
+{
+    "global": {
+        "title": "Dr Jones",
+
+        "main": {
+            "title": "Welcome to Dr. Jones",
+            "intro": "Dr Jones is a tool created to query the Adobe Analytics API,   Indiana was both a profesesor and an explorer and our aim is to both teach and explore everything that is available to you.",
+            "group": {
+                "next": {
+                    "title": "Query the API",
+                    "description": "You can start querying against the API straight away, no need to save any credentials.",
+                    "linkText": "Query the API",
+                    "authentication": "Saving is good, as you can access more powerful tools and tasks, but we don't need it!  See 'Getting Started' below if you want to learn more."
+                },
+                "getstarted": {
+                    "title": "Getting Started",
+                    "description": "Enter your API credentials and access a set of tools to show you the API in all it's morning glory.   These tools and tasks are more tailored to your business needs and can provide a flexible tool to manage your Analytics configuration and implementation",
+                    "linkText": "Authenticate (or check your credentials)"
+                },
+                "help": {
+                    "title": "Not sure what do do next?",
+                    "description": "It's all confusing, all of the time.  Don't worry we've got you covered in our help section.  Have a read as you can save your credentials and gain access to much more than querying the API.  Try it, it's good.",
+                    "linkText": "View the help"
+                }
+            }
+        },
+
+        "menu": {
+            "home": "Home",
+            "language": "Language",
+            "help": {
+                "title": "Help",
+                "about": "About Dr Jones",
+                "issues": "Known Issues",
+                "usage": "How To Use Dr Jones"
+            },
+            "system": {
+                "title": "Operations",
+                "auth": "Login/Logout",
+                "preferences": "Preferences",
+                "storage": "Manage Storage"
+            },
+            "tasks": {
+                "title": "Tasks",
+                "custom": "Custom Tasks",
+                "favourites": "Favourite Tasks",
+                "export": "Export..",
+                "import": "Import..",
+                "all": "All Tasks"
+            },
+            "tools": {
+                "title": "Tools",
+                "groups": "Manage Groups",
+                "credentials": "Credential Details",
+                "explorer": "API Explorer",
+                "reportsuites": "Manage Report Suites",
+                "users": "Manage Logins",
+                "environment": "Data Centres"
+            }
+        },
+
+        "form": {
+            "action": {
+                "save": "Save",
+                "cancel": "Cancel",
+                "revert": "Revert",
+                "reset": "Reset",
+                "view": "View",
+                "submit": "Submit",
+                "logout": "Logout",
+                "login": "Login",
+                "delete": "Delete",
+                "dismiss": "Dismiss",
+                "refresh": "Refresh",
+                "info": "Info",
+                "create": "Create",
+                "edit": "Edit",
+                "confirm": "Confirm",
+                "close": "Close"
+            },
+            "ordering": {
+
+            },
+            "filtering": {
+                "filterBy": "Filter By"
+            },
+            "delete": {
+                "title": "Confirm Delete",
+                "question": "Are you sure you want to delete this item?"
+            }
+        },
+
+        "cache": {
+            "results": "(Cached Results)",
+            "info": {
+                "title": "Cache Info",
+                "intro": "Details about these cached results."
+            },
+            "refresh": {
+                "title": "Cache Refresh",
+                "intro": "You can refresh the results from the server.  The cached values will be removed and then refreshed from the remote service."
+            },
+            "values": {
+                "storename": "Store Name",
+                "keyname": "Key Name"
+            }
+        },
+
+        "values": {
+            "norecords": "No records were found for you.",
+            "id": {
+                "label": "Id",
+                "column": "Id"
+            },
+            "code": {
+                "label": "Code",
+                "column": "Code"
+            },
+            "name": {
+                "label": "Name",
+                "column": "Name"
+            },
+            "username": {
+                "label": "Username",
+                "column": "Username",
+                "invalid": "The username is required",
+                "minlength": "The username must be more than 5 characters in length."
+            },
+            "firstname": {
+                "label": "First Name",
+                "column": "First Name"
+            },
+            "lastname": {
+                "label": "Last Name",
+                "column": "Last Name"
+            },
+            "email": {
+                "label": "Email",
+                "column": "Email"
+            },
+            "phone": {
+                "label": "Phone",
+                "column": "Phone"
+            },
+            "size": {
+                "label": "Size",
+                "column": "Size"
+            },
+            "date": {
+                "label": "Date",
+                "column": "Date"
+            },
+            "created": {
+                "label": "Created",
+                "column": "Created"
+            },
+            "expires": {
+                "label": "Expires",
+                "column": "Expires"
+            },
+            "description": {
+                "label": "Description",
+                "column": "Description"
+            },
+            "url": {
+                "label": "URL",
+                "column": "URL"
+            },
+            "tags": {
+                "label": "Tags",
+                "column": "Tags"
+            },
+            "category": {
+                "label": "Category",
+                "column": "Category"
+            },
+            "value": {
+                "label": "Value",
+                "column": "Value"
+            }
+        },
+
+        "errors": {
+            "notimplemented": {
+                "title": "Not implemented",
+                "intro": "This feature is not implemented yet.   If you are lucky, you might get a description of the feature in it's place below"
+            },
+            "accessdenied": {
+                "title": "Access Denied!",
+                "intro": "You have tried to access a page you don't have access to (or no longer have access to.",
+                "relogin": "You can try relogging in again."
+            }
+        },
+
+        "notifications": {
+            "async": {
+                "start": "Hang fire, we are loading your request.",
+                "finish": "Thanks for waiting, we've finished now!",
+                "error": "Oops, something went wrong when loading your request.",
+                "cached": "Great!  We got your details from a previous cache."
+            }
+        }
+    }
+}

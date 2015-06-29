@@ -1,0 +1,28 @@
+{
+    "name": "Social",
+    "methods": {"Social.GetAppFlowComponentSubmissions":"GetAppFlowComponentSubmissions","Social.GetAppFlowComponents":"GetAppFlowComponents","Social.GetAppFlows":"GetAppFlows","Social.GetAppStats":"GetAppStats","Social.GetPostData":"GetPostData","Social.GetPropertiesList":"GetPropertiesList"},
+    "defaultArgs": {
+        "Social.GetAppFlowComponentSubmissions": {
+            "application_name":"(string)",
+            "component_identifier":"(string)",
+            "flow_identifier":"(string)"
+        },
+        "Social.GetAppFlowComponents": {
+            "application_name":"(string)",
+            "flow_identifier":"(string)"
+        },
+        "Social.GetAppFlows": {
+            "app_id":"(string)"
+        },
+        "Social.GetAppStats": {
+            "application_name":"(string)"
+        },
+        "Social.GetPostData": {
+            "finish":"(string)",
+            "start":"(string)"
+        },
+        "Social.GetPropertiesList": [
+
+        ]
+    }
+}

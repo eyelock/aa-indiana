@@ -1,0 +1,135 @@
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><span translate="global.title">Adobe Analytics Indiana</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+            <ul class="nav navbar-nav nav-pills navbar-right">
+                <li ui-sref-active="active">
+                    <a ui-sref="home">
+                        <span class="glyphicon glyphicon-home"></span>
+                        <span translate="global.menu.home">Home</span>
+                    </a>
+                </li>
+
+                <li ui-sref-active="active" class="dropdown pointer">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="">
+                        <span>
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                            <span translate="global.menu.system.title">System</span>
+                            <b class="caret"></b>
+                        </span>
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li ui-sref-active="active" >
+                            <a ui-sref="system.auth">
+                                <span class="glyphicon glyphicon-asterisk"></span>&#xA0;
+                                <span translate="global.form.action.login" ng-show="!isAuthenticated()">Login</span>
+                                <span translate="global.form.action.logout" ng-show="isAuthenticated()">Logout</span>
+                            </a>
+                        </li>
+
+                        <li ui-sref-active="active" ng-show="isInRole('ROLE_USER')"><a ui-sref="system.preferences"><span class="glyphicon glyphicon-asterisk"></span>
+                        &#xA0;<span translate="global.menu.system.preferences">Preferences</span></a></li>
+
+                        <li class="divider" ng-show="isInRole('ROLE_USER')"></li>
+
+                        <li ui-sref-active="active" ng-show="isInRole('ROLE_USER')"><a ui-sref="system.storage"><span class="glyphicon glyphicon-asterisk"></span>
+                        &#xA0;<span translate="global.menu.system.storage">Storage</span></a></li>
+                    </ul>
+                </li>
+
+                <li ui-sref-active="active" class="dropdown pointer" ng-show="isInRole('ROLE_USER')">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="">
+                        <span>
+                            <span class="glyphicon glyphicon-search"></span>
+                            <span translate="global.menu.tasks.title">Tasks</span>
+                            <b class="caret"></b>
+                        </span>
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li ui-sref-active="active"><a ui-sref="tasks.favourites"><span class="glyphicon glyphicon-asterisk"></span>
+                        &#xA0;<span translate="global.menu.tasks.favourites">Favourties</span></a></li>
+
+                        <li ui-sref-active="active"><a ui-sref="tasks.all"><span class="glyphicon glyphicon-asterisk"></span>
+                        &#xA0;<span translate="global.menu.tasks.all">All</span></a></li>
+
+                        <li class="divider"></li>
+
+                        <li ui-sref-active="active"><a ui-sref="tasks.custom"><span class="glyphicon glyphicon-asterisk"></span>
+                        &#xA0;<span translate="global.menu.tasks.custom">Custom</span></a></li>
+
+                        <li ui-sref-active="active"><a ui-sref="tasks.export"><span class="glyphicon glyphicon-asterisk"></span>
+                        &#xA0;<span translate="global.menu.tasks.export">Export</span></a></li>
+
+                        <li ui-sref-active="active"><a ui-sref="tasks.import"><span class="glyphicon glyphicon-asterisk"></span>
+                        &#xA0;<span translate="global.menu.tasks.import">Import</span></a></li>
+                    </ul>
+                </li>
+
+                <li ui-sref-active="active" class="dropdown pointer">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="">
+                        <span>
+                            <span class="glyphicon glyphicon-cog"></span>
+                            <span translate="global.menu.tools.title">Tools</span>
+                            <b class="caret"></b>
+                        </span>
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li ui-sref-active="active" ><a ui-sref="tools.explorer"><span class="glyphicon glyphicon-asterisk"></span>
+                        &#xA0;<span translate="global.menu.tools.explorer">Explorer</span></a></li>
+
+                        <li ui-sref-active="active" ><a ui-sref="tools.environment"><span class="glyphicon glyphicon-asterisk"></span>
+                        &#xA0;<span translate="global.menu.tools.environment">Environments</span></a></li>
+
+                        <li class="divider" ng-show="isInRole('ROLE_USER')"></li>
+
+                        <li ui-sref-active="active" ng-show="isInRole('ROLE_USER')"><a ui-sref="tools.credentials"><span class="glyphicon glyphicon-asterisk"></span>
+                        &#xA0;<span translate="global.menu.tools.credentials">Credentials</span></a></li>
+
+                        <li ui-sref-active="active" ng-show="isInRole('ROLE_USER')"><a ui-sref="tools.users"><span class="glyphicon glyphicon-asterisk"></span>
+                        &#xA0;<span translate="global.menu.tools.users">Users</span></a></li>
+
+                        <li ui-sref-active="active" ng-show="isInRole('ROLE_USER')"><a ui-sref="tools.groups"><span class="glyphicon glyphicon-asterisk"></span>
+                        &#xA0;<span translate="global.menu.tools.groups">Groups</span></a></li>
+
+                        <li ui-sref-active="active" ng-show="isInRole('ROLE_USER')"><a ui-sref="tools.reportsuites"><span class="glyphicon glyphicon-asterisk"></span>
+                        &#xA0;<span translate="global.menu.tools.reportsuites">Report Suites</span></a></li>
+                    </ul>
+                </li>
+
+                <li ui-sref-active="active" class="dropdown pointer">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="">
+                        <span>
+                            <span class="glyphicon glyphicon-cog"></span>
+                            <span translate="global.menu.help.title">Help</span>
+                            <b class="caret"></b>
+                        </span>
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li ui-sref-active="active" ><a ui-sref="help.usage"><span class="glyphicon glyphicon-asterisk"></span>
+                        &#xA0;<span translate="global.menu.help.usage">Usage</span></a></li>
+
+                        <li ui-sref-active="active" ><a ui-sref="help.issues"><span class="glyphicon glyphicon-asterisk"></span>
+                        &#xA0;<span translate="global.menu.help.issues">Issues</span></a></li>
+
+                        <li class="divider"></li>
+
+                        <li ui-sref-active="active" ><a ui-sref="help.about"><span class="glyphicon glyphicon-asterisk"></span>
+                        &#xA0;<span translate="global.menu.help.about">About</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

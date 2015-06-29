@@ -1,0 +1,92 @@
+{
+    "name": "Classifications",
+    "methods": {"Classifications.CommitImport":"CommitImport","Classifications.CreateExport":"CreateExport","Classifications.CreateFTP":"CreateFTP","Classifications.CreateImport":"CreateImport","Classifications.GetCompatibilityElements":"GetCompatibilityElements","Classifications.GetExport":"GetExport","Classifications.GetFTP":"GetFTP","Classifications.GetFilters":"GetFilters","Classifications.GetStatus":"GetStatus","Classifications.GetTemplate":"GetTemplate","Classifications.PopulateImport":"PopulateImport"},
+    "defaultArgs": {
+        "Classifications.CommitImport": {
+            "job_id":"(int)"
+        },
+        "Classifications.CreateExport": {
+            "campaign_filter_end_date":"(string)",
+            "campaign_filter_start_date":"(string)",
+            "date_filter_end_date":"(string)",
+            "date_filter_start_date":"(string)",
+            "element":"(string)",
+            "email_address":"(string)",
+            "encoding":"(string)",
+            "row_count":"(int)",
+            "row_filter_column_name":"(string)",
+            "row_filter_column_value":"(string)",
+            "rsid_list":[
+                "(string)"
+            ]
+        },
+        "Classifications.CreateFTP": {
+            "description":"(string)",
+            "element":"(string)",
+            "email_address":"(string)",
+            "export":"(boolean)",
+            "overwrite":"(boolean)",
+            "rsid_list":[
+                "(string)"
+            ]
+        },
+        "Classifications.CreateImport": {
+            "check_divisions":"(boolean)",
+            "description":"(string)",
+            "element":"(string)",
+            "email_address":"(string)",
+            "export_results":"(boolean)",
+            "header":[
+                "(string)"
+            ],
+            "overwrite_conflicts":"(boolean)",
+            "rsid_list":[
+                "(string)"
+            ]
+        },
+        "Classifications.GetCompatibilityElements": {
+            "rsid_list":[
+                "(string)"
+            ]
+        },
+        "Classifications.GetExport": {
+            "file_id":"(int)",
+            "page":"(int)"
+        },
+        "Classifications.GetFTP": {
+            "rsid_list":[
+                "(string)"
+            ]
+        },
+        "Classifications.GetFilters": {
+            "element":"(string)",
+            "rsid_list":[
+                "(string)"
+            ]
+        },
+        "Classifications.GetStatus": {
+            "job_id":"(int)"
+        },
+        "Classifications.GetTemplate": {
+            "classification_names":[
+                "(string)"
+            ],
+            "element":"(string)",
+            "encoding":"(string)",
+            "rsid_list":[
+                "(string)"
+            ]
+        },
+        "Classifications.PopulateImport": {
+            "job_id":"(int)",
+            "page":"(int)",
+            "rows":[
+                {
+                    "row":[
+                        "(string)"
+                    ]
+                }
+            ]
+        }
+    }
+}

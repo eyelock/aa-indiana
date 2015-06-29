@@ -1,0 +1,48 @@
+<div>
+    <h2 translate="scheduler.plugins.reportqueuelist.title">Data Feeds</h2>
+
+    <p translate="scheduler.plugins.reportqueuelist.intro">Please see your list of Data Feeds below</p>
+
+    <dl class="dl-horizontal">
+        <dt translate="scheduler.plugins.reportqueuelist.values.totalRequests.column"></dt>
+        <dd>{{lastResult.data.length}}</dd>
+    </dl>
+
+    <div>
+        <label><span translate="global.form.filtering.filterBy">Filter by</span>: <input ng-model="search.$"></label>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="scheduler.plugins.reportqueuelist.values.reportID.column">Report Id</th>
+                    <th translate="scheduler.plugins.reportqueuelist.values.type.column">Type</th>
+                    <th translate="scheduler.plugins.reportqueuelist.values.queueTime.column">Queue Time</th>
+                    <th translate="scheduler.plugins.reportqueuelist.values.status.column">Status</th>
+                    <th translate="scheduler.plugins.reportqueuelist.values.priority.column">Priority</th>
+                    <th translate="scheduler.plugins.reportqueuelist.values.estimate.column">Estimate</th>
+                    <th translate="scheduler.plugins.reportqueuelist.values.reportSuiteID.column">Report Suite Id</th>
+                    <th translate="scheduler.plugins.reportqueuelist.values.user.column">User</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr dir-paginate="rq in lastResult[0].data | itemsPerPage: 25 | orderBy: 'queueTime' | filter:search">
+                    <td>{{rq.reportID}}</td>
+                    <td>{{rq.type}}</td>
+                    <td>{{rq.queueTime}}</td>
+                    <td>{{rq.status}}</td>
+                    <td>{{rq.priority}}</td>
+                    <td>{{rq.estimate}}</td>
+                    <td>{{rq.reportSuiteID}}</td>
+                    <td>{{rq.user}}</td>
+                </tr>
+                <tr ng-show="lastResult[0].data.length === 0">
+                    <td colspan="8"><span translate="global.values.norecords">No records were found.</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <dir-pagination-controls></dir-pagination-controls>
+    </div>
+</div>

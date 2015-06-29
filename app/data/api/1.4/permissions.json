@@ -1,0 +1,97 @@
+{
+    "name": "Permissions",
+    "methods": {"Permissions.AddLogin":"AddLogin","Permissions.DeleteGroup":"DeleteGroup","Permissions.DeleteLogin":"DeleteLogin","Permissions.GetGroup":"GetGroup","Permissions.GetGroups":"GetGroups","Permissions.GetLogin":"GetLogin","Permissions.GetLogins":"GetLogins","Permissions.GetReportSuiteGroups":"GetReportSuiteGroups","Permissions.SaveGroup":"SaveGroup","Permissions.SaveLogin":"SaveLogin","Permissions.SaveReportSuiteGroups":"SaveReportSuiteGroups"},
+    "defaultArgs": {
+        "Permissions.AddLogin": {
+            "create_dashboards":"(boolean)",
+            "email":"(string)",
+            "first_name":"(string)",
+            "group_names":[
+                "(string)"
+            ],
+            "is_admin":"(boolean)",
+            "is_temp":"(boolean)",
+            "last_name":"(string)",
+            "login":"(string)",
+            "must_change_password":"(boolean)",
+            "password":"(string)",
+            "phone_number":"(string)",
+            "rsid":"(string)",
+            "temp_end_date":"(date)",
+            "temp_start_date":"(date)",
+            "title":"(string)"
+        },
+        "Permissions.DeleteGroup": {
+            "group_name":"(string)"
+        },
+        "Permissions.DeleteLogin": {
+            "login":"(string)"
+        },
+                "Permissions.GetGroup": {
+            "group_name":"(string)"
+        },
+        "Permissions.GetGroups": {
+            "group_search_field":"(string)",
+            "group_search_value":"(string)",
+            "strip_legacy_groups":"(boolean)"
+        },
+        "Permissions.GetLogin": {
+            "login":"(string)"
+        },
+        "Permissions.GetLogins": {
+            "login_search_field":"(string)",
+            "login_search_value":"(string)"
+        },
+        "Permissions.GetReportSuiteGroups": {
+            "rsid":"(string)"
+        },
+        "Permissions.SaveGroup": {
+            "group_description":"(string)",
+            "group_name":"(string)",
+            "new_name":"(string)",
+            "report_access_list":[
+                {
+                    "category":"(string)",
+                    "name":"(string)",
+                    "access":"(string)",
+                    "report_ids":[
+                        "(int)"
+                    ]
+                }
+            ],
+            "rsid_list":[
+                "(string)"
+            ],
+            "user_list":[
+                "(string)"
+            ]
+        },
+        "Permissions.SaveLogin": {
+            "email":"(string)",
+            "first_name":"(string)",
+            "group_names":[
+                "(string)"
+            ],
+            "is_admin":"(boolean)",
+            "is_temp":"(boolean)",
+            "last_name":"(string)",
+            "login":"(string)",
+            "must_change_password":"(boolean)",
+            "password":"(string)",
+            "phone_number":"(string)",
+            "temp_end_date":"(date)",
+            "temp_start_date":"(date)",
+            "title":"(string)"
+        },
+        "Permissions.SaveReportSuiteGroups": {
+            "groups":[
+                {
+                    "group_name":"(string)",
+                    "group_description":"(string)",
+                    "group_type":"(string)"
+                }
+            ],
+            "rsid":"(string)"
+        }
+    }
+}

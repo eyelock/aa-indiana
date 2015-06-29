@@ -1,0 +1,22 @@
+<div class="clearfix">
+    <div class="pull-right">
+        <button type="button" ng-click="toggle()" ng-hide="editorDisabled">Toggle</button>
+    </div>
+
+    <div>
+        <div ng-show="!isEditor">
+            <textarea json-text
+                      ng-model="ngModel"
+                      ng-name="name"
+                      ng-class="className"
+                      ng-required="required"
+                      ng-disabled="disabled"></textarea>
+        </div>
+
+        <div ng-show="isEditor">
+            <div class="jsonView">
+                <json child="ngModel" default-collapsed="editorCollapsed" type="object"></json>
+            </div>
+        </div>
+    </div>
+</div>

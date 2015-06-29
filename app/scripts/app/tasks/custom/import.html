@@ -1,0 +1,71 @@
+<div>
+    <h2 translate="tasks.import.title">Import</h2>
+
+    <p translate="tasks.import.intro">Introducton about Import.</p>
+
+    <div class="jumbotron">
+        <div class="container">
+            <h3>
+                <i class="glyphicon glyphicon-import"></i>
+                <span translate="tasks.details.title">Custom Tasks Details</span>
+            </h3>
+
+            <p translate="tasks.details.intro">Load the custom tasks to perform export features.</p>
+
+            <p ng-show="tasks.length > 0"><span  translate="tasks.details.count">No. of custom tasks</span>: {{tasks.length}}</p>
+        </div>
+    </div>
+
+    <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.message}}</alert>
+
+    <div ng-show="!hasImported">
+        <form name="editForm" role="form" ng-submit="importJson()" novalidate show-validation>
+            <div class="form-group" show-errors>
+                <label tranlsate="tasks.import.overwrite.label" class="control-label">Overwrite?</label>
+                <input type="checkbox"
+                       class="form-control"
+                       name="overwrite"
+                       ng-model="model.overwrite"
+                       ng-true-value="true"
+                       ng-false-value="false"
+                       class="form-control">
+
+                <p translate="tasks.import.overwrite.help">If you select overwrite, any existing custom tasks with the same Id will be overwritten, otherwise we will keep the existing.</p>
+            </div>
+
+            <div class="form-group" show-errors>
+                <label translate="tasks.import.importjson.label" class="control-label">Import JSON</label>
+
+                <textarea name="jsonString"
+                      class="largeTextArea"
+                          ng-model="model.importString"
+                          required></textarea>
+
+                <p translate="tasks.import.importjson.help">A JSON array containing the objects that represent each Task Job configuration.</p>
+
+                <div ng-show="editForm.jsonString.$error.required && !editForm.$pristine">
+                    <p translate="tasks.import.importjson.required" class="help-block">The import JSON string is required.</p>
+                </div>
+                <div ng-show="editForm.jsonString.$error.json && !editForm.$pristine">
+                    <p translate="tasks.import.importjson.parseerror" class="help-block">The JSON must be valid and parseable.</p>
+                </div>
+            </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-warning" type="button" ng-disabled="!(apiMethodName && apiMethodName.length > 0)" ng-click="init()">
+                        <span class="glyphicon glyphicon-hand-left"></span>&nbsp;<span translate="global.form.action.reset">Reset</span>
+                    </button>
+
+                    <button type="submit" class="btn btn-primary" ladda="loading" data-style="slide-right">
+                        <span class="glyphicon glyphicon-upload"></span>&nbsp;<span translate="global.form.action.submit">Submit</span>
+                    </button>
+                </div>
+        </form>
+    </div>
+
+    <div ng-show="hasImported">
+        <p translate="tasks.import.importjson.importfinished"></p>
+        <button type="button" ng-click="init()"><span translate="tasks.import.importjson.importagain"></span></button>
+    </div>
+
+</div>

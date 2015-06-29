@@ -1,0 +1,51 @@
+<div>
+    <h2 translate="help.about.title">About</h2>
+    
+    <p translate="help.about.intro">Introducton about Help about.</p>
+    
+    <h3 translate="help.about.inspiration.title">Inspiration</h3>
+    
+    <p translate="help.about.inspiration.description">A description about the inspriation.</p>
+    
+    <h3 translate="help.about.platform.title">Platform</h3>
+    
+    <p translate="help.about.platform.description">A description about the platform.</p>    
+    
+    <h3 translate="help.about.getinvolved.title">Get Involved</h3>
+    
+    <p translate="help.about.getinvolved.description">A description about how to get involved.</p>   
+
+    <hr/>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <h4 translate="help.about.getinvolved.involvement.email.title">Email</h4>
+
+            <p translate="help.about.getinvolved.involvement.email.description">You can email us and we will consider the tasks/tools you need.</p>
+
+            <a href="mailto:{{APP_CONTACT.email}}" class="btn btn-info">
+                <span translate="help.about.getinvolved.involvement.email.contact"></span>
+            </a>
+        </div>
+
+        <div class="col-md-6">
+            <h4 translate="help.about.getinvolved.involvement.development.title">Development</h4>
+
+            <p translate="help.about.getinvolved.involvement.development.description">The code is free, you can get it at the location below.  If you don't have access, email above and we can arrange access.</p>
+
+            <a href="{{APP_CONTACT.code}}" class="btn btn-info">
+                <span translate="help.about.getinvolved.involvement.development.contact"></span>
+            </a>
+        </div>    
+    </div>
+    
+    <hr/>
+    
+    <h3 translate="help.about.technologies.title">Technologies</h3>
+    
+    <p translate="help.about.technologies.description">Technologies used in the application.</p>
+    
+    <ul ng-repeat="tech in technologies">
+        <li><a ng-href="{{tech.link}}">{{tech.name}}</a></li>
+    </ul>
+</div>

@@ -1,0 +1,36 @@
+<div>
+    <h2 translate="{{translatePrefix}}.title">Predefined</h2>
+
+    <p translate="{{translatePrefix}}.intro">Introducton about Task Predefined.</p>
+
+    <div>
+        <label>
+            <span translate="global.form.filtering.filterBy">Filter by</span>:
+            <input ng-model="search.$">
+        </label>
+    </div>
+
+    <table class="table">
+    <tr>
+        <th></th>
+        <th translate="global.values.name.column">Name</th>
+        <th translate="global.values.tags.column">Tags</th>
+        <th translate="global.values.description.column">Description</th>
+    </tr>
+    <tr dir-paginate="task in tasks | itemsPerPage: 25 | orderBy: 'tags' | filter:search">
+        <th>
+            <a ng-click="toggleFavouriteTask(task)" ng-class="task.isFavourite ? 'toggleOff' : 'toggleOn'">
+                <span>Toggle</span>
+            </a>
+        </th>
+        <td><a href="#/tasks/run/{{task.id}}" translate="{{task.name}}"></a></td>
+        <td>{{task.tags}}</td>
+        <td translate="{{task.description}}"></td>
+    </tr>
+    <tr ng-show="tasks.length === 0">
+        <td colspan="3" translate="global.values.norecords">No records found.</td>
+    </tr>
+    </table>
+
+    <dir-pagination-controls></dir-pagination-controls>
+</div>

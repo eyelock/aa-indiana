@@ -1,0 +1,103 @@
+{
+    "id": "root",
+    "name": "Root",
+    "description": "Collection of Predefined tasks",
+    "tasks": [
+        {
+            "id": "getDataFeeds",
+            "name": "scheduler.tasks.getDataFeeds.name",
+            "description": "scheduler.tasks.getDataFeeds.description",
+            "tags": "datafeed, list",
+            "url": "/data/tasks/datafeed/datafeed-list.json"
+        },
+        {
+            "id": "getDataSourcesJobs",
+            "name": "scheduler.tasks.getDataSourcesJobs.name",
+            "description": "scheduler.tasks.getDataSourcesJobs.description",
+            "tags": "datasourcres, jobs, list",
+            "url": "/data/tasks/datasources/datasources-listjobs.json"
+        },
+        {
+            "id": "doDataSourceProcessIncompleteVisits",
+            "name": "scheduler.tasks.doDataSourceProcessIncompleteVisits.name",
+            "description": "scheduler.tasks.doDataSourceProcessIncompleteVisits.description",
+            "tags": "datasources, tools, process",
+            "url": "/data/tasks/datasources/datasources-processincompletevisits.json"
+        },
+        {
+            "id": "deleteUsers",
+            "name": "scheduler.tasks.deleteUsers.name",
+            "description": "scheduler.tasks.deleteUsers.description",
+            "tags": "permissions, users, logins, delete, remove",
+            "url": "/data/tasks/permissions/permissions-deleteusers.json"
+        },
+        {
+            "id": "cancelReportQueue",
+            "name": "scheduler.tasks.cancelReportQueue.name",
+            "description": "scheduler.tasks.cancelReportQueue.description",
+            "tags": "report, cancel, api",
+            "url": "/data/tasks/report/report-cancelqueue.json"
+        },
+        {
+            "id": "listReportQueue",
+            "name": "scheduler.tasks.listReportQueue.name",
+            "description": "scheduler.tasks.listReportQueue.description",
+            "tags": "report, list, api",
+            "url": "/data/tasks/report/report-listqueue.json"
+        },
+        {
+            "id": "reportQueueAndGet",
+            "name": "scheduler.tasks.reportQueueAndGet.name",
+            "description": "scheduler.tasks.reportQueueAndGet.description",
+            "url": "/data/tasks/report/report-queueandget.json"
+        },
+        {
+            "id": "getReportSuiteBaseUrls",
+            "name": "scheduler.tasks.getReportSuiteBaseUrls.name",
+            "description": "scheduler.tasks.getReportSuiteBaseUrls.name",
+            "tags": "reportsuite, baseurl, list",
+            "url": "/data/tasks/reportsuite/reportsuite-getbaseurl.json"
+        },
+        {
+            "id": "getReportSuiteEvars",
+            "name": "scheduler.tasks.getReportSuiteEvars.name",
+            "description": "scheduler.tasks.getReportSuiteEvars.description",
+            "tags": "reportsuite, evars, list",
+            "url": "/data/tasks/reportsuite/reportsuite-getevars.json"
+        },
+        {
+            "id": "getReportSuiteEvents",
+            "name": "scheduler.tasks.getReportSuiteEvents.name",
+            "description": "scheduler.tasks.getReportSuiteEvents.description",
+            "url": "/data/tasks/reportsuite/reportsuite-getevents.json"
+        },
+        {
+            "id": "getReportSuiteMarketingChannels",
+            "name": "scheduler.tasks.getReportSuiteMarketingChannels.name",
+            "description": "scheduler.tasks.getReportSuiteMarketingChannels.description",
+            "tags": "reportsuite, marketingchannels, list",
+            "url": "/data/tasks/reportsuite/reportsuite-getmarketingchannels.json"
+        },
+        {
+            "id": "getReportSuiteEUComplianceChecks",
+            "name": "scheduler.tasks.getReportSuiteEUComplianceChecks.name",
+            "description": "scheduler.tasks.getReportSuiteEUComplianceChecks.name",
+            "tags": "tools, reportsuite, ipobfuscation, settings, eucompliance, list",
+            "url": "/data/tasks/tools/tools-eucompliancecheck.json"
+        },
+        {
+            "id": "doGenericExecute",
+            "name": "scheduler.tasks.doGenericExecute.name",
+            "description": "scheduler.tasks.doGenericExecute.description",
+            "tags": "tools, explorer, execute, generic",
+            "url": "/data/tasks/tools/tools-explorereditor.json"
+        },
+        {
+            "id": "doReportSuiteSettingsComparison",
+            "name": "scheduler.tasks.doReportSuiteSettingsComparison.name",
+            "description": "scheduler.tasks.doReportSuiteSettingsComparison.description",
+            "tags": "tools, reportsuite, settings, comparsion, list",
+            "url": "/data/tasks/tools/tools-reportsuitesettingscomparison.json"
+        }
+    ]
+}

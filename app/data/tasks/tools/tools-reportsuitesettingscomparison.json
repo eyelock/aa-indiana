@@ -1,0 +1,140 @@
+{
+    "id": "doReportSuiteSettingsComparison",
+    "name": "scheduler.tasks.doReportSuiteSettingsComparison.name",
+    "description": "scheduler.tasks.doReportSuiteSettingsComparison.description",
+    "tags": "tools, reportsuite, settings, comparsion, list",
+    "jobs": [
+        {
+            "id": "getReportSuites",
+            "name": "scheduler.jobs.getReportSuites.name",
+            "description": "scheduler.jobs.getReportSuites.name",
+            "pluginConfig": {
+                "id": "promptServiceCall",
+                "factory": "ServiceCallPluginFactory",
+                "serviceName": "ApiHelper",
+                "methodName": "executeMethod",
+                "methodArgs": {
+                    "code": "Company",
+                    "method": "GetReportSuites",
+                    "args": {}
+                }
+            }
+        },
+
+        {
+            "id": "promptForSettings",
+            "name": "scheduler.jobs.promptReportSuites.name",
+            "description": "scheduler.jobs.promptReportSuites.description",
+            "pluginConfig": {
+                "id": "captureUserInputRsids",
+                "factory": "InputPromptPluginFactory",
+                "state": "scheduler.plugins.inputprompt",
+                "prompts": [
+                    {
+                        "name": "report_suites",
+                        "label": "scheduler.tasks.doReportSuiteSettingsComparison.jobs.promptForSettings.selecttwo",
+                        "type": "selectmulti",
+                        "value": "@getReportSuites.data.report_suites",
+                        "options": {
+                            "buttonLabel": "site_title",
+                            "itemLabel": "site_title (rsid)",
+                            "outputProperties": "rsid site_title",
+                            "maxLabels": "6",
+                            "maxHeight": "200px"
+                        },
+                        "required": true
+                    },
+                    {
+                        "name": "report_suite",
+                        "label": "scheduler.tasks.doReportSuiteSettingsComparison.jobs.promptForSettings.selectprimary",
+                        "type": "selectone",
+                        "value": "formModel.report_suites",
+                        "options": "rs.rsid as rs.site_title for rs in formModel.report_suites",
+                        "required": true
+                    }
+                ]
+            }
+        },
+
+        {
+            "id": "promptForProperties",
+            "name": "scheduler.tasks.doReportSuiteSettingsComparison.jobs.promptForProperties.name",
+            "description": "scheduler.tasks.doReportSuiteSettingsComparison.jobs.promptForProperties.description",
+            "pluginConfig": {
+                "id": "captureUserInputProperties",
+                "factory": "InputPromptPluginFactory",
+                "state": "scheduler.plugins.inputprompt",
+                "prompts": [
+                    {
+                        "name": "report_suite_properties",
+                        "label": "scheduler.tasks.doReportSuiteSettingsComparison.jobs.promptForProperties.label",
+                        "type": "checkbox",
+                        "required": true,
+                        "options": {
+                            "preselected": "true"
+                        },
+                        "value": [
+                            "ecommerce_level",
+                            "ecommerce_visits",
+                            "ecommerce_visitors",
+                            "activation",
+                            "base_currency",
+                            "calendar_type",
+                            "default_page",
+                            "discover_enabled",
+                            "ip_obfuscation",
+                            "localization",
+                            "time_zone",
+                            "template",
+                            "unique_visitor_variable",
+                            "video_settings",
+                            "mobile_breakdowns"
+                        ]
+                    }
+                ]
+            }
+        },
+
+        {
+            "id": "getReportSuiteSettings",
+            "name": "scheduler.jobs.getReportSuiteSettings.name",
+            "description": "scheduler.jobs.getReportSuiteSettings.description",
+            "pluginConfig": {
+                "id": "serviceCall",
+                "factory": "ServiceCallPluginFactory",
+                "serviceName": "ApiHelper",
+                "methodName": "executeMethod",
+                "methodArgs": {
+                    "code": "ReportSuite",
+                    "method": "GetSettings",
+                    "args": {
+                        "rsid_list": "@promptForSettings.report_suites:rsid"
+                    }
+                }
+            }
+        },
+
+        {
+            "id": "valueCheckerResults",
+            "name": "scheduler.tasks.doReportSuiteSettingsComparison.jobs.valueCheckerResults.name",
+            "description": "scheduler.tasks.doReportSuiteSettingsComparison.jobs.valueCheckerResults.description",
+            "pluginConfig": {
+                "id": "valueCheckerDisplay",
+                "factory": "ValueCheckerPluginFactory",
+                "state": "scheduler.plugins.valuechecker",
+                "options": {
+                    "data": {
+                        "objects": "@getReportSuiteSettings.data",
+                        "primary": "@promptForSettings.report_suite",
+                        "idProp": "rsid"
+                    },
+                    "headerProps": [
+                        "rsid",
+                        "site_title"
+                    ],
+                    "checkProps": "@promptForProperties.report_suite_properties"
+                }
+            }
+        }
+    ]
+}

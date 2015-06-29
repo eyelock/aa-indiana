@@ -1,0 +1,54 @@
+{
+    "scheduler": {
+        "refreshcancels": "Warning: If you refresh the page you will cancel your task and have to begin again",
+        "taskcompleted": "The task is now completed and has stopped running.",
+
+        "form": {
+            "selectmultiple": "Please select one or more of the following",
+            "selectone": "Please select one of the following",
+            "inputtext": "Please enter your text",
+            "inputsearch": "Please enter your search text",
+            "valuerequired": "This value is required.",
+            "submit": "Submit",
+            "reset": "Reset"
+        },
+
+        "plugins": {
+            "inputprompt": {
+                "title": "Input Prompt",
+                "intro": "To continue with the Task we need some input from you."
+            },
+            "resultsdisplay": {
+                "title": "Task Results",
+                "intro": "Find the results of the Task that was completed.",
+                "textOutput": {
+                    "tabTitle": "JSON Output"
+                },
+                "treeOutput": {
+                    "tabTitle": "Tree Output"
+                }
+            },
+            "valuechecker": {
+                "title": "Value Checker",
+                "intro": "Comparison of results against a primary.",
+                "success": {
+                    "title": "Success!",
+                    "description": "All checks were deemed to have passed and been valid!"
+                },
+                "error": {
+                    "title": "Problems!",
+                    "description": "In checking all the data, there were some properties that were deemed not to have been the same.  See the table below for further details."
+                }
+            },
+            "servicepoller": {
+                "title": "Service Poller",
+                "intro": "Please wait while we poll the service for your results.",
+                "counter": "No Executions",
+                "starttime": "Start Time",
+                "endtime": "End Time",
+                "interval": "Interval",
+                "lastexecution": "Last Execution"
+            }
+        }
+    }
+}

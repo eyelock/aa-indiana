@@ -1,0 +1,36 @@
+<div>
+    <h2 translate="tasks.export.title">Export</h2>
+
+    <p translate="tasks.export.intro">Introducton about Export.</p>
+
+    <div class="jumbotron">
+        <div class="container">
+            <h3 translate="tasks.details.title">Custom Tasks Details</h3>
+
+            <p translate="tasks.details.intro">Load the custom tasks to perform export features.</p>
+
+            <p ng-show="hasLoaded"><span  translate="tasks.details.count">No. of custom tasks</span>: {{tasks.length}}</p>
+
+            <button type="button" class="btn btn-primary" ng-click="loadForExport()">
+                <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="tasks.details.prepareexport">Prepare Export</span>
+            </button>
+        </div>
+    </div>
+
+    <div ng-show="tasks.length > 0">
+        <h3 translate="tasks.export.json.title">JSON String</h3>
+
+        <p translate="tasks.export.json.info">Copy and paste the below contents to a .json file to save the back up.</p>
+
+        <textarea name="jsonString"
+                  class="largeTextArea"
+                  disabled>{{tasks | json}}</textarea>
+    </div>
+
+    <div ng-show="hasLoaded && tasks.length === 0">
+        <h3 translate="tasks.export.norecords.title">No Custom Tasks found</h3>
+
+        <p translate="tasks.export.norecords.info">No custom tasks were found to export.  Are you sure you have created some
+?</p>
+    </div>
+</div>

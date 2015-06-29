@@ -1,0 +1,46 @@
+<div>
+    <h2 translate="scheduler.plugins.valuechecker.title">Value Checker</h2>
+
+    <p translate="scheduler.plugins.valuechecker.intro">Find the results of the value checks that were requested.</p>
+
+    <div job-header="job"></div>
+
+    <div class="jumbotron">
+        <div class="container">
+            <div ng-show="result.meta.isEqual">
+                <h3>
+                    <i class="glyphicon glyphicon-ok"></i>
+                    <span translate="scheduler.plugins.valuechecker.success.title">Success</span>
+                </h3>
+
+                <alert type="success">
+                    <p translate="scheduler.plugins.valuechecker.success.description">All checks were deemed to have passed and been valid!</p>
+                </alert>
+            </div>
+
+            <div ng-show="!result.meta.isEqual">
+                <h3>
+                    <i class="glyphicon glyphicon-warning-sign"></i>
+                    <span class="scheduler.plugins.valuechecker.error.title">Problems!</span>
+                </h3>
+
+                <alert type="danger">
+                    <p translate="scheduler.plugins.valuechecker.error.description">In checking all the data, there were some properties that were deemed not to have been the same.  See the table below for further details.</p>
+                </alert>
+            </div>
+        </div>
+    </div>
+
+    <table class="table table-striped">
+        <tr ng-repeat="row in result.rows" ng-class="getRowClass(row)">
+            <td ng-repeat="col in row.columns track by $index"
+                ng-class="getColClass(col)">
+                <span ng-show="!col.meta.isEqual">
+                    <i class="glyphicon glyphicon-warning-sign"></i>
+                </span>
+
+                {{col.data}}
+            </td>
+        </tr>
+    </table>
+</div>

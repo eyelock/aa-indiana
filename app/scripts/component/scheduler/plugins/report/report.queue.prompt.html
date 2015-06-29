@@ -1,0 +1,101 @@
+<div>
+    <h2 translate="scheduler.plugins.reportqueuelist.title">Data Feeds</h2>
+
+    <p translate="scheduler.plugins.reportqueuelist.intro">Please see your list of Data Feeds below</p>
+
+    <dl class="dl-horizontal">
+        <dt translate="scheduler.plugins.reportqueuelist.values.totalRequests.column"></dt>
+        <dd>{{lastResult.data.length}}</dd>
+    </dl>
+
+    <div>
+        <label><span translate="global.form.filtering.filterBy">Filter by</span>: <input ng-model="search.$"></label>
+    </div>
+
+    <div class="table-responsive">
+        <form name="promptForm" role="form" ng-submit="submitValues()" novalidate show-validation>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th translate="scheduler.plugins.reportqueuelist.values.reportID.column">Report Id</th>
+                        <th translate="scheduler.plugins.reportqueuelist.values.type.column">Type</th>
+                        <th translate="scheduler.plugins.reportqueuelist.values.queueTime.column">Queue Time</th>
+                        <th translate="scheduler.plugins.reportqueuelist.values.status.column">Status</th>
+                        <th translate="scheduler.plugins.reportqueuelist.values.priority.column">Priority</th>
+                        <th translate="scheduler.plugins.reportqueuelist.values.estimate.column">Estimate</th>
+                        <th translate="scheduler.plugins.reportqueuelist.values.reportSuiteID.column">Report Suite Id</th>
+                        <th translate="scheduler.plugins.reportqueuelist.values.user.column">User</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr dir-paginate="rq in lastResult.data | itemsPerPage: 25 | orderBy: 'queueTime' | filter:search">
+                        <td>
+                            <input type="checkbox"
+                                   name="reportID"
+                                   id="reportID_{{rq.reportID}}"
+                                   ng-model="formCheckboxElement.reportID[rq.reportID]"
+                                   ng-true-value="true"
+                                   ng-false-value="false">
+                        </td>
+                        <td>{{rq.reportID}}</td>
+                        <td>{{rq.type}}</td>
+                        <td>{{rq.queueTime}}</td>
+                        <td>{{rq.status}}</td>
+                        <td>{{rq.priority}}</td>
+                        <td>{{rq.estimate}}</td>
+                        <td>{{rq.reportSuiteID}}</td>
+                        <td>{{rq.user}}</td>
+                    </tr>
+                    <tr ng-show="lastResult.data.length === 0">
+                        <td colspan="9"><span translate="global.values.norecords">No records were found.</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <dir-pagination-controls></dir-pagination-controls>
+
+            <div input-prompt-form-buttons form="promptForm" submit="submitValues(promptForm)" reset="init()" current-job="job"></div>
+        </form>
+    </div>
+
+   <div class="modal fade" id="confirmModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="confirmForm" ng-submit="logout()">
+                    <div class="modal-header">
+                        <button type="button"
+                                class="close"
+                                data-dismiss="modal"
+                                aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+
+                        <h4 class="modal-title">{{modal.title | translate}}</h4>
+                    </div>
+
+                    <div class="modal-body">
+                        <p>{{modal.description | translate}}</p>
+
+                        <div ng-repeat="(key, value) in formModel">
+                            <h5><strong>{{key}}</strong></h5>
+
+                            <ul>
+                                <li ng-repeat="item in value track by $index">{{item}}</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="modalClear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;{{modal.cancelButton | translate}}
+                        </button>
+
+                        <button type="button" class="btn btn-danger" ng-click="modalConfirm()">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;{{modal.confirmButton | translate}}
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

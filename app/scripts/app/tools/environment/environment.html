@@ -1,0 +1,27 @@
+<div>
+    <h2 translate="tools.environment.title">Environments</h2>
+    
+    <p translate="tools.environment.intro"></p>
+    
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="global.values.code.column">Code</th>
+                    <th translate="tools.environment.values.name.column">Name</th>
+                    <th translate="tools.environment.values.url.column">API URL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="environment in environments">                 
+                    <td>{{environment.code}}</td>
+                    <td>{{environment.name}}</td>
+                    <td>{{environment.url}}</td>
+                </tr>
+                <tr ng-if="environments.length === 0">
+                    <td colspan=""><span translate="global.values.norecords">No records were found.</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

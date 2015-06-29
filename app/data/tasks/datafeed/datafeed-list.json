@@ -1,0 +1,103 @@
+{
+    "id": "getDataFeeds",
+    "name": "scheduler.tasks.getDataFeeds.name",
+    "description": "scheduler.tasks.getDataFeeds.description",
+    "tags": "datafeed, list",
+    "jobs": [
+        {
+            "id": "getReportSuites",
+            "name": "scheduler.jobs.getReportSuites.name",
+            "description": "scheduler.jobs.getReportSuites.description",
+            "pluginConfig": {
+                "id": "promptServiceCall",
+                "factory": "ServiceCallPluginFactory",
+                "serviceName": "ApiHelper",
+                "methodName": "executeMethod",
+                "methodArgs": {
+                    "code": "Company",
+                    "method": "GetReportSuites",
+                    "args": {}
+                }
+            }
+        },
+
+        {
+            "id": "promptForSettings",
+            "name": "scheduler.jobs.promptReportSuites.name",
+            "description": "scheduler.jobs.promptReportSuites.description",
+            "pluginConfig": {
+                "id": "captureUserInput",
+                "factory": "InputPromptPluginFactory",
+                "state": "scheduler.plugins.inputprompt",
+                "prompts": [
+                    {
+                        "name": "report_suites",
+                        "label": "scheduler.jobs.promptReportSuites.label.selectmulti",
+                        "type": "selectmulti",
+                        "value": "@getReportSuites.data.report_suites",
+                        "options": {
+                            "buttonLabel": "site_title",
+                            "itemLabel": "site_title (rsid)",
+                            "outputProperties": "rsid",
+                            "maxLabels": "6",
+                            "maxHeight": "200px"
+                        },
+                        "required": true
+                    },
+                    {
+                        "name": "start_time",
+                        "label": "scheduler.tasks.getDataFeeds.jobs.promptForSettings.starttime",
+                        "type": "date",
+                        "value": "",
+                        "required": false,
+                        "options": {
+                            "format": "yyyy-MM-dd 00:00:00"
+                        }
+                    },
+                    {
+                        "name": "end_time",
+                        "label": "scheduler.tasks.getDataFeeds.jobs.promptForSettings.endtime",
+                        "type": "date",
+                        "value": "",
+                        "required": false,
+                        "options": {
+                            "format": "yyyy-MM-dd 23:59:59"
+                        }
+                    }
+                ]
+            }
+        },
+
+        {
+            "id": "getDataFeeds",
+            "name": "scheduler.tasks.getDataFeeds.name",
+            "description": "scheduler.tasks.getDataFeeds.description",
+            "pluginConfig": {
+                "id": "serviceCall",
+                "factory": "ServiceCallPluginFactory",
+                "serviceName": "ApiHelper",
+                "methodName": "executeMethod",
+                "methodArgs": {
+                    "code": "DataFeed",
+                    "method": "GetFeeds",
+                    "args": {
+                        "rsid_list": "@promptForSettings.report_suites:rsid",
+                        "start_time": "@promptForSettings.start_time",
+                        "end_time": "@promptForSettings.end_time"
+                    }
+                }
+            }
+        },
+
+        {
+            "id": "displayResults",
+            "name": "scheduler.tasks.getDataFeeds.jobs.displayResults.name",
+            "description": "scheduler.tasks.getDataFeeds.jobs.displayResults.description",
+            "pluginConfig": {
+                "id": "resultsDisplay",
+                "factory": "ResultsDisplayPluginFactory",
+                "state": "scheduler.plugins.datafeedlist"
+            }
+        }
+    ]
+}

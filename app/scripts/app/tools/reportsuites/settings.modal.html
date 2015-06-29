@@ -1,0 +1,190 @@
+<div class="modal fade modal-wide">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-hidden="true"
+                        ng-click="cancel()">&times;</button>
+
+                <h4 class="modal-title">
+                    <span translate="tools.reportsuites.settings.title">Report Suite Settings</span>: {{reportSuite.site_title}}
+                </h4>
+            </div>
+
+            <div class="modal-body">
+                <p translate="tools.reportsuites.settings.intro">Settings for the report suite.</p>
+
+                <tabset>
+                    <tab>
+                        <tab-heading>
+                            <span translate="tools.reportsuites.settings.general.title">General</span>
+                        </tab-heading>
+
+                        <p translate="tools.reportsuites.settings.general.intro"></p>
+
+                        <table class="table table-striped">
+                            <tr>
+                                <th translate="global.values.name.column">Name</th>
+                                <th translate="global.values.value.column">Value</th>
+                            </tr>
+                            <tr dir-paginate="prop in generalProps | itemsPerPage: 10" pagination-id="generalPaging">
+                                <td>{{prop}}</td>
+                                <td>{{settings[prop]}}</td>
+                            </tr>
+                        </table>
+
+                        <dir-pagination-controls pagination-id="generalPaging"></dir-pagination-controls>
+                    </tab>
+
+                    <tab>
+                        <tab-heading>
+                            <span translate="tools.reportsuites.settings.properties.title">Props</span>
+                        </tab-heading>
+
+                        <p translate="tools.reportsuites.settings.properties.intro"></p>
+
+                        <table class="table table-striped">
+                            <tr>
+                                <th ng-repeat="propName in propProps">{{propName}}</th>
+                            </tr>
+                            <tr dir-paginate="prop in properties | itemsPerPage: 10" pagination-id="propertiesPaging">
+                                <td ng-repeat="propName in propProps">{{prop[propName]}}</td>
+                            </tr>
+                            <tr ng-show="properties.length === 0">
+                                <td colspan="{{propProps.length}}" translate="global.values.norecords">No records found.</td>
+                            </tr>
+                        </table>
+
+                        <dir-pagination-controls pagination-id="propertiesPaging"></dir-pagination-controls>
+                    </tab>
+
+                    <tab>
+                        <tab-heading>
+                            <span translate="tools.reportsuites.settings.classifications.title">Classifications</span>
+                        </tab-heading>
+
+                        <p translate="tools.reportsuites.settings.classifications.intro"></p>
+
+                        <div class="jsonView">
+                            <json child="classifications" default-collapsed="true" type="object"></json>
+                        </div>
+                    </tab>
+
+                    <tab>
+                        <tab-heading>
+                            <span translate="tools.reportsuites.settings.segments.title">Segments</span>
+                        </tab-heading>
+
+                        <p translate="tools.reportsuites.settings.segments.intro"></p>
+
+                        <table class="table table-striped">
+                            <tr>
+                                <th ng-repeat="propName in segmentProps">{{propName}}</th>
+                            </tr>
+                            <tr dir-paginate="prop in segments | itemsPerPage: 10" pagination-id="segmentsPaging">
+                                <td ng-repeat="propName in segmentProps">{{prop[propName]}}</td>
+                            </tr>
+                            <tr ng-show="segments.length === 0">
+                                <td colspan="{{segmentProps.length}}" translate="global.values.norecords">No records found.</td>
+                            </tr>
+                        </table>
+
+                        <dir-pagination-controls pagination-id="segmentsPaging"></dir-pagination-controls>
+                    </tab>
+
+                    <tab>
+                        <tab-heading>
+                            <span translate="tools.reportsuites.settings.elements.title">Segments</span>
+                        </tab-heading>
+
+                        <p translate="tools.reportsuites.settings.elements.intro"></p>
+
+                        <table class="table table-striped">
+                            <tr>
+                                <th ng-repeat="propName in elementProps">{{propName}}</th>
+                            </tr>
+                            <tr dir-paginate="prop in elements | itemsPerPage: 10" pagination-id="elementsPaging">
+                                <td ng-repeat="propName in elementProps">{{prop[propName]}}</td>
+                            </tr>
+                            <tr ng-show="elements.length === 0">
+                                <td colspan="{{elementProps.length}}" translate="global.values.norecords">No records found.</td>
+                            </tr>
+                        </table>
+
+                        <dir-pagination-controls pagination-id="elementsPaging"></dir-pagination-controls>
+                    </tab>
+
+                    <tab>
+                        <tab-heading>
+                            <span translate="tools.reportsuites.settings.metrics.title">Metrics</span>
+                        </tab-heading>
+
+                        <p translate="tools.reportsuites.settings.elements.intro"></p>
+
+                        <table class="table table-striped">
+                            <tr>
+                                <th ng-repeat="propName in metricsProps">{{propName}}</th>
+                            </tr>
+                            <tr dir-paginate="metric in metrics | itemsPerPage: 10" pagination-id="metricsPaging">
+                                <td ng-repeat="propName in metricsProps">{{metric[propName]}}</td>
+                            </tr>
+                            <tr ng-show="elements.length === 0">
+                                <td colspan="{{metrics.length}}" translate="global.values.norecords">No records found.</td>
+                            </tr>
+                        </table>
+
+                        <dir-pagination-controls pagination-id="metricsPaging"></dir-pagination-controls>
+                    </tab>
+
+                    <tab>
+                        <tab-heading>
+                            <span translate="tools.reportsuites.settings.videosettings.title">Video Settings</span>
+                        </tab-heading>
+
+                        <p translate="tools.reportsuites.settings.videosettings.intro"></p>
+
+                        <table class="table table-striped">
+                            <tr>
+                                <th translate="global.values.name.column">Name</th>
+                                <th translate="global.values.value.column">Value</th>
+                            </tr>
+                            <tr dir-paginate="(k, v) in videosettings | itemsPerPage: 10" pagination-id="videoSettingsPaging">
+                                <td>{{k}}</td>
+                                <td>{{v}}</td>
+                            </tr>
+                        </table>
+
+                        <dir-pagination-controls pagination-id="videoSettingsPaging"></dir-pagination-controls>
+                    </tab>
+
+                    <tab>
+                        <tab-heading>
+                            <span translate="tools.reportsuites.settings.mobilebreakdowns.title">Mobile Breakdowns</span>
+                        </tab-heading>
+
+                        <p translate="tools.reportsuites.settings.mobilebreakdowns.intro"></p>
+
+                        <table class="table table-striped">
+                            <tr>
+                                <th translate="global.values.name.column">Name</th>
+                            </tr>
+                            <tr dir-paginate="(k, v) in mobilebreakdowns | itemsPerPage: 10" pagination-id="mobilebreakdownsPaging">
+                                <td>{{v}}</td>
+                            </tr>
+                        </table>
+
+                        <dir-pagination-controls pagination-id="mobilebreakdownsPaging"></dir-pagination-controls>
+                    </tab>
+                </tabset>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="cancel()">
+                    <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="global.form.action.close">Close</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

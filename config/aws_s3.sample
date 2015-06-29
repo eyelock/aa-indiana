@@ -1,0 +1,7 @@
+{
+    "AWSAccessKeyId": "mykeyid",
+    "AWSSecretKey": "mysecret",
+    "BucketRegion": "myregion",
+    "StagingBucket": "drjones-staging.mydomain.net",
+    "ProductionBucket": "drjones.mydomain.net" 
+}

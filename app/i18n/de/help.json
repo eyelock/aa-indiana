@@ -1,0 +1,69 @@
+{
+    "help": {
+        "about": {
+            "title": "Über Dr. Jones",
+            "intro": "System Informationen und Hintergrund zu Dr. Jones.",
+            "inspiration": {
+                "title": "Inspiration",
+                "description": "Indiana Jones (copyright Lucas Films, oder dergleichen) war ein ruhiger Kerl zu seiner Zeit. Er liebte es einige Klassen zu unterrichten und ansonsten zu entspannen. Leider gab es oft etwas, das ihn ins Unglück zog. Dieses Tool ist wie der Übermütige Teil seines Lebens. Internen Tools von Adobe wird häufig 'Dr.' vorangestellt, daher ist es wohl auch sinnvoll wenn 'Indiana' mit einem 'Dr.' vorangestellt wird ... so machte es Sinn, wenn Seth sagte, nenn es 'Dr. Jones '"
+            },
+            "platform": {
+                "title": "Platform",
+                "description": "Wie vermutet, es ist ein Werkzeug, das die Adobe Analytics 1.4 REST-API verwendet. Wenn man sich den Quellcode ansieht dann scheint es ist ein bisschen wie eine Mischung aus Trickserei und dynamischer Objektgenerierung. Im Laufe der Zeit wird Dr. Jones wachsen und ein bischen wie eine Übersichtskarte einer Datenbank sein. Wir zeigen Ihnen wie Sie Ihre Unternehmensziele, mit Hilfe der vom Adobe Analytics API-Team exzellenten API, erreichen. Die API ist einfach zu verwenden, aber wir versuchen es Ihnen noch einfacher zu machen."
+            },
+            "getinvolved": {
+                "title": "Mitmachen",
+                "description": "Wir verwenden nur die öffentliche API wie sie vom Adobe Analytics API-Team bereitgestellt wird. Eines der Hauptziele, welches aber noch nicht realisiert wurde, ist eine API Engine mit der man Ereignisse verketten kann. Sobald die Grundlagen passen gibt es eine Engine die Ihre geschäftlichen Anforderungen erfüllt.",
+                "involvement": {
+                    "email": {
+                        "title": "Email",
+                        "description": "Sie können uns emailen, wir werden Ihre Aufgaben/Tools in Betracht ziehen.",
+						
+                        "contact": "support+dmaapilexplorer@eyelock.net"
+                    },
+                    "development": {
+                        "title": "Entwicklung",
+                        "description": "Der Quellcode ist offen, sie finden ihn unter dem Link unten. Kontaktieren Sie uns per Email falls Sie nicht darauf zugreifen können.",
+						"contact": "https://bitbucket.org/eyelock/aaindiana"
+                    }
+                }
+            },
+            "technologies": {
+                "title": "Technologien",
+                "description": "Diese Applikation beinhaltet viele Komponenten. Unten finden Sie eine Liste der Hauptkomponenten die verwendet wurden."
+	        }
+        },
+        "issues": {
+            "title": "Bekannte Probleme",
+			"intro": "Nichts ist Perfekt. Unten finden Sie bekannte Probleme in Dr. Jones und ob es einen Workaround gibt.",
+            "values": {
+                "version": {
+                    "column": "Version"   
+                },
+                "reference ": {
+                    "column": "Referenz"   
+                },
+                "issue": {
+                    "column": "Problem"   
+                },
+                "workaroreferenceund": {
+                    "column": "Referenz"   
+                },                
+                "workaround": {
+                    "column": "Workaround?"   
+                },
+                "status": {
+                    "column": "Status?"   
+                },
+                "reference": {
+                    "column": "Referenz"   
+                }
+            }
+        },
+        "usage": {
+            "title": "Dr. Jones verwenden",
+            "intro": "Lernen Sie Dr. Jones zu verwenden." 
+        }
+    }
+}
+        

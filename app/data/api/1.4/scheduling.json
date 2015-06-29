@@ -1,0 +1,149 @@
+{
+    "name": "Scheduling",
+    "methods": {"Scheduling.CreatePublishedReport":"CreatePublishedReport","Scheduling.DeletePublishedReport":"DeletePublishedReport","Scheduling.DeleteWorkbook":"DeleteWorkbook","Scheduling.DownloadWorkbook":"DownloadWorkbook","Scheduling.GetPublishedReports":"GetPublishedReports","Scheduling.GetReportsRunHistory":"GetReportsRunHistory","Scheduling.GetWorkbookList":"GetWorkbookList","Scheduling.ReRunReport":"ReRunReport","Scheduling.UpdatePublishedReport":"UpdatePublishedReport","Scheduling.UploadWorkbook":"UploadWorkbook"},
+    "defaultArgs": {
+        "Scheduling.CreatePublishedReport": {
+            "location":"(string)",
+            "product":"(string)",
+            "repoId":"(string)",
+            "scheduledReport":{
+                "scheduleRecurrenceParameter":{
+                    "frequency":"(string)",
+                    "dayOfWeek":"(string)",
+                    "dayOfMonth":"(int)",
+                    "runHour":"(int)",
+                    "recurrence":"(int)",
+                    "startDate":"(string)",
+                    "endDate":"(string)",
+                    "sequence":"(string)",
+                    "cancelType":"(string)",
+                    "cancelOccurence":"(int)",
+                    "month":"(string)",
+                    "timezoneOffset":"(string)"
+                },
+                "deliveryParameters":{
+                    "emailTo":"(string)",
+                    "emailFrom":"(string)",
+                    "publishingList":[
+                        "(string)"
+                    ],
+                    "emailSubject":"(string)",
+                    "emailNotes":"(string)",
+                    "ftpHost":"(string)",
+                    "ftpUser":"(string)",
+                    "ftpPassword":"(string)",
+                    "ftpPort":"(string)",
+                    "ftpPath":"(string)",
+                    "locale":"(string)",
+                    "fileFormat":"(string)",
+                    "deliveryType":"(string)",
+                    "isCompressed":"(boolean)",
+                    "hideUnsubscribe":"(boolean)"
+                },
+                "id":"(int)",
+                "reportSuiteID":"(string)",
+                "isFailed":"(boolean)",
+                "excelWorkbook":{
+                    "filename":"(string)",
+                    "owner":"(string)",
+                    "description":"(string)",
+                    "lastModified":"(dateTime)"
+                }
+            },
+            "workbook":"(base64Binary)"
+        },
+                "Scheduling.DeletePublishedReport": {
+            "product":"(string)",
+            "scheduledReportIds":[
+                "(int)"
+            ]
+        },
+        "Scheduling.DeleteWorkbook": {
+            "location":"(string)",
+            "product":"(string)",
+            "username":"(string)",
+            "workbookNames":[
+                "(string)"
+            ]
+        },
+        "Scheduling.DownloadWorkbook": {
+            "location":"(string)",
+            "productType":"(string)",
+            "username":"(string)",
+            "workbookName":"(string)"
+        },
+        "Scheduling.GetPublishedReports": {
+            "product":"(string)",
+            "username":"(string)"
+        },
+        "Scheduling.GetReportsRunHistory": {
+            "limit":"(int)",
+            "offset":"(int)",
+            "product":"(string)",
+            "username":"(string)"
+        },
+        "Scheduling.GetWorkbookList": {
+            "location":"(string)",
+            "product":"(string)"
+        },
+        "Scheduling.ReRunReport": {
+            "id":"(int)"
+        },
+        "Scheduling.UpdatePublishedReport": {
+            "product":"(string)",
+            "repoId":"(string)",
+            "scheduledReport":{
+                "scheduleRecurrenceParameter":{
+                    "frequency":"(string)",
+                    "dayOfWeek":"(string)",
+                    "dayOfMonth":"(int)",
+                    "runHour":"(int)",
+                    "recurrence":"(int)",
+                    "startDate":"(string)",
+                    "endDate":"(string)",
+                    "sequence":"(string)",
+                    "cancelType":"(string)",
+                    "cancelOccurence":"(int)",
+                    "month":"(string)",
+                    "timezoneOffset":"(string)"
+                },
+                "deliveryParameters":{
+                    "emailTo":"(string)",
+                    "emailFrom":"(string)",
+                    "publishingList":[
+                        "(string)"
+                    ],
+                    "emailSubject":"(string)",
+                    "emailNotes":"(string)",
+                    "ftpHost":"(string)",
+                    "ftpUser":"(string)",
+                    "ftpPassword":"(string)",
+                    "ftpPort":"(string)",
+                    "ftpPath":"(string)",
+                    "locale":"(string)",
+                    "fileFormat":"(string)",
+                    "deliveryType":"(string)",
+                    "isCompressed":"(boolean)",
+                    "hideUnsubscribe":"(boolean)"
+                },
+                "id":"(int)",
+                "reportSuiteID":"(string)",
+                "isFailed":"(boolean)",
+                "excelWorkbook":{
+                    "filename":"(string)",
+                    "owner":"(string)",
+                    "description":"(string)",
+                    "lastModified":"(dateTime)"
+                }
+            },
+            "workbook":"(base64Binary)"
+        },
+        "Scheduling.UploadWorkbook": {
+            "description":"(string)",
+            "filename":"(string)",
+            "location":"(string)",
+            "product":"(string)",
+            "workbook":"(base64Binary)"
+        }
+    }
+}

@@ -1,0 +1,257 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- http://realfavicongenerator.net/ -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/favicons/favicon-194x194.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="/images/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/images/favicons/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/images/favicons/manifest.json">
+    <link rel="shortcut icon" href="/images/favicons/favicon.ico">
+    <meta name="apple-mobile-web-app-title" content="Dr Jones">
+    <meta name="application-name" content="Dr Jones">
+    <meta name="msapplication-TileColor" content="#b91d47">
+    <meta name="msapplication-TileImage" content="/images/favicons/mstile-144x144.png">
+    <meta name="msapplication-config" content="/images/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/json-formatter/dist/json-formatter.css" />
+    <link rel="stylesheet" href="bower_components/ladda/dist/ladda.min.css" />
+    <link rel="stylesheet" href="bower_components/angular-growl-v2/build/angular-growl.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/json-edit/css/styles.css" />
+    <link rel="stylesheet" href="bower_components/isteven-angular-multiselect/isteven-multi-select.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css({.tmp,app}) styles/main.css -->
+    <link rel="stylesheet" href="styles/custom.css">
+    <!-- endbuild -->
+
+    <!-- Analytics script -->
+    <!-- build:js scripts/analytics.js
+    <script src="scripts/vendor/adobe/AppMeasurement.js"></script>-->
+    <!-- endbuild -->
+</head>
+<body ng-app="aaindianaApp">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!--[if lt IE 10]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div ui-view="navbar" ng-cloak=""></div>
+
+    <div class="container">
+        <div class="well" ui-view="content"></div>
+
+        <div class="footer">
+            <div ui-view="footer" ng-cloak=""></div>
+        </div>
+    </div>
+
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-translate/angular-translate.js"></script>
+    <script src="bower_components/angular-dynamic-locale/src/tmhDynamicLocale.js"></script>
+    <script src="bower_components/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
+    <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+    <script src="bower_components/json-formatter/dist/json-formatter.js"></script>
+    <script src="bower_components/spin.js/spin.js"></script>
+    <script src="bower_components/ladda/dist/ladda.min.js"></script>
+    <script src="bower_components/angular-ladda/dist/angular-ladda.min.js"></script>
+    <script src="bower_components/angular-cache/dist/angular-cache.js"></script>
+    <script src="bower_components/angular-growl-v2/build/angular-growl.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.js"></script>
+    <script src="bower_components/angular-ui-sortable/sortable.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/json-edit/js/directives.js"></script>
+    <script src="bower_components/waypoints/waypoints.js"></script>
+    <script src="bower_components/SHA-1/sha1.js"></script>
+    <script src="bower_components/angulartics/src/angulartics.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-adobe.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-chartbeat.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-cnzz.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-flurry.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-ga-cordova.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-ga.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-gtm.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-kissmetrics.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-mixpanel.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-piwik.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-scroll.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-segmentio.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-splunk.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-woopra.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-marketo.js"></script>
+    <script src="bower_components/angulartics/src/angulartics-intercom.js"></script>
+    <script src="bower_components/isteven-angular-multiselect/isteven-multi-select.js"></script>
+    <script src="bower_components/angular-utils-pagination/dirPagination.js"></script>
+    <script src="bower_components/angular-modal-service/dst/angular-modal-service.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+
+    <!-- build:js({.tmp,app}) scripts/apiexplorer.js -->
+    <script src="scripts/module/apiexplorer/explorer.js"></script>
+    <script src="scripts/module/apiexplorer/constants.js"></script>
+    <script src="scripts/module/apiexplorer/wsse.js"></script>
+    <script src="scripts/module/apiexplorer/api.js"></script>
+    <script src="scripts/module/apiexplorer/directives/apirequesterror.directive.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp,app}) scripts/scheduler.js -->
+    <script src="scripts/module/scheduler/scheduler.js"></script>
+    <script src="scripts/module/scheduler/task.js"></script>
+    <script src="scripts/module/scheduler/job.js"></script>
+    <script src="scripts/module/scheduler/jobmanager.js"></script>
+    <script src="scripts/module/scheduler/directives/job.header.directive.js"></script>
+    <script src="scripts/module/scheduler/plugins/plugins.js"></script>
+
+    <script src="scripts/module/scheduler/plugins/inputprompt/inputprompt.plugin.js"></script>
+    <script src="scripts/module/scheduler/plugins/inputprompt/inputprompt.js"></script>
+    <script src="scripts/module/scheduler/plugins/inputprompt/inputprompt.controller.js"></script>
+    <script src="scripts/module/scheduler/plugins/inputprompt/confirm.modal.controller.js"></script>
+    <script src="scripts/module/scheduler/plugins/inputprompt/inputprompt.formbuttons.directive.js"></script>
+
+    <script src="scripts/module/scheduler/plugins/servicepoller/servicepoller.plugin.js"></script>
+    <script src="scripts/module/scheduler/plugins/servicepoller/servicepoller.js"></script>
+    <script src="scripts/module/scheduler/plugins/servicepoller/servicepoller.controller.js"></script>
+    <script src="scripts/module/scheduler/plugins/servicepoller/servicepoller.info.directive.js"></script>
+
+    <script src="scripts/module/scheduler/plugins/resultsdisplay/resultsdisplay.plugin.js"></script>
+    <script src="scripts/module/scheduler/plugins/resultsdisplay/resultsdisplay.js"></script>
+    <script src="scripts/module/scheduler/plugins/resultsdisplay/resultsdisplay.controller.js"></script>
+
+    <script src="scripts/module/scheduler/plugins/servicecall/servicecall.plugin.js"></script>
+
+    <script src="scripts/module/scheduler/plugins/valuechecker/valuechecker.plugin.js"></script>
+    <script src="scripts/module/scheduler/plugins/valuechecker/valuechecker.js"></script>
+    <script src="scripts/module/scheduler/plugins/valuechecker/valuechecker.controller.js"></script>
+    <script src="scripts/module/scheduler/plugins/valuechecker/valuechecker.filter.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app/app.js"></script>
+    <script src="scripts/app/app.constants.js"></script>
+    <script src="scripts/directives/showerror.js"></script>
+    <script src="scripts/directives/jsontext.js"></script>
+    <script src="scripts/directives/jsoninput.js"></script>
+    <script src="scripts/filters/millsecondstotimestring.js"></script>
+    <script src="scripts/decorators/statereload.js"></script>
+
+    <script src="scripts/component/auth/auth.factory.js"></script>
+    <script src="scripts/component/auth/principal.factory.js"></script>
+    <script src="scripts/component/auth/provider/auth.apiendpoint.factory.js"></script>
+
+    <script src="scripts/component/util/cache.service.js"></script>
+    <script src="scripts/component/util/environment.service.js"></script>
+    <script src="scripts/component/util/transformutils.service.js"></script>
+
+    <script src="scripts/component/language/language.factory.js"></script>
+    <script src="scripts/component/language/language.controller.js"></script>
+
+    <script src="scripts/component/services/explorer/apihelper.service.js"></script>
+    <script src="scripts/component/services/tasks/registry.service.js"></script>
+    <script src="scripts/component/services/system/preferences.service.js"></script>
+
+    <script src="scripts/component/navbar/navbar.directive.js"></script>
+    <script src="scripts/component/navbar/navbar.controller.js"></script>
+    <script src="scripts/component/footer/footer.controller.js"></script>
+
+	<script src="scripts/app/main/main.js"></script>
+    <script src="scripts/app/main/main.controller.js"></script>
+
+    <script src="scripts/app/help/help.js"></script>
+    <script src="scripts/app/help/about/about.js"></script>
+    <script src="scripts/app/help/about/about.controller.js"></script>
+    <script src="scripts/app/help/issues/issues.js"></script>
+    <script src="scripts/app/help/issues/issues.controller.js"></script>
+    <script src="scripts/app/help/usage/usage.js"></script>
+    <script src="scripts/app/help/usage/usage.controller.js"></script>
+
+    <script src="scripts/app/system/system.js"></script>
+    <script src="scripts/app/system/auth/auth.js"></script>
+    <script src="scripts/app/system/auth/auth.controller.js"></script>
+    <script src="scripts/app/system/auth/auth.modal.controller.js"></script>
+    <script src="scripts/app/system/preferences/preferences.js"></script>
+    <script src="scripts/app/system/preferences/preferences.controller.js"></script>
+    <script src="scripts/app/system/storage/storage.js"></script>
+    <script src="scripts/app/system/storage/storage.controller.js"></script>
+    <script src="scripts/app/system/storage/clearall.modal.controller.js"></script>
+    <script src="scripts/app/system/storage/clearcache.modal.controller.js"></script>
+
+    <script src="scripts/app/tasks/tasks.js"></script>
+    <script src="scripts/app/tasks/custom/custom.js"></script>
+    <script src="scripts/app/tasks/custom/export.controller.js"></script>
+    <script src="scripts/app/tasks/custom/import.controller.js"></script>
+    <script src="scripts/app/tasks/custom/custom.controller.js"></script>
+    <script src="scripts/app/tasks/custom/custom.edit.modal.controller.js"></script>
+    <script src="scripts/app/tasks/custom/custom.delete.modal.controller.js"></script>
+    <script src="scripts/app/tasks/list/list.js"></script>
+    <script src="scripts/app/tasks/list/list.all.controller.js"></script>
+    <script src="scripts/app/tasks/list/list.favourites.controller.js"></script>
+    <script src="scripts/app/tasks/run/run.js"></script>
+    <script src="scripts/app/tasks/run/run.controller.js"></script>
+
+    <script src="scripts/app/tools/tools.js"></script>
+    <script src="scripts/app/tools/credentials/credentials.js"></script>
+    <script src="scripts/app/tools/credentials/credentials.controller.js"></script>
+    <script src="scripts/app/tools/environment/environment.js"></script>
+    <script src="scripts/app/tools/environment/environment.controller.js"></script>
+    <script src="scripts/app/tools/groups/groups.js"></script>
+    <script src="scripts/app/tools/groups/groups.controller.js"></script>
+    <script src="scripts/app/tools/groups/details.modal.controller.js"></script>
+    <script src="scripts/app/tools/explorer/explorer.js"></script>
+    <script src="scripts/app/tools/explorer/explorer.controller.js"></script>
+    <script src="scripts/app/tools/reportsuites/reportsuites.js"></script>
+    <script src="scripts/app/tools/reportsuites/reportsuites.controller.js"></script>
+    <script src="scripts/app/tools/reportsuites/groups.modal.controller.js"></script>
+    <script src="scripts/app/tools/reportsuites/settings.modal.controller.js"></script>
+    <script src="scripts/app/tools/users/users.js"></script>
+    <script src="scripts/app/tools/users/users.controller.js"></script>
+    <script src="scripts/app/tools/users/details.modal.controller.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp,app}) scripts/scheduler-plugins.js -->
+    <script src="scripts/component/scheduler/plugins/datafeed/datafeed.js"></script>
+    <script src="scripts/component/scheduler/plugins/datafeed/datafeed.list.controller.js"></script>
+    <script src="scripts/component/scheduler/plugins/datafeed/datafeed.activity.modal.controller.js"></script>
+    <script src="scripts/component/scheduler/plugins/report/report.js"></script>
+    <!-- endbuild -->
+</body>
+</html>

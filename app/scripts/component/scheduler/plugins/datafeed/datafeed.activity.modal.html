@@ -1,0 +1,49 @@
+<div class="modal fade" id="activityModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form name="datafeedRequestsForm" ng-submit="cancel()">
+                <div class="modal-header">
+                    <button type="button"
+                            class="close"
+                            data-dismiss="modal"
+                            aria-hidden="true"
+                            ng-click="clear()">&times;</button>
+
+                    <h4 class="modal-title" translate="scheduler.plugins.datafeedlist.activity.title">Activity</h4>
+                </div>
+
+                <div class="modal-body">
+                    <p translate="scheduler.plugins.datafeedlist.activity.intro">
+                        Below shows all the activity for the data feed in the last 48 hours.
+                    </p>
+
+                    <table class="table table-striped">
+                        <tr>
+                            <td translate="scheduler.plugins.datafeedlist.activity.jobid">Job Id</td>
+                            <td translate="scheduler.plugins.datafeedlist.activity.start">Start</td>
+                            <td translate="scheduler.plugins.datafeedlist.activity.end">End</td>
+                            <td translate="scheduler.plugins.datafeedlist.activity.status">Status</td>
+                        </tr>
+                        <tr dir-paginate="activity in datafeed.activity | itemsPerPage: 15" pagination-id="activities">
+                            <td>{{activity.job_id}}</td>
+                            <td>{{activity.begin | date}}</td>
+                            <td>{{activity.end | date}}</td>
+                            <td>{{activity.status}}</td>
+                        </tr>
+                        <tr ng-show="datafeed.activity.length === 0">
+                            <td colspan="4"><span translate="global.values.norecords">No records were found.</span></td>
+                        </tr>
+                    </table>
+
+                    <dir-pagination-controls pagination-id="activities"></dir-pagination-controls>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-default" data-dismiss="modal">
+                        <span class="glyphicon glyphicon-remove"></span>&nbsp;<span translate="global.form.action.close">Close</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

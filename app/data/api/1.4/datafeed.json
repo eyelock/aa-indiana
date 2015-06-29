@@ -1,0 +1,19 @@
+{
+    "name": "DataFeed",
+    "methods": {"DataFeed.GetFeed":"GetFeed","DataFeed.GetFeeds":"GetFeeds"},
+    "defaultArgs": {
+        "DataFeed.GetFeed": {
+            "feed_id":"(int)"
+        },
+        "DataFeed.GetFeeds": {
+            "end_time":"(string)",
+            "rsid_list":[
+                "(string)"
+            ],
+            "start_time":"(string)",
+            "status":[
+                "(string)"
+            ]
+        }
+    }
+}

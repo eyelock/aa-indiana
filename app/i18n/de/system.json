@@ -1,0 +1,67 @@
+{
+    "system": {
+        "auth": {
+            "title": "Authentifizierung",
+            "intro": "Ihr Benutzername und Secret um auf die API zuzugreifen.",
+			"confirmlogouttext": "Wirklich abmelden? Sie verlieren alle zwischengespeicherten Daten und können auf einige Berichte nicht zugreifen bis Sie sich wieder anmelden.",
+            "confirmlogouttitle": "Abmelden und alle Daten entfernen?",
+            "values": {
+                "secret": {
+                    "label": "Secret",
+                    "invalid": "'Secret' ist erforderlich",
+                    "minlength": "Das 'Secret' muss mindestens 32 Zeichen lang sein."
+                }
+            }
+        },
+        "preferences": {
+            "title": "Voreinstellungen",
+            "intro": "Sie können Ihre Voreinstellungen hier ändern."
+        },
+        "storage": {
+            "title": "Speicher verwalten",
+            "intro": "Hier können Sie alle Daten und Abfragen die gespeichert wurden einsehen und löschen falls erforderlich. 'Abmelden' hat prinzipiell den gleichen Effekt.",
+            "clearall": {
+                "title": "Alles löschen!",
+                "description": "Sie können alles löschen, das beinhaltet auch Ihre aktuellen Anmeldedaten!",
+                "buttonLabel": "Alles löschen",
+                "confirmtitle": "Sind Sie sicher dass Sie den gesamten Zwischenspeicher löschen wollen?",
+                "confirmdescription": "Wenn Sie alles löschen verlieren Sie auch Ihre aktuellen Benutzerdaten. Wir wollen wirklich sicherstellen ob sie alles entfernen wollen. Klicken Sie auf 'Bestätigen' um alles zu löschen. Diese Aktion kann nicht rückgängig gemacht werden."
+
+            },
+            "clearcache": {
+                "confirmtitle": "Einzelne Cache Elemente Löschen!",
+                "confirmdescription": "Sind Sie sicher diese Cache Element soll gelöscht werden?"
+            },
+            "list": {
+                "title": "Alle Ihre Cache Elemente",
+                "description": "Unten finden Sie eine Liste aller aktuellen Cache Elemente, Sie können wählen welche Sie löschen wollen.",
+                "warning": "Die aufgelisteten Cache Elemente sind alle die auf die bisher zugegriffen wurde, es ist möglich das es noch mehr gibt auf die noch nicht zugegriffen wurde."
+            },
+            "values": {
+                "cacheFlushInterval": {
+                    "column": "Cache Lösch-Interval"
+                },
+                "capacity": {
+                    "column": "Kapazität",
+                    "unlimited": "Unlimitiert"
+                },
+                "deleteOnExpire": {
+                    "column": "Ablauf Policy"
+                },
+                "disabled": {
+                    "column": "Deaktiviert"
+                },
+                "maxAge": {
+                    "column": "Höchstalter",
+                    "unlimited": "Bis zur Cache Bereinigung"
+                },
+                "recycleFreq": {
+                    "column": "Löschfrequenz"
+                },
+                "storageMode": {
+                    "column": "Speichermodus"
+                }
+            }
+        }
+    }
+}

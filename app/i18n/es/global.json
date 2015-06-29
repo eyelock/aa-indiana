@@ -1,0 +1,176 @@
+{
+    "global": {
+        "title": "Dr Jones",
+
+        "main": {
+            "title": "Bienvenido a Dr. Jones",
+            "intro": "Dr Jones es una herramienta desarrollada para hacer llamadas a la API de Adobe Analytics,   Indiana era explorador además de profesor y nuestra intención es enseñar y ayudarte a explorar todo lo que la API puede ofrecerte.",
+            "group": {
+                "next": {
+                    "title": "Llamada a la API",
+                    "description": "Puedes hacer llamadas desde ya, ho hace falta guardar los credenciales.",
+                    "linkText": "Llamada a la API",
+                    "authentication": "Guardar el estado siempre es recomendable ya que puedes tener acceso a herramientas más potentes, pero no es esencial en todos los casos!  Echa in vistazo a la sección 'Empezando' si quieres saber más."
+                },
+                "getstarted": {
+                    "title": "Empezando",
+                    "description": "Introduce los credencials para tener acceso a la API en toda su extensión.   Estas herramientas y tareas están más adaptadas a las necesidades de tu negocio y permiten controlar tu configuración e implementación de Adobe Analytics de una manera más flexible",
+                    "linkText": "Autenticarse (o verificar credenciales)"
+                },
+                "help": {
+                    "title": "Y ahora qué?",
+                    "description": "Ya sabemos que cuesta trabajo seguir el hilo de todo.  No te preocupes ya las sección de ayuda te puede servir de apoyo.  Échale un vistazo ya que puedes guardar tus datos de inicion de sesión y tener acceso a mucho más de lo que la API ofrece.  Pruébalo, merece la pena.",
+                    "linkText": "Ver Ayuda"
+                }
+            }
+        },
+
+        "menu": {
+            "home": "Inicio",
+            "language": "Idioma",
+            "help": {
+                "title": "Ayuda",
+                "about": "Acerca de Dr Jones",
+                "issues": "Errores conocidos",
+                "usage": "Cómo usar Dr Jones"
+            },
+            "system": {
+                "title": "Operaciones",
+                "auth": "Inicio/Desconexión",
+                "preferences": "Preferencias",
+                "storage": "Almacenamiento"
+            },
+            "tasks": {
+                "title": "Tareas",
+                "custom": "Tareas Personalizadas",
+                "favourites": "Tareas Favoritas",
+                "export": "Exportar..",
+                "import": "Importar..",
+                "all": "Tareas Tous"
+            },
+            "tools": {
+                "title": "Herramientas",
+                "company": "Administrar Compañía",
+                "credentials": "Datos de conexión",
+                "explorer": "Explorador API",
+                "reportsuites": "Administrar Report Suites",
+                "users": "Administrar Usuarios",
+                "environment": "Data Centres"
+            }
+        },
+
+        "form": {
+            "action": {
+                "save": "Guardar",
+                "cancel": "Cancelar",
+                "revert": "Deshacer",
+                "reset": "Resetear",
+                "view": "Ver",
+                "submit": "Enviar",
+                "logout": "Desconexión",
+                "login": "Inicio",
+                "delete": "Borrar",
+                "dismiss": "Descartar",
+                "refresh": "Refrescar",
+                "info": "Información"
+            },
+            "ordering": {
+
+            },
+            "filtering": {
+                "filterBy": "Filtrar por"
+            }
+        },
+
+        "cache": {
+            "results": "(Resultados en caché)",
+            "info": {
+                "title": "Información Cache",
+                "intro": "Información acerca de los resultados en caché."
+            },
+            "refresh": {
+                "title": "Refrescar Caché",
+                "intro": "Puedes refrescar los resultados recibidos del servidor.  Los valores de caché serán borrados y luego refrescados desde el servicio remoto."
+            },
+            "values": {
+                "storename": "Nombre Almacenamiento",
+                "keyname": "Clave"
+            }
+        },
+
+        "values": {
+            "norecords": "No se encontró ningún resultado.",
+            "id": {
+                "title": "Id",
+                "column": "Id"
+            },
+            "code": {
+                "title": "Código",
+                "column": "Código"
+            },
+            "name": {
+                "title": "Nombre",
+                "column": "Nombre"
+            },
+            "username": {
+                "label": "Usuario",
+                "column": "Usuario",
+                "invalid": "Es necesario introducir el nombre de usuario",
+                "minlength": "El nombre de usuario debe tener al menos 5 caracteres."
+            },
+            "firstname": {
+                "label": "Nombre",
+                "column": "Nombre"
+            },
+            "lastname": {
+                "label": "Apellidos",
+                "column": "Apellidos"
+            },
+            "email": {
+                "label": "Email",
+                "column": "Email"
+            },
+            "phone": {
+                "label": "Teléfono",
+                "column": "Teléfono"
+            },
+            "size": {
+                "label": "Tamaño",
+                "column": "Tamaño"
+            },
+            "date": {
+                "label": "Fecha",
+                "column": "Fecha"
+            },
+            "created": {
+                "label": "Creado",
+                "column": "Creado"
+            },
+            "expires": {
+                "label": "Caduca",
+                "column": "Caduca"
+            }
+        },
+
+        "errors": {
+            "notimplemented": {
+                "title": "Por terminar",
+                "intro": "Esta opción no ha sido implementada todavía. Con un poco de suerte habrá una descripción debajo"
+            },
+            "accessdenied": {
+                "title": "Acceso Denegado!",
+                "intro": "Has intentado acceder a una página para la cual no tienes acceso.",
+                "relogin": "Prueba de nuevo desconectándote y entrando otra vez."
+            }
+        },
+
+        "notifications": {
+            "async": {
+                "start": "Un momento, estamos procesando tu llamada.",
+                "finish": "Gracias por esperar, ya la tienes lista!",
+                "error": "Oops, algo no ha funcionado correctamente al procesar la llamada.",
+                "cached": "Genial!  La información está en caché."
+            }
+        }
+    }
+}

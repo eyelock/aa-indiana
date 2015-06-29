@@ -1,0 +1,110 @@
+<div>
+    <h2 translate="tasks.run.title">Run Task</h2>
+
+    <p>
+        <span translate="tasks.run.intro">Details and output of running a task.</span>
+    </p>
+
+    <tabset>
+        <tab>
+            <tab-heading>
+                <span translate="tasks.run.details.tabTitle">Details</span>
+            </tab-heading>
+
+            <p translate="tasks.run.details.intro">Details about the task, including what the aim is.</p>
+
+            <dl class="dl-horizontal">
+                <dt translate="global.values.id.label">Id</dt>
+                <dd>{{taskDetails.id}}</dd>
+
+                <dt translate="global.values.name.label">Name</dt>
+                <dd>{{taskDetails.name | translate}}</dd>
+
+                <dt translate="global.values.description.label">Description</dt>
+                <dd>{{taskDetails.description | translate}}</dd>
+
+                <dt translate="global.values.url.label">URL</dt>
+                <dd>{{taskDetails.url}}</dd>
+            </dl>
+
+            <div class="pull-right">
+                <button type="button"
+                        class="btn btn-primary"
+                        ng-disabled="!task.jobs.hasNext()"
+                        ng-click="runTask()"
+                        ladda="task.loading"
+                        data-style="slide-right">Execute</button>
+            </div>
+
+            <div class="clearfix"></div>
+        </tab>
+
+        <tab>
+            <tab-heading>
+                <span translate="tasks.run.jobs.tabTitle">Jobs</span>
+            </tab-heading>
+
+            <p translate="tasks.run.jobs.intro">The following jobs are linked with this task.</p>
+
+            <accordion close-others="oneAtATime">
+                <accordion-group ng-repeat="job in task.config.jobs">
+                    <accordion-heading>
+                        {{job.name | translate}}
+                    </accordion-heading>
+
+                    <ul>
+                        <li>Job id:  {{job.id}}</li>
+                        <li>Job name:  {{job.name  | translate}}</li>
+                        <li>Job description:  {{job.description | translate}}</li>
+                        <li>Job autoProgress:  {{ job.autoProgress.toString() | translate }}</li>
+                    </ul>
+                </accordion-group>
+            </accordion>
+
+            <div class="pull-right">
+                <button type="button"
+                        class="btn btn-primary"
+                        ng-disabled="!task.jobs.hasNext()"
+                        ng-click="runTask()"
+                        ladda="task.loading"
+                        data-style="slide-right">Execute</button>
+            </div>
+
+            <div class="clearfix"></div>
+        </tab>
+
+        <tab>
+            <tab-heading>
+                <span translate="tasks.run.config.tabTitle">Configuration</span>
+            </tab-heading>
+
+            <p translate="tasks.run.config.intro">View the configuration of this task in the JSON structure to create a chain of jobs to complete.</p>
+
+            <dl class="dl-horizontal">
+                <dt translate="global.values.id.label">Id</dt>
+                <dd>{{taskConfig.id}}</dd>
+
+                <dt translate="global.values.name.label">Name</dt>
+                <dd>{{taskConfig.name | translate }}</dd>
+
+                <dt translate="tasks.run.config.noJobs">No of Jobs</dt>
+                <dd>{{taskConfig.jobs.length}}</dd>
+            </dl>
+
+            <textarea name="taskConfigString"
+                        class="largeTextArea"
+                        disabled>{{taskConfig | json}}</textarea>
+
+            <div class="pull-right">
+                <button type="button"
+                        class="btn btn-primary"
+                        ng-disabled="!task.jobs.hasNext()"
+                        ng-click="runTask()"
+                        ladda="task.loading"
+                        data-style="slide-right">Execute</button>
+            </div>
+
+            <div class="clearfix"></div>
+        </tab>
+    </tabset>
+</div>

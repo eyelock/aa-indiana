@@ -1,0 +1,33 @@
+<div class="modal fade" id="logoutConfirmation">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form name="logoutForm" ng-submit="logout()">
+                <div class="modal-header">
+                    <button type="button"
+                            class="close"
+                            data-dismiss="modal"
+                            aria-hidden="true"
+                            ng-click="cancel()">&times;</button>
+
+                    <h4 class="modal-title" translate="system.auth.confirmlogouttitle">Logout and clear all data?</h4>
+                </div>
+
+                <div class="modal-body">
+                    <p translate="system.auth.confirmlogouttext">Are you sure you want to log out and lose all your cached data?</p>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="cancel()">
+                        <span class="glyphicon glyphicon-ban-circle"></span>
+                        &nbsp;<span translate="global.form.action.cancel">Cancel</span>
+                    </button>
+
+                    <button type="button" data-dismiss="modal" class="btn btn-danger" ng-click="logout()">
+                        <span class="glyphicon glyphicon-remove-circle"></span>
+                        &nbsp;<span translate="global.form.action.logout">Logout</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

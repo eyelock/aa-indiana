@@ -1,0 +1,94 @@
+{
+    "id": "deleteUsers",
+    "name": "scheduler.tasks.deleteUsers.name",
+    "description": "scheduler.tasks.deleteUsers.description",
+    "tags": "permissions, users, logins, delete, remove",
+    "jobs": [
+        {
+            "id": "getUsers",
+            "name": "scheduler.tasks.deleteUsers.jobs.getUsers.name",
+            "description": "scheduler.tasks.deleteUsers.jobs.getUsers.description",
+            "pluginConfig": {
+                "id": "getUsersServiceCall",
+                "factory": "ServiceCallPluginFactory",
+                "serviceName": "ApiHelper",
+                "methodName": "executeMethod",
+                "methodArgs": {
+                    "code": "Permissions",
+                    "method": "GetLogins",
+                    "args": {}
+                }
+            }
+        },
+
+        {
+            "id": "promptForUsers",
+            "name": "scheduler.tasks.deleteUsers.jobs.promptForUsers.name",
+            "description": "scheduler.tasks.deleteUsers.jobs.promptForUsers.description",
+            "pluginConfig": {
+                "id": "captureUsers",
+                "factory": "InputPromptPluginFactory",
+                "state": "scheduler.plugins.inputprompt",
+                "prompts": [
+                    {
+                        "name": "logins",
+                        "label": "scheduler.tasks.deleteUsers.jobs.promptForUsers.label",
+                        "type": "checkbox",
+                        "required": true,
+                        "value": "@getUsers.data:login",
+                        "options": {
+                            "preselected": "false"
+                        }
+                    }
+                ],
+                "options": {
+                    "confirm": {
+                        "enabled": "true",
+                        "title": "scheduler.tasks.deleteUsers.jobs.promptForUsers.confirmTitle",
+                        "description": "scheduler.tasks.deleteUsers.jobs.promptForUsers.confirmDescription",
+                        "selectionLabel": "login"
+                    }
+                }
+            }
+        },
+
+        {
+            "id": "doDelete",
+            "name": "scheduler.tasks.deleteUsers.jobs.doDelete.name",
+            "description": "scheduler.tasks.deleteUsers.jobs.doDelete.description",
+            "autoProgress": true,
+            "pluginConfig": {
+                "id": "serviceCall",
+                "factory": "ServiceCallPluginFactory",
+                "serviceName": "ApiHelper",
+                "methodName": "executeMethod",
+                "methodArgs": {
+                    "code": "Permissions",
+                    "method": "DeleteLoginsssss",
+                    "args": {
+                        "login": "@promptForUsers.logins"
+                    }
+                },
+                "options": {
+                    "executeMany": "true",
+                    "splitArgs": "args"
+                }
+            }
+        },
+
+        {
+            "id": "displayResults",
+            "name": "scheduler.tasks.deleteUsers.jobs.displayResults.name",
+            "description": "scheduler.tasks.deleteUsers.jobs.displayResults.description",
+            "pluginConfig": {
+                "id": "resultsDisplay",
+                "factory": "ResultsDisplayPluginFactory",
+                "state": "scheduler.plugins.resultsdisplay",
+                "options": {
+                    "multipleResults": "true",
+                    "multipleTitle": "config.data.login"
+                }
+            }
+        }
+    ]
+}

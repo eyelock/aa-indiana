@@ -1,0 +1,86 @@
+<div>
+    <h2 translate="system.storage.title">Manger Storage</h2>
+
+    <p translate="system.storage.intro">You can view what the application currently stores about your requests and credentials here, and clear them if you need.  'Logout' effectively clears everyting also!</p>
+
+    <div class="jumbotron">
+        <div class="container">
+            <h3>
+                <i class="glyphicon glyphicon-trash"></i>
+                <span translate="system.storage.clearall.title">Clear all</span>
+            </h3>
+
+            <p translate="system.storage.clearall.description">Clear everything from the cached data.</p>
+
+            <button type="button" class="btn btn-danger pull-right" ng-click="confirmClearAll()">
+                <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="global.form.action.delete">Delete</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <h3>
+        <span translate="system.storage.list.title">Clear individual caches</span>
+    </h3>
+
+    <p translate="system.storage.list.description">Clear everything from the cached data.</p>
+
+    <alert type="warning">
+        <p translate="system.storage.list.warning">Cache's listed below are all that have been accessed so far, there may be others that haven't been accessed yet.</p>
+    </alert>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="global.values.id.column">Id</th>
+                    <th translate="system.storage.values.storageMode.column">Storage Mode</th>
+                    <th translate="global.values.size.column">Size</th>
+                    <th translate="system.storage.values.deleteOnExpire.column">Expire Policy</th>
+                    <th translate="system.storage.values.maxAge.column">Maximum Age</th>
+                    <th translate="system.storage.values.capacity.column">Capacity</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="cache in caches | orderBy: 'site_title' | filter:search">
+                    <td>{{cache.id}}</td>
+                    <td>{{cache.storageMode}}</td>
+                    <td>{{cache.size}}</td>
+                    <td>{{cache.deleteOnExpire}}</td>
+                    <td>
+                        <span ng-switch on="isUnlimited(cache.maxAge)">
+                            <span ng-switch-when="true">
+                                <span translate="system.storage.values.maxAge.unlimited">Unlimited</span>
+                            </span>
+                            <span ng-switch-default>
+                                {{cache.maxAge | millSecondsToTimeString}}
+                            </span>
+                        </span>
+                    </td>
+                    <td>
+                        <span ng-switch on="isUnlimited(cache.capacity)">
+                            <span ng-switch-when="true">
+                                <span translate="system.storage.values.capacity.unlimited">Unlimited</span>
+                            </span>
+                            <span ng-switch-default>
+                                {{cache.capacity}}
+                            </span>
+                        </span>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger" ng-click="confirmClearCache(cache.id)">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="global.form.action.delete">Delete</span>
+                        </button>
+                    </td>
+                </tr>
+                <tr ng-show="reportSuites.length === 0">
+                    <td colspan="2" translate="tools.reportsuites.noRecords">No records found.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

@@ -1,0 +1,52 @@
+<div class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-hidden="true"
+                        ng-click="cancel()">&times;</button>
+
+                <h4 class="modal-title" translate="tools.users.details.title">Login Details</h4>
+            </div>
+
+            <div class="modal-body">
+                <p translate="tools.users.details.intro">View details associated with the login.</p>
+                <p class="modal-subject">{{reportSuite.site_title}}</p>
+
+                <tabset>
+                    <tab>
+                        <tab-heading>
+                            <span translate="tools.users.details.details.tabTitle">Details</span>
+                        </tab-heading>
+
+                        <ul>
+                            <li ng-repeat="(key, value) in details">{{key}}: {{value}}</li>
+                        </ul>
+                    </tab>
+
+                    <tab>
+                        <tab-heading>
+                            <span translate="tools.users.details.groups.tabTitle">Groups</span>
+                        </tab-heading>
+
+                        <ul>
+                            <li ng-repeat="group in groups track by $index">{{group}}</li>
+                        </ul>
+
+                        <p ng-show="groups.length === 0">
+                            <span translate="tools.users.details.groups.noGroups">The login does not belong to any groups.</span>
+                        </p>
+                    </tab>
+                </tabset>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="cancel()">
+                    <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="global.form.action.close">Close</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

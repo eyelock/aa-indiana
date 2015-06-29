@@ -1,0 +1,7 @@
+{
+    "enabled": true,
+    "endpoint": "https://hooks.slack.com/services/.......",
+    "channel": "#general",
+    "username": "My slave bot",
+    "icon_url": "http://vermilion1.github.io/presentations/grunt/images/grunt-logo.png"
+}

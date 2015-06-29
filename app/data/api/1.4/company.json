@@ -1,0 +1,27 @@
+{
+    "name": "Company",
+    "methods": {"Company.GetEndpoint":"GetEndpoint","Company.GetLoginKey":"GetLoginKey","Company.GetReportSuites":"GetReportSuites","Company.GetTrackingServer":"GetTrackingServer","Company.GetVersionAccess":"GetVersionAccess"},
+    "defaultArgs": {
+        "Company.GetEndpoint": {
+            "company":"(string)"
+        },
+        "Company.GetLoginKey": {
+            "company":"(string)",
+            "login":"(string)",
+            "password":"(string)"
+        },
+        "Company.GetReportSuites": {
+            "search":"(string)",
+            "types":[
+                "(string)"
+            ]
+        },
+        "Company.GetTrackingServer": {
+            "rsid":"(string)"
+        },
+        "Company.GetVersionAccess": [
+
+        ]
+    }
+}
+    

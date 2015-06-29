@@ -1,0 +1,66 @@
+{
+    "system": {
+        "auth": {
+            "title": "Identificarse",
+            "intro": "Introduce tu nombre de usuario y contraseña para acceder a la API.",
+            "confirmlogouttext": "¿Seguro que quieres desconectarte?  Se perderán todos los datos de la memoria caché y no tendrás acceso a algunos de los informes hasta que te conectes de nuevo.",
+            "confirmlogouttitle": "¿Desconectarse y borrar datos?",
+            "values": {
+                "secret": {
+                    "label": "Shared Secret",
+                    "invalid": "Es necesario introducir la contraseña (Shared Secret)",
+                    "minlength": "La contraseña consta de 32 caracteres."
+                }
+            }
+        },
+        "preferences": {
+            "title": "Preferencias",
+            "intro": "Desde aquí puedes cambiar tus preferencias para que te sea más sencillo usar la herramienta cada vez que te conectes."
+        },
+        "storage": {
+            "title": "Almacenamiento",
+            "intro": "Desde aquí puedes revisar lo que tu sesión ha almacenado por el momento y borrar lo que no necesites. Si te desconectas también se borran los datos de sesión.",
+            "clearall": {
+                "title": "¡Borrar todo!",
+                "description": "Desde aquí puedes borrar datos de inicio de sesión. Asegúrate de tenerlos a mano antes de continuar.",
+                "buttonLabel": "Borrar todo",
+                "confirmtitle": "¿Seguro que quieres borrarlo todo?",
+                "confirmdescription": "Si seleccionas 'Borrar todo' se borrarán también los datos de usuario con los que iniciaste la sesión. Por eso ___queremos confirmar___ que estás seguro.  Haz click en 'Confirmar' para borrarlo todo.  Esta operación no se puede deshacer."
+            },
+            "clearcache": {
+                "confirmtitle": "¡Borrar caché individual!",
+                "confirmdescription": "¿Seguro que quieres borrar estos datos?"
+            },
+            "list": {
+                "title": "Toda tu información me pertenece",
+                "description": "Listado de toda la información almacenada en la aplicación. Puedes seleccionar borrar datos individualmente.",
+                "warning": "El siguiente listado muestra los datos a los cuales se ha tenido acceso hasta la fecha. Es posible que existan otros a los cuales no se haya tenido acceso todavía."
+            },
+            "values": {
+                "cacheFlushInterval": {
+                    "column": "Intervalo de borrado de caché"
+                },
+                "capacity": {
+                    "column": "Capacidad",
+                    "unlimited": "Ilimitado"
+                },
+                "deleteOnExpire": {
+                    "column": "Política de expiración"
+                },
+                "disabled": {
+                    "column": "Desactivado"
+                },
+                "maxAge": {
+                    "column": "Máx. antigüedad",
+                    "unlimited": "Hasta borrado de caché"
+                },
+                "recycleFreq": {
+                    "column": "Frecuncia de reciclaje"
+                },
+                "storageMode": {
+                    "column": "Modo de almacenamiento"
+                }
+            }
+        }
+    }
+}

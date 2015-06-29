@@ -1,0 +1,176 @@
+{
+    "global": {
+        "title": "Dr Jones",
+
+        "main": {
+            "title": "Bienvenue sur Dr. Jones",
+            "intro": "Dr Jones est un outil créé pour explorer l'API d’Adobe Analytics, Indiana était à la fois un professeur et un explorateur et notre objectif est donc à la fois d’enseigner et d’explorer tout ce qui est disponible pour cette API.",
+            "group": {
+                "next": {
+                    "title": "Utiliser l'API",
+                    "description": "Vous pouvez directement faire des requêtes via l’API, il n’y a pas besoin de sauvegarder vos identifiants.",
+                    "linkText": "Utiliser l'API",
+                    "authentication": "La sauvegarde des identifiants est bien, car vous pouvez accéder à des outils et des tâches plus puissants, mais nous n’en avons pas besoin! Voir \"Premiers pas\" ci-dessous si vous voulez en savoir plus."
+                },
+                "getstarted": {
+                    "title": "Premiers pas",
+                    "description": "Entrez vos identifiants pour l’API et accéder à un ensemble d'outils pour vous montrer l'API dans toute sa splendeur. Ces outils et tâches sont mieux adaptés aux besoins de votre entreprise et peuvent vous fournir un outil flexible pour gérer votre configuration et implémentation d’Analytics.",
+                    "linkText": "S'authentifier (ou vérifier vos identifiants)"
+                },
+                "help": {
+                    "title": "Vous êtes bloqué ?",
+                    "description": "L’API est une source de confusion constante. Ne vous inquiétez pas, nous avons ce qu'il vous faut dans notre section d'aide. En plus de vous laisser utiliser l’API, l’enregistrement de vos identifiants vous donne des bénéfices supplémentaires !",
+                    "linkText": "Voir l'aide"
+                }
+            }
+        },
+
+        "menu": {
+            "home": "Accueil",
+            "language": "Langue",
+            "help": {
+                "title": "Aide",
+                "about": "À propos de Dr Jones",
+                "issues": "Problèmes Connus",
+                "usage": "Comment utiliser Dr Jones"
+            },
+            "system": {
+                "title": "Opérations",
+                "auth": "Connexion/Déconnexion",
+                "preferences": "Préférences",
+                "storage": "Gérer le stockage"
+            },
+            "tasks": {
+                "title": "Tâches",
+                "custom": "Tâches personnalisées",
+                "favourites": "Tâches favorites",
+                "export": "Exporter..",
+                "import": "Importer..",
+                "predefined": "Tâches tous"
+            },
+            "tools": {
+                "title": "Outils",
+                "company": "Gérer la compagnie",
+                "credentials": "Détails des identifiants",
+                "explorer": "Explorer l'API",
+                "reportsuites": "Gérer les report suites",
+                "users": "Gérer les Logins",
+                "environment": "Data Centres"
+            }
+        },
+
+        "form": {
+            "action": {
+                "save": "Sauvegarder",
+                "cancel": "Annuler",
+                "revert": "Restaurer",
+                "reset": "Réinitialiser",
+                "view": "Voir",
+                "submit": "Soumettre",
+                "logout": "Se Déconnecter",
+                "login": "Se Connecter",
+                "delete": "Supprimer",
+                "dismiss": "Rejeter",
+                "refresh": "Actualiser",
+                "info": "Info"
+            },
+            "ordering": {
+
+            },
+            "filtering": {
+                "filterBy": "Filtrer par"
+            }
+        },
+
+        "cache": {
+            "results": "Résultats (en cache)",
+            "info": {
+                "title": "Cache Info",
+                "intro": "Détails des résultats mis en cache."
+            },
+            "refresh": {
+                "title": "Actualiser le cache",
+                "intro": "Vous pouvez actualiser les résultats du serveur. Les valeurs mises en cache seront supprimés puis actualisés à partir du service"
+            },
+            "values": {
+                "storename": "Stocker les noms",
+                "keyname": "Nom clé"
+            }
+        },
+
+        "values": {
+            "norecords": "Aucun document n'a été trouvé pour vous.",
+            "id": {
+                "title": "Id",
+                "column": "Id"
+            },
+            "code": {
+                "title": "Code",
+                "column": "Code"
+            },
+            "name": {
+                "title": "Name",
+                "column": "Name"
+            },
+            "username": {
+                "label": "Username",
+                "column": "Username",
+                "invalid": "The username is required",
+                "minlength": "The username must be more than 5 characters in length."
+            },
+            "firstname": {
+                "label": "First Name",
+                "column": "First Name"
+            },
+            "lastname": {
+                "label": "Last Name",
+                "column": "Last Name"
+            },
+            "email": {
+                "label": "Email",
+                "column": "Email"
+            },
+            "phone": {
+                "label": "Phone",
+                "column": "Phone"
+            },
+            "size": {
+                "label": "Size",
+                "column": "Size"
+            },
+            "date": {
+                "label": "Date",
+                "column": "Date"
+            },
+            "created": {
+                "label": "Created",
+                "column": "Created"
+            },
+            "expires": {
+                "label": "Expires",
+                "column": "Expires"
+            }
+        },
+
+        "errors": {
+            "notimplemented": {
+                "title": "Non implémenté",
+                "intro": "Cette fonction n'a pas encore été implémenté. Si vous êtes chanceux, vous pourriez obtenir une description de la fonction à sa place ci-dessous"
+            },
+            "accessdenied": {
+                "title": "Accès Refusé!",
+                "intro": "Vous avez essayé d'accéder à une page dont vous n’avez pas les droits d’accès.",
+                "relogin": "Vous pouvez essayer de vous reconnecter."
+            }
+        },
+
+        "notifications": {
+            "async": {
+                "start": "Un moment s’il vous plait, nous chargeons de votre requête.",
+                "finish": "Merci pour l'attente, le chargement a été complété.",
+                "error": "Oops, quelque chose a mal tourné lors du chargement de votre requête.",
+                "cached": "Super! Nous avons obtenu vos coordonnées à partir d'un cache précédente."
+            }
+        }
+    }
+}
